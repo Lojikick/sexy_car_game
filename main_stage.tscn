@@ -149,4 +149,4 @@ spring_length = 2.0
 margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="Player/CamRoot/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 0.888433, 0.459006, 0, -0.459006, 0.888433, 0, 1.45449, 2.57785)
+transform = Transform3D(1, 0, 0, 0, 0.947372, 0.320133, 0, -0.320133, 0.947372, 0, 2.41216, 2.57785)
