@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bl65nv32tqe4w"]
+
+[node name="World" type="Node3D"]
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map"]
+size = Vector3(100, 0, 100)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Map"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 0.826413, 0.563065, 0, -0.563065, 0.826413, -0.0740595, 4.47898, 8.03608)
