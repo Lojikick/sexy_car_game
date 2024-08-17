@@ -1,9 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://bddlh1wy82or7"]
+[gd_scene load_steps=24 format=3 uid="uid://bddlh1wy82or7"]
 
 [ext_resource type="Script" path="res://scripts/third_person.gd" id="1_x3oai"]
 [ext_resource type="Script" path="res://NOT_WORKING/cameraFollow.gd" id="2_7k52i"]
 [ext_resource type="Shader" path="res://shader/toon.gdshader" id="2_hsh1f"]
 [ext_resource type="Shader" path="res://shader/outline.gdshader" id="4_r2fid"]
+[ext_resource type="PackedScene" uid="uid://wcqrhpqhh4i7" path="res://assets/kenny_car_assets/ambulance.glb" id="5_ncg02"]
+[ext_resource type="PackedScene" uid="uid://deu3acr0b852d" path="res://assets/kenny_car_assets/box.glb" id="6_atthu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1eg42"]
 
@@ -204,3 +206,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0413912, -0.093626, -0.438
 mesh = SubResource("QuadMesh_texcw")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("ShaderMaterial_jtc70")
+
+[node name="ambulance" parent="." instance=ExtResource("5_ncg02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.63301, 0.249241, 4.33956)
+
+[node name="box2" parent="." instance=ExtResource("6_atthu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.04273, 0.241544, 1.65012)
