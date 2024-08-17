@@ -167,7 +167,7 @@ shape = SubResource("WorldBoundaryShape3D_xkh8x")
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47298, 5.89493)
-script = ExtResource("1_a3rf1")
+script = ExtResource("1_fe1fq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_a5l1k")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bujhmjnc4bxko"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_n0em7"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_lio7m"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_o1485"]
 
@@ -13,7 +13,7 @@ visible = false
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.240366, 1.22403, -0.365019)
 visible = false
-script = ExtResource("1_n0em7")
+script = ExtResource("1_lio7m")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 transform = Transform3D(0.99993, 0.0118156, 0, -0.0118156, 0.99993, 0, 0, 0, 1, 0.096772, 1.05736, 0.0526915)
