@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://diwqu1cvft320"]
+[gd_scene load_steps=10 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://modules/Level.gd" id="1_r7rqx"]
 [ext_resource type="PackedScene" uid="uid://ch2436aoeqts0" path="res://modules/module_a.tscn" id="2_ohfyf"]
 [ext_resource type="Script" path="res://modules/car.gd" id="3_jc3ke"]
+[ext_resource type="PackedScene" uid="uid://bcps2377ctyhe" path="res://modules/module_b.tscn" id="3_qk40l"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_un0t5"]
 
@@ -20,19 +21,19 @@ albedo_color = Color(1, 0.159699, 0.39244, 1)
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
 script = ExtResource("1_r7rqx")
-modules = Array[PackedScene]([ExtResource("2_ohfyf")])
+modules = Array[PackedScene]([ExtResource("2_ohfyf"), ExtResource("3_qk40l")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.930437, 0.366453, 0, -0.366453, 0.930437, 0, 0.701672, 0.96712)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.923358, 0.383941, 0, -0.383941, 0.923358, 0, 4.05139, 4.3534)
-
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.574896, 0)
 script = ExtResource("3_jc3ke")
+
+[node name="RayCast3D" type="RayCast3D" parent="Player"]
+transform = Transform3D(0.793332, -0.00199755, 0.608786, 0.608789, 0.00171294, -0.79333, 0.000541948, 0.999997, 0.00257506, -0.0591378, -0.138154, 0.0659937)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_un0t5")
@@ -51,12 +52,5 @@ material_override = SubResource("StandardMaterial3D_35gqq")
 lod_bias = 0.001
 mesh = SubResource("CapsuleMesh_wdoo5")
 
-[node name="CamRoot" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.65018, 3.56607)
-
-[node name="SpringArm3D" type="SpringArm3D" parent="Player/CamRoot"]
-spring_length = 2.0
-margin = 0.5
-
-[node name="Camera3D" type="Camera3D" parent="Player/CamRoot/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 0.947372, 0.320133, 0, -0.320133, 0.947372, 0, 2.41216, 2.57785)
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.923358, 0.383941, 0, -0.383941, 0.923358, 0, 3.47649, 4.3534)
