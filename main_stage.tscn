@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://i4bdrx6j8y4n"]
+[gd_scene load_steps=22 format=3 uid="uid://bddlh1wy82or7"]
 
 [ext_resource type="Script" path="res://third_person.gd" id="1_a3rf1"]
 [ext_resource type="Script" path="res://NOT_WORKING/cameraFollow.gd" id="2_7k52i"]
