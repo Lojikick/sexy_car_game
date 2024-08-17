@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://bddlh1wy82or7"]
 
-[ext_resource type="Script" path="res://third_person.gd" id="1_a3rf1"]
+[ext_resource type="Script" path="res://scripts/third_person.gd" id="1_x3oai"]
 [ext_resource type="Script" path="res://NOT_WORKING/cameraFollow.gd" id="2_7k52i"]
 [ext_resource type="Shader" path="res://shader/toon.gdshader" id="2_hsh1f"]
 [ext_resource type="Shader" path="res://shader/outline.gdshader" id="4_r2fid"]
@@ -166,8 +166,8 @@ shape = SubResource("WorldBoundaryShape3D_xkh8x")
 [node name="StaticBody3D" type="StaticBody3D" parent="StaticBody3D"]
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47298, 5.89493)
-script = ExtResource("1_fe1fq")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47298, 5.13574)
+script = ExtResource("1_x3oai")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_a5l1k")
