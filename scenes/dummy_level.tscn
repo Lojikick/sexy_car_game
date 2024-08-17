@@ -19,7 +19,7 @@ albedo_color = Color(1, 0.159699, 0.39244, 1)
 
 [node name="main" type="Node3D"]
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Level" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
 script = ExtResource("1_eefjj")
 modules = Array[PackedScene]([ExtResource("2_v8pk6"), ExtResource("3_ua7j0")])
@@ -27,7 +27,7 @@ modules = Array[PackedScene]([ExtResource("2_v8pk6"), ExtResource("3_ua7j0")])
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.930437, 0.366453, 0, -0.366453, 0.930437, 0, 0.701672, 0.96712)
+transform = Transform3D(1, 0, 0, 0, 0.930437, 0.366453, 0, -0.366453, 0.930437, 0, 4.64983, 5.59964)
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.574896, 0)
@@ -41,6 +41,7 @@ shape = SubResource("CapsuleShape3D_un0t5")
 
 [node name="car_model" parent="Player" instance=ExtResource("5_j5iir")]
 transform = Transform3D(-0.996699, 0, 0.0811904, 0, 1, 0, -0.0811904, 0, -0.996699, 0, 0, 0)
+visible = false
 
 [node name="MeshRoot" type="Node3D" parent="Player"]
 
