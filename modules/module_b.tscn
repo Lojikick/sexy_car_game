@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bcps2377ctyhe"]
 
 [ext_resource type="PackedScene" uid="uid://bqvd8j2ns5pxr" path="res://modules/ref_module.tscn" id="1_7einb"]
-[ext_resource type="Script" path="res://module.gd" id="1_lbyko"]
+[ext_resource type="Script" path="res://scripts/module.gd" id="1_mrn5q"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_vc0ak"]
 
@@ -10,7 +10,7 @@ data = PackedVector3Array(0, 1, 0.5, 0.049, 1, 0.4976, 0, 0.6, 0.5, 0.049, 1, 0.
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
-script = ExtResource("1_lbyko")
+script = ExtResource("1_mrn5q")
 
 [node name="Ref_Module" parent="." instance=ExtResource("1_7einb")]
 

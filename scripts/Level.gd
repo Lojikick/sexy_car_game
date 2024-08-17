@@ -12,8 +12,6 @@ func _ready():
 	for n in amnt:
 		print("Bite me!")
 		spawnModule(n*offset)
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
