@@ -1,9 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://i4bdrx6j8y4n"]
+[gd_scene load_steps=18 format=3 uid="uid://i4bdrx6j8y4n"]
 
 [ext_resource type="Script" path="res://third_person.gd" id="1_a3rf1"]
-[ext_resource type="Script" path="res://NOT_WORKING/cameraFollow.gd" id="2_7k52i"]
-[ext_resource type="Shader" path="res://shader/toon.gdshader" id="2_hsh1f"]
-[ext_resource type="Shader" path="res://shader/outline.gdshader" id="4_r2fid"]
+[ext_resource type="Script" path="res://cameraFollow.gd" id="2_7k52i"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1eg42"]
 
@@ -33,56 +31,14 @@ points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a5l1k"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgej1"]
+albedo_color = Color(1, 0.159699, 0.39244, 1)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_wd7f7"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6gsyv"]
-render_priority = 0
-shader = ExtResource("2_hsh1f")
-shader_parameter/albedo = Color(1, 0, 0, 1)
-shader_parameter/clamp_diffuse_to_max = false
-shader_parameter/cuts = 3
-shader_parameter/wrap = 0.0
-shader_parameter/steepness = 1.0
-shader_parameter/use_attenuation = true
-shader_parameter/use_specular = false
-shader_parameter/specular_strength = 1.0
-shader_parameter/specular_shininess = 16.0
-shader_parameter/use_rim = false
-shader_parameter/rim_width = 8.0
-shader_parameter/rim_color = Color(1, 1, 1, 1)
-shader_parameter/use_ramp = false
-shader_parameter/use_borders = false
-shader_parameter/border_width = 0.01
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkvvi"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dax45"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ek0yg"]
-render_priority = 0
-shader = ExtResource("2_hsh1f")
-shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/clamp_diffuse_to_max = false
-shader_parameter/cuts = 3
-shader_parameter/wrap = 0.0
-shader_parameter/steepness = 1.0
-shader_parameter/use_attenuation = true
-shader_parameter/use_specular = false
-shader_parameter/specular_strength = 1.0
-shader_parameter/specular_shininess = 16.0
-shader_parameter/use_rim = false
-shader_parameter/rim_width = 8.0
-shader_parameter/rim_color = Color(1, 1, 1, 1)
-shader_parameter/use_ramp = false
-shader_parameter/use_borders = false
-shader_parameter/border_width = 0.01
-
-[sub_resource type="QuadMesh" id="QuadMesh_texcw"]
-size = Vector2(2, 2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jtc70"]
-render_priority = 0
-shader = ExtResource("4_r2fid")
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_thickness = 2.0
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.234068, 0)
@@ -175,18 +131,16 @@ shape = SubResource("CapsuleShape3D_a5l1k")
 [node name="MeshRoot" type="Node3D" parent="Player"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/MeshRoot"]
-cast_shadow = 0
+material_override = SubResource("StandardMaterial3D_cgej1")
 mesh = SubResource("CapsuleMesh_wd7f7")
-surface_material_override/0 = SubResource("ShaderMaterial_6gsyv")
 
 [node name="Eyes" type="Node3D" parent="Player/MeshRoot/MeshInstance3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/MeshRoot/MeshInstance3D/Eyes"]
 transform = Transform3D(0.8489, 0, 0, 0, 0.291202, 0, 0, 0, -1.13156, 0, 0.447251, -0.0961785)
-cast_shadow = 0
+material_override = SubResource("StandardMaterial3D_pkvvi")
 lod_bias = 0.001
 mesh = SubResource("CapsuleMesh_dax45")
-surface_material_override/0 = SubResource("ShaderMaterial_ek0yg")
 
 [node name="CamRoot" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.65018, 3.56607)
@@ -196,11 +150,6 @@ spring_length = 2.0
 margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="Player/CamRoot/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 0.947373, 0.320133, 0, -0.320133, 0.947373, 0, 2.41216, 2.57785)
+transform = Transform3D(1, 0, 0, 0, 0.947372, 0.320133, 0, -0.320133, 0.947372, 0, 2.41216, 2.57785)
 script = ExtResource("2_7k52i")
-
-[node name="outline" type="MeshInstance3D" parent="Player/CamRoot/SpringArm3D/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0413912, -0.093626, -0.438589)
-mesh = SubResource("QuadMesh_texcw")
-skeleton = NodePath("../../../..")
-surface_material_override/0 = SubResource("ShaderMaterial_jtc70")
+smooth_speed = 10.0

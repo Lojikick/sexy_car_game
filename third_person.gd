@@ -14,15 +14,16 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 #Handles 3D camera movement
-func _input(event):
+#func _input(event):
 	
-	if event is InputEventMouseMotion:
+	#if event is InputEventMouseMotion:
 		# LEFT AND RIGHT #Y AXIS: Rotate entire character:
 		#rotate_y(deg_to_rad(-event.relative.x * sens))
 		## UP AND DOWN #X AXIS: Rotate camera:
 		#pivot.rotate_x(deg_to_rad(-event.relative.y * sens))
 		#Check to make sure camera does not go over player
-		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
+		#pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
+		
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
