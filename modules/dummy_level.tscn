@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://modules/Level.gd" id="1_r7rqx"]
 [ext_resource type="PackedScene" uid="uid://ch2436aoeqts0" path="res://modules/module_a.tscn" id="2_ohfyf"]
-[ext_resource type="Script" path="res://third_person.gd" id="3_8sqjp"]
+[ext_resource type="Script" path="res://modules/car.gd" id="3_jc3ke"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_un0t5"]
 
@@ -32,7 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 0.923358, 0.383941, 0, -0.383941, 0.923358, 
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.574896, 0)
-script = ExtResource("3_8sqjp")
+script = ExtResource("3_jc3ke")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_un0t5")
