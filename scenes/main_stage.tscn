@@ -1,5 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://bddlh1wy82or7"]
+[gd_scene load_steps=26 format=3 uid="uid://bddlh1wy82or7"]
 
+[ext_resource type="PackedScene" uid="uid://c4tw6ffnnus4h" path="res://scenes/building_module_0.tscn" id="1_44kbm"]
 [ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/mouse.tscn" id="1_e5acv"]
 [ext_resource type="Script" path="res://scripts/third_person.gd" id="1_x3oai"]
 [ext_resource type="Script" path="res://NOT_WORKING/cameraFollow.gd" id="2_7k52i"]
@@ -167,6 +168,9 @@ transform = Transform3D(0.289, 0, 0, 0, 0.203, 0, 0, 0, 0.297, 0, -0.982486, 0.7
 shape = SubResource("WorldBoundaryShape3D_xkh8x")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="StaticBody3D"]
+
+[node name="building module 0" parent="StaticBody3D" instance=ExtResource("1_44kbm")]
+transform = Transform3D(-7.86547, 0, -6.1753, 0, 10, 0, 6.1753, 0, -7.86547, 23.4452, -0.685908, -23.5164)
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47298, 5.13574)
