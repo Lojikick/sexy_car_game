@@ -2,7 +2,8 @@ extends Node3D
 
 #Direct parent reference
 @onready var level = $"../"
-var speed = 30
+var speed = 25
+var new_module_spawn_offset = 2.8
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,7 +12,7 @@ func _process(delta):
 	position.z += speed * delta
 	#if our position is behind the camera range
 	if position.z > 5:
-		level.spawnModule(position.z+(level.amnt*2.8))
+		level.spawnModule(position.z+(level.amnt*new_module_spawn_offset))
 		queue_free()
 		#Spawn a nrew module at following position:
 			#position.x * level.amt*level.offset

@@ -10,7 +10,6 @@ var initObs = 0
 func _ready():
 	#spawn modules 10 times, input is module_num * offset
 	for n in amnt:
-		print("Bite me!")
 		spawnModule(n*offset)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -29,9 +28,7 @@ func spawnModule(n):
 		var instance = modules[num].instantiate()
 		#instantiate with instantiate()
 		#position:
-		print(instance.position)
 		instance.position.z = n*(-1)
-		print(instance.position)
 		add_child(instance)
 	else:
 		var instance = modules[0].instantiate()

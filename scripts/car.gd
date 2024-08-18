@@ -85,6 +85,7 @@ func _physics_process(delta):
 	
 	#Handle player exiting of the game:
 	if death_sensor.is_colliding():
+		print("Collision detected!")
 		death()
 		#get_tree().reload_current_scene()
 	if Input.is_action_just_pressed("switch") and not is_transitioning:

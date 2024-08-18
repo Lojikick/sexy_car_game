@@ -3,15 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://cuxcx7jbhvet" path="res://assets/kenny_car_assets/sedan.glb" id="1_ip844"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_66vmx"]
-size = Vector3(1, 1.70996, 2.70215)
+size = Vector3(1, 4.44788, 2.40405)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.417941, 0.479517, 0.585039)
-shape = SubResource("BoxShape3D_66vmx")
-
 [node name="sedan" parent="CharacterBody3D" instance=ExtResource("1_ip844")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.466756, 0, 0.674076)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1.27171, 0, 0, 0, 0.234266, 0, 0, 0, 1, 0.497311, 0.727875, 0.658005)
+shape = SubResource("BoxShape3D_66vmx")
