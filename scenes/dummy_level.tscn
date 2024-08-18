@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://diwqu1cvft320"]
+[gd_scene load_steps=14 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://ch2436aoeqts0" path="res://modules/module_a.tscn" id="2_v8pk6"]
 [ext_resource type="PackedScene" uid="uid://bcps2377ctyhe" path="res://modules/module_b.tscn" id="3_ua7j0"]
 [ext_resource type="Script" path="res://scripts/car.gd" id="4_m0aui"]
+[ext_resource type="PackedScene" uid="uid://dppr62roorm57" path="res://scenes/imported models/building_module_1.tscn" id="4_qoxar"]
+[ext_resource type="PackedScene" uid="uid://c8fns0ol3yxj8" path="res://scenes/imported models/building_module_2.tscn" id="5_2xp2j"]
 [ext_resource type="PackedScene" uid="uid://dkthp18q1rkrg" path="res://assets/3D-Car-With-Settingspanel-0eb08d38bd593a8f1314de22d646a95442247612/assets/3d_car_customizable/assets/car_model.glb" id="5_j5iir"]
 [ext_resource type="PackedScene" uid="uid://cuxcx7jbhvet" path="res://assets/kenny_car_assets/sedan.glb" id="6_d2ip0"]
 
@@ -24,6 +26,7 @@ albedo_color = Color(1, 0.159699, 0.39244, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
 script = ExtResource("1_eefjj")
 modules = Array[PackedScene]([ExtResource("2_v8pk6"), ExtResource("3_ua7j0")])
+buildingModules = Array[PackedScene]([ExtResource("4_qoxar"), ExtResource("5_2xp2j")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 

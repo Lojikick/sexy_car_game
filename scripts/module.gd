@@ -6,6 +6,7 @@ var speed = 25
 var new_module_spawn_offset = 2.8
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
 	#Continuously subtract position by speed

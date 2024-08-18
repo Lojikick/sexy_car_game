@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8fns0ol3yxj8"]
+
+[ext_resource type="PackedScene" uid="uid://bfdp8uebvphun" path="res://assets/buildings/building module 2.glb" id="1_7wb6c"]
+[ext_resource type="Script" path="res://scripts/module.gd" id="2_agr4m"]
+[ext_resource type="Shader" path="res://shader/emissive.gdshader" id="3_4cxd8"]
+[ext_resource type="Texture2D" uid="uid://6dgn5oov7kwf" path="res://assets/buildings/building module 2_color 2.png" id="4_smj80"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_om42w"]
+render_priority = 0
+shader = ExtResource("3_4cxd8")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("4_smj80")
+
+[node name="building module 2" instance=ExtResource("1_7wb6c")]
+script = ExtResource("2_agr4m")
+
+[node name="bake 2" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_om42w")
