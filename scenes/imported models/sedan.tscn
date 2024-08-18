@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=3 uid="uid://cy7r83r1ktmk7"]
+
+[ext_resource type="PackedScene" uid="uid://cuxcx7jbhvet" path="res://assets/kenny_car_assets/sedan.glb" id="1_8i0mg"]
+[ext_resource type="Shader" path="res://shader/emissive.gdshader" id="2_dnujj"]
+[ext_resource type="Texture2D" uid="uid://dkc4nlc5jxa47" path="res://assets/kenny_car_assets/Textures/colormap.png" id="3_al0dl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rjntw"]
+render_priority = 0
+shader = ExtResource("2_dnujj")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_al0dl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_poalf"]
+render_priority = 0
+shader = ExtResource("2_dnujj")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_al0dl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3a2ci"]
+render_priority = 0
+shader = ExtResource("2_dnujj")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_al0dl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dv7gx"]
+render_priority = 0
+shader = ExtResource("2_dnujj")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_al0dl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_olb24"]
+render_priority = 0
+shader = ExtResource("2_dnujj")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_al0dl")
+
+[node name="sedan" instance=ExtResource("1_8i0mg")]
+
+[node name="body" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_rjntw")
+
+[node name="wheel-back-left" parent="." index="1"]
+surface_material_override/0 = SubResource("ShaderMaterial_poalf")
+
+[node name="wheel-back-right" parent="." index="2"]
+surface_material_override/0 = SubResource("ShaderMaterial_3a2ci")
+
+[node name="wheel-front-left" parent="." index="3"]
+surface_material_override/0 = SubResource("ShaderMaterial_dv7gx")
+
+[node name="wheel-front-right" parent="." index="4"]
+surface_material_override/0 = SubResource("ShaderMaterial_olb24")

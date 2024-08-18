@@ -73,3 +73,4 @@ func _on_level_barrier_area_entered(area: Area3D) -> void:
 		#if child is RigidBody2D:
 			#child.gravity_scale = 1.0  # Adjust as needed
 			#child.lock_rotation = true  # Optional: prevents rotation if you don't want it
+

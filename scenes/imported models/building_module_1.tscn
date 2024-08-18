@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dppr62roorm57"]
+[gd_scene load_steps=6 format=3 uid="uid://dppr62roorm57"]
 
 [ext_resource type="PackedScene" uid="uid://btcf04l0yx4yo" path="res://assets/buildings/building module 1.glb" id="1_eibuf"]
+[ext_resource type="Script" path="res://scripts/module.gd" id="2_2yr8t"]
 [ext_resource type="Shader" path="res://shader/emissive.gdshader" id="2_t85ee"]
 [ext_resource type="Texture2D" uid="uid://wtyspn1bivfm" path="res://assets/buildings/building module 1_color 1.png" id="3_ib7lo"]
 
@@ -25,6 +26,7 @@ shader_parameter/border_width = 0.01
 shader_parameter/albedo_texture = ExtResource("3_ib7lo")
 
 [node name="building module 1" instance=ExtResource("1_eibuf")]
+script = ExtResource("2_2yr8t")
 
 [node name="1 bake" parent="." index="0"]
 surface_material_override/0 = SubResource("ShaderMaterial_6nstk")
