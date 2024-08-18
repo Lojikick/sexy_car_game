@@ -81,7 +81,6 @@ transform = Transform3D(1, 0, 0, 0, 0.923358, 0.383941, 0, -0.383941, 0.923358, 
 
 [node name="outline" type="MeshInstance3D" parent="Player/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0413912, -0.093626, -0.438589)
-visible = false
 mesh = SubResource("QuadMesh_vgilf")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("ShaderMaterial_4ab1s")
