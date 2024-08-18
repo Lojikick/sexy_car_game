@@ -3,7 +3,7 @@ extends Node3D
 @export var modules: Array[PackedScene] = []
 var amnt = 15
 var rng = RandomNumberGenerator.new()
-var offset = 3.2
+var offset = 5.8
 var initObs = 0
 var speed = 25
 var new_module_spawn_offset = 3.5
@@ -53,7 +53,7 @@ func spawnModule(n):
 			child.position.y -= total_movement  # Adjust initial Y position based on total level movement
 
 func _on_level_barrier_area_entered(area: Area3D) -> void:
-	var new_position = last_spawn_position + new_module_spawn_offset
+	var new_position = last_spawn_position + offset
 	spawnModule(new_position)
 	
 	

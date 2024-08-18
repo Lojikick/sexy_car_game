@@ -87,7 +87,7 @@ mesh = SubResource("CapsuleMesh_wdoo5")
 transform = Transform3D(1, 0, 0, 0, 0.923358, 0.383941, 0, -0.383941, 0.923358, 0, 3.47649, 4.3534)
 
 [node name="level_barrier" type="Area3D" parent="." groups=["level_end"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.414635, 4.8012)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.414635, 7.45843)
 script = ExtResource("8_7rvd1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level_barrier"]
