@@ -1,5 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://bddlh1wy82or7"]
+[gd_scene load_steps=25 format=3 uid="uid://bddlh1wy82or7"]
 
+[ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/mouse.tscn" id="1_e5acv"]
 [ext_resource type="Script" path="res://scripts/third_person.gd" id="1_x3oai"]
 [ext_resource type="Script" path="res://NOT_WORKING/cameraFollow.gd" id="2_7k52i"]
 [ext_resource type="Shader" path="res://shader/toon.gdshader" id="2_hsh1f"]
@@ -181,6 +182,7 @@ script = ExtResource("1_x3oai")
 shape = SubResource("CapsuleShape3D_a5l1k")
 
 [node name="MeshRoot" type="Node3D" parent="Player"]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/MeshRoot"]
 cast_shadow = 0
@@ -212,6 +214,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0413912, -0.093626, -0.438
 mesh = SubResource("QuadMesh_texcw")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("ShaderMaterial_jtc70")
+
+
+[node name="gaming mouse backup" parent="Player" instance=ExtResource("1_e5acv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.500755, 0)
+
+[node name="ambulance" parent="." instance=ExtResource("5_ncg02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.63301, 0.249241, 4.33956)
 
 [node name="box2" parent="." instance=ExtResource("6_atthu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.04273, 0.241544, 1.65012)
