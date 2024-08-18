@@ -6,8 +6,11 @@
 [ext_resource type="Script" path="res://NOT_WORKING/cameraFollow.gd" id="2_7k52i"]
 [ext_resource type="Shader" path="res://shader/toon.gdshader" id="2_hsh1f"]
 [ext_resource type="Shader" path="res://shader/outline.gdshader" id="4_r2fid"]
-[ext_resource type="PackedScene" uid="uid://wcqrhpqhh4i7" path="res://assets/kenny_car_assets/ambulance.glb" id="5_ncg02"]
 [ext_resource type="PackedScene" uid="uid://deu3acr0b852d" path="res://assets/kenny_car_assets/box.glb" id="6_atthu"]
+[ext_resource type="PackedScene" uid="uid://cuxcx7jbhvet" path="res://assets/kenny_car_assets/sedan.glb" id="7_0g61a"]
+[ext_resource type="PackedScene" uid="uid://ce1clfo0okfxy" path="res://assets/kenny_car_assets/truck.glb" id="8_d5dyn"]
+[ext_resource type="PackedScene" uid="uid://eao4h6cku86n" path="res://ambulance.tscn" id="9_5wvwd"]
+[ext_resource type="PackedScene" uid="uid://dm66u8i6sn10i" path="res://assets/kenny_car_assets/police.glb" id="9_7e7cp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1eg42"]
 
@@ -87,6 +90,9 @@ render_priority = 0
 shader = ExtResource("4_r2fid")
 shader_parameter/shadow_color = Color(0, 0, 0, 1)
 shader_parameter/shadow_thickness = 2.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xtc41"]
+size = Vector3(1, 1.9032, 3.98151)
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.234068, 0)
@@ -213,6 +219,7 @@ mesh = SubResource("QuadMesh_texcw")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("ShaderMaterial_jtc70")
 
+
 [node name="gaming mouse backup" parent="Player" instance=ExtResource("1_e5acv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.500755, 0)
 
@@ -221,3 +228,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.63301, 0.249241, 4.33956)
 
 [node name="box2" parent="." instance=ExtResource("6_atthu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.04273, 0.241544, 1.65012)
+
+[node name="sedan" parent="." instance=ExtResource("7_0g61a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.17995, 0.234996, 4.42684)
+
+[node name="truck" parent="." instance=ExtResource("8_d5dyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.97773, 0.241544, 4.429)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5012, 0.923653, 8.09924)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.115662, -0.703522)
+shape = SubResource("BoxShape3D_xtc41")
+
+[node name="ambulance" parent="CharacterBody3D" instance=ExtResource("9_5wvwd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0316725, -0.761815, -0.36008)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CharacterBody3D"]
+
+[node name="police" parent="." instance=ExtResource("9_7e7cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8639, 0.241544, 4.36008)
