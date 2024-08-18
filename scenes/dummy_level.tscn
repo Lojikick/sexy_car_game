@@ -6,8 +6,10 @@
 [ext_resource type="Script" path="res://scripts/car.gd" id="4_m0aui"]
 [ext_resource type="PackedScene" uid="uid://r7ryx5b7kam2" path="res://modules/module_c.tscn" id="4_p52dj"]
 [ext_resource type="PackedScene" uid="uid://dkthp18q1rkrg" path="res://assets/3D-Car-With-Settingspanel-0eb08d38bd593a8f1314de22d646a95442247612/assets/3d_car_customizable/assets/car_model.glb" id="5_j5iir"]
-[ext_resource type="PackedScene" uid="uid://cuxcx7jbhvet" path="res://assets/kenny_car_assets/sedan.glb" id="6_d2ip0"]
+[ext_resource type="PackedScene" uid="uid://toncqk8um2f0" path="res://scenes/imported models/sedan.tscn" id="7_u6772"]
 [ext_resource type="Script" path="res://scenes/collider.gd" id="8_7rvd1"]
+[ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/imported models/mouse.tscn" id="8_37yle"]
+[ext_resource type="Shader" path="res://shader/outline.gdshader" id="9_mk8c6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_331pq"]
 size = Vector3(1.23047, 1, 1)
@@ -15,14 +17,14 @@ size = Vector3(1.23047, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3pysw"]
 size = Vector3(1.49069, 1, 2.58582)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssuos"]
-albedo_color = Color(1, 0.159699, 0.39244, 1)
+[sub_resource type="QuadMesh" id="QuadMesh_vgilf"]
+size = Vector2(2, 2)
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_hjwqs"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_35gqq"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_wdoo5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ab1s"]
+render_priority = 0
+shader = ExtResource("9_mk8c6")
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_thickness = 2.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cab8x"]
 size = Vector3(3.83148, 2.74304, 0.295898)
@@ -68,23 +70,21 @@ visible = false
 
 [node name="MeshRoot" type="Node3D" parent="Player"]
 
-[node name="sedan" parent="Player/MeshRoot" instance=ExtResource("6_d2ip0")]
+[node name="sedan" parent="Player/MeshRoot" instance=ExtResource("7_u6772")]
 transform = Transform3D(-1.18215, 0, 0.018697, 0, 1.1816, 0, -0.0221824, 0, -0.996403, -0.0115091, -0.881525, 0.00835109)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/MeshRoot"]
-material_override = SubResource("StandardMaterial3D_ssuos")
-mesh = SubResource("CapsuleMesh_hjwqs")
-
-[node name="Eyes" type="Node3D" parent="Player/MeshRoot/MeshInstance3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/MeshRoot/MeshInstance3D/Eyes"]
-transform = Transform3D(0.8489, 0, 0, 0, 0.291202, 0, 0, 0, -1.13156, 0, 0.447251, -0.0961785)
-material_override = SubResource("StandardMaterial3D_35gqq")
-lod_bias = 0.001
-mesh = SubResource("CapsuleMesh_wdoo5")
+[node name="gaming mouse backup" parent="Player/MeshRoot" instance=ExtResource("8_37yle")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.764046, 0.235408)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.923358, 0.383941, 0, -0.383941, 0.923358, 0, 3.47649, 4.3534)
+
+[node name="outline" type="MeshInstance3D" parent="Player/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0413912, -0.093626, -0.438589)
+visible = false
+mesh = SubResource("QuadMesh_vgilf")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_4ab1s")
 
 [node name="level_barrier" type="Area3D" parent="." groups=["level_end"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.414635, 9.61453)

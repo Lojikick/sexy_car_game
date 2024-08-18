@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://bddlh1wy82or7"]
 
-[ext_resource type="PackedScene" uid="uid://c4tw6ffnnus4h" path="res://scenes/building_module_0.tscn" id="1_44kbm"]
-[ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/mouse.tscn" id="1_e5acv"]
+[ext_resource type="PackedScene" uid="uid://c4tw6ffnnus4h" path="res://modules/building/building_module_0.tscn" id="1_44kbm"]
+[ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/imported models/mouse.tscn" id="1_e5acv"]
 [ext_resource type="Script" path="res://scripts/third_person.gd" id="1_x3oai"]
 [ext_resource type="Script" path="res://NOT_WORKING/cameraFollow.gd" id="2_7k52i"]
 [ext_resource type="Shader" path="res://shader/toon.gdshader" id="2_hsh1f"]

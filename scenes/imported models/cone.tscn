@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8vfutvhn7ko8"]
+
+[ext_resource type="PackedScene" uid="uid://4ondiigic81s" path="res://assets/kenny_car_assets/cone.glb" id="1_k4yi6"]
+[ext_resource type="Shader" path="res://shader/emissive.gdshader" id="2_op5ug"]
+[ext_resource type="Texture2D" uid="uid://d4bobhgcsxy4x" path="res://assets/kenny_car_assets/Textures/colormap.png" id="3_ejhn5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_22erj"]
+render_priority = 0
+shader = ExtResource("2_op5ug")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_ejhn5")
+
+[node name="cone2" instance=ExtResource("1_k4yi6")]
+
+[node name="cone" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_22erj")
