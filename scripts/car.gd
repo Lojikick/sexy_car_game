@@ -54,7 +54,7 @@ func toggle_car_size():
 		target_scale = Vector3(0.05, 0.05, 0.05) 
 	
 	else:
-		target_scale = Vector3(1.0, 1.0, 1.0) 
+		target_scale = Vector3(1.9, 1.9, 1.9) 
 	
 	
 	#animate the scale:

@@ -42,7 +42,7 @@ modules = Array[PackedScene]([ExtResource("2_v8pk6"), ExtResource("3_ua7j0"), Ex
 transform = Transform3D(1, 0, 0, 0, 0.930437, 0.366453, 0, -0.366453, 0.930437, 0, 4.64983, 5.59964)
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.574896, 0)
+transform = Transform3D(1.9, 0, 0, 0, 1.9, 0, 0, 0, 1.9, 0, 0.574896, 0)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("4_m0aui")
@@ -87,7 +87,7 @@ mesh = SubResource("CapsuleMesh_wdoo5")
 transform = Transform3D(1, 0, 0, 0, 0.923358, 0.383941, 0, -0.383941, 0.923358, 0, 3.47649, 4.3534)
 
 [node name="level_barrier" type="Area3D" parent="." groups=["level_end"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.414635, 7.45843)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.414635, 9.61453)
 script = ExtResource("8_7rvd1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level_barrier"]
