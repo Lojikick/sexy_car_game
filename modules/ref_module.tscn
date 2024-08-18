@@ -1,9 +1,6 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqvd8j2ns5pxr"]
 
-[gd_scene load_steps=6 format=3 uid="uid://bqvd8j2ns5pxr"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ghre0"]
-size = Vector3(24.7319, 5.58781, 14.3017)
-
+[ext_resource type="Shader" path="res://shader/emissive.gdshader" id="1_h4tv2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jb427"]
 
@@ -72,13 +69,7 @@ shader_parameter/use_borders = false
 shader_parameter/border_width = 0.01
 
 [node name="Ref_Module" type="Node3D"]
-transform = Transform3D(2.88953, 0, 0, 0, 1, 0, 0, 0, 1.70334, 0, 0, 0)
-
-[node name="Area3D" type="Area3D" parent="." groups=["module"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.382813, 2.2939, -0.318939)
-shape = SubResource("BoxShape3D_ghre0")
+transform = Transform3D(2.13383, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 4.15814, 0, 0, 0, 4.15814, 0.0608058, 3.3422, 0.986948)
