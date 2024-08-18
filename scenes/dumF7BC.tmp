@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://scenes/collider.gd" id="8_7rvd1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_331pq"]
-size = Vector3(1.23047, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3pysw"]
 size = Vector3(1.49069, 1, 2.58582)
@@ -47,11 +46,10 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("4_m0aui")
 
-[node name="Death_Sensor" type="Area3D" parent="Player" groups=["player"]]
-collision_mask = 3
+[node name="Deatth_Sensor" type="Area3D" parent="Player" groups=["player"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Death_Sensor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0224609, 0, -1.09633)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Deatth_Sensor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.09633)
 shape = SubResource("BoxShape3D_331pq")
 
 [node name="RayCast3D" type="RayCast3D" parent="Player"]
@@ -98,5 +96,5 @@ shape = SubResource("BoxShape3D_cab8x")
 transform = Transform3D(2.68187, 0, 0, 0, 2.03066, 0, 0, 0, 0.336716, 0, -0.276341, 0)
 mesh = SubResource("BoxMesh_gusxa")
 
-[connection signal="area_entered" from="Player/Death_Sensor" to="Player" method="_on_deatth_sensor_area_entered"]
+[connection signal="area_entered" from="Player/Deatth_Sensor" to="Player" method="_on_deatth_sensor_area_entered"]
 [connection signal="area_entered" from="level_barrier" to="Level" method="_on_level_barrier_area_entered"]

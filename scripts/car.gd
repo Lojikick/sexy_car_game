@@ -8,14 +8,14 @@ const JUMP_VELOCITY = 4.5
 @export var sens = 0.5
 
 #Death Sensor, For collisions
-@onready var death_sensor = $RayCast3D
+#@onready var death_sensor = $RayCast3D
 
 #Variables for Transition
 @onready var small_car = false
 var is_transitioning = false
 @export var transition_duration = 0.5
 @onready var tween: Tween
-
+@onready var death_sensor = $Death_Sensor
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -65,7 +65,13 @@ func toggle_car_size():
 	
 	# Small car now true
 	small_car = not small_car
-
+	if small_car:
+		print("Now small car:", small_car)
+		death_sensor.set_collision_mask_value(3, true)
+	else:
+		print("Now big car:", small_car)
+		death_sensor.set_collision_mask_value(3, false)
+		
 func _finished_transition():
 	is_transitioning = false
 	
@@ -84,9 +90,9 @@ func _physics_process(delta):
 		#velocity.y = JUMP_VELOCITY
 	
 	#Handle player exiting of the game:
-	if death_sensor.is_colliding():
-		print("Collision detected!")
-		death()
+	#if death_sensor.is_colliding():
+		#print("Collision detected!")
+		#death()
 		#get_tree().reload_current_scene()
 	if Input.is_action_just_pressed("switch") and not is_transitioning:
 		toggle_car_size()
@@ -105,3 +111,13 @@ func _physics_process(delta):
 		#velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_deatth_sensor_area_entered(area: Area3D) -> void:
+	if area.is_in_group("car"):
+		print("Collided with car")
+		death()
+	if area.is_in_group("cone"):
+		print("Collided with cone")
+		death()
+		#death()
