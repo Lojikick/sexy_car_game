@@ -6,7 +6,11 @@ const JUMP_VELOCITY = 4.5
 
 #@onready var pivot = $CamRoot
 @export var sens = 0.5
+
+#Death Sensor, For collisions
 @onready var death_sensor = $RayCast3D
+
+#Variables for Transition
 @onready var small_car = false
 var is_transitioning = false
 @export var transition_duration = 0.5
@@ -32,10 +36,8 @@ func _input(event):
 		##Check to make sure camera does not go over player
 		#pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
 		
-		
-func death():
-	get_tree().reload_current_scene()
 
+# Small Big Transition Functions
 func toggle_car_size():
 	is_transitioning = true
 	
@@ -66,6 +68,12 @@ func toggle_car_size():
 
 func _finished_transition():
 	is_transitioning = false
+	
+#Death/ Level Reload Functions
+func death():
+	get_tree().reload_current_scene()
+
+#Physics Process
 func _physics_process(delta):
 	# Add the gravity.
 	#if not is_on_floor():
@@ -83,7 +91,6 @@ func _physics_process(delta):
 		toggle_car_size()
 		
 	if Input.is_action_just_pressed("escape"):
-			
 		get_tree().quit()
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
