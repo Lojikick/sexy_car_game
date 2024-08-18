@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cgtukf5fqf2va"]
 
-[ext_resource type="PackedScene" uid="uid://cuxcx7jbhvet" path="res://assets/kenny_car_assets/sedan.glb" id="1_ip844"]
+[ext_resource type="PackedScene" uid="uid://cy7r83r1ktmk7" path="res://scenes/imported models/sedan.tscn" id="1_1acd5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_66vmx"]
 size = Vector3(1, 4.44788, 2.40405)
@@ -9,7 +9,7 @@ size = Vector3(1, 4.44788, 2.40405)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 
-[node name="sedan" parent="CharacterBody3D" instance=ExtResource("1_ip844")]
+[node name="sedan2" parent="CharacterBody3D" instance=ExtResource("1_1acd5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.466756, 0, 0.674076)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
