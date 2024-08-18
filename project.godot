@@ -19,6 +19,14 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Sexy Car Game"
 
+[global_group]
+
+global_collidable=""
+cone=""
+player=""
+module=""
+car=""
+
 [input]
 
 left={

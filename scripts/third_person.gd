@@ -48,3 +48,8 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	print("Collision Success!")

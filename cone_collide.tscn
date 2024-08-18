@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://qv1wqh11358d"]
+
+[ext_resource type="PackedScene" uid="uid://4ondiigic81s" path="res://assets/kenny_car_assets/cone.glb" id="1_38eol"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_k173h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_onu6o"]
+size = Vector3(0.121094, 0.595093, 0.658569)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m07y2"]
+size = Vector3(0.527763, 0.588013, 0.52301)
+
+[node name="Cone" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.249181, 0)
+collision_layer = 4
+collision_mask = 4
+
+[node name="Area3D" type="Area3D" parent="." groups=["cone"]]
+transform = Transform3D(1.24142, 0, 0, 0, 1.24142, 0, 0, 0, 1.24142, 0.421648, 0.478221, 0.0710492)
+visible = false
+collision_layer = 4
+collision_mask = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(0.10234, 0, 0, 0, 0.60469, 0, 0, 0, 0.670626, -0.0264331, -0.175485, 0.0146409)
+mesh = SubResource("BoxMesh_k173h")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0264331, -0.175485, 0.0146409)
+shape = SubResource("BoxShape3D_onu6o")
+
+[node name="cone2" parent="." instance=ExtResource("1_38eol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0605124, 0, 0.0807927)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0694374, 0.294098, 0.0695774)
+shape = SubResource("BoxShape3D_m07y2")
