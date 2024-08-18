@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://diwqu1cvft320"]
+[gd_scene load_steps=12 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://ch2436aoeqts0" path="res://modules/module_a.tscn" id="2_v8pk6"]
 [ext_resource type="PackedScene" uid="uid://bcps2377ctyhe" path="res://modules/module_b.tscn" id="3_ua7j0"]
 [ext_resource type="Script" path="res://scripts/car.gd" id="4_m0aui"]
 [ext_resource type="PackedScene" uid="uid://dkthp18q1rkrg" path="res://assets/3D-Car-With-Settingspanel-0eb08d38bd593a8f1314de22d646a95442247612/assets/3d_car_customizable/assets/car_model.glb" id="5_j5iir"]
+[ext_resource type="PackedScene" uid="uid://cuxcx7jbhvet" path="res://assets/kenny_car_assets/sedan.glb" id="6_d2ip0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_un0t5"]
 
@@ -34,7 +35,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.574896, 0)
 script = ExtResource("4_m0aui")
 
 [node name="RayCast3D" type="RayCast3D" parent="Player"]
-transform = Transform3D(0.793332, -0.00199755, 0.608786, 0.608789, 0.00171294, -0.79333, 0.000541948, 0.999997, 0.00257506, -0.0591378, -0.138154, 0.0659937)
+transform = Transform3D(12.592, -0.000532352, -0.00116677, -0.00615346, 0.00253579, -2.38139, 0.00682421, 0.984661, 0.00613224, -0.000974394, 0.322719, -0.618295)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_un0t5")
@@ -44,6 +45,9 @@ transform = Transform3D(-0.996699, 0, 0.0811904, 0, 1, 0, -0.0811904, 0, -0.9966
 visible = false
 
 [node name="MeshRoot" type="Node3D" parent="Player"]
+
+[node name="sedan" parent="Player/MeshRoot" instance=ExtResource("6_d2ip0")]
+transform = Transform3D(-1.18215, 0, 0.018697, 0, 1.1816, 0, -0.0221824, 0, -0.996403, -0.0115091, -0.881525, 0.00835109)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/MeshRoot"]
 material_override = SubResource("StandardMaterial3D_ssuos")
