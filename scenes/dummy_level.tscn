@@ -133,19 +133,19 @@ surface_material_override/0 = SubResource("ShaderMaterial_4ab1s")
 
 [node name="Timer" type="Timer" parent="Player"]
 
-[node name="level_barrier" type="Area3D" parent="Player" groups=["level_end"]]
-transform = Transform3D(0.526316, 0, 0, 0, 0.526316, 0, 0, 0, 0.526316, 0, -0.520806, 19.0062)
+[node name="level_barrier" type="Area3D" parent="." groups=["level_end"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.414635, 36.1118)
 script = ExtResource("8_7rvd1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/level_barrier"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level_barrier"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302582, 0.871521, 0.352051)
 shape = SubResource("BoxShape3D_cab8x")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/level_barrier/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="level_barrier/CollisionShape3D"]
 transform = Transform3D(2.68187, 0, 0, 0, 2.03066, 0, 0, 0, 0.336716, 0, -0.276341, 0)
 mesh = SubResource("BoxMesh_gusxa")
 
 [connection signal="area_entered" from="Player/Death_Sensor" to="Player" method="_on_deatth_sensor_area_entered"]
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
-[connection signal="area_entered" from="Player/level_barrier" to="Level" method="_on_level_barrier_area_entered"]
-[connection signal="area_entered" from="Player/level_barrier" to="BuildingLevel" method="_on_level_barrier_area_entered"]
+[connection signal="area_entered" from="level_barrier" to="Level" method="_on_level_barrier_area_entered"]
+[connection signal="area_entered" from="level_barrier" to="BuildingLevel" method="_on_level_barrier_area_entered"]
