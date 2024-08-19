@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbj10gcowjshb"
-path.s3tc="res://.godot/imported/skybox_skybox 2.png-d2aa1665fb416e51bae22a9998cc786b.s3tc.ctex"
+uid="uid://cuf5odvd6mcd3"
+path.s3tc="res://.godot/imported/skybox_skybox.png-7944a7da1d9e7731373793d206dca2a4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "05d88a0683153bf9abc880caa3f6e0da"
+"md5": "8fd67aac43af2aab2ad389ce4848d101"
 }
 
 [deps]
 
-source_file="res://assets/skybox_skybox 2.png"
-dest_files=["res://.godot/imported/skybox_skybox 2.png-d2aa1665fb416e51bae22a9998cc786b.s3tc.ctex"]
+source_file="res://assets/skybox/skybox_skybox.png"
+dest_files=["res://.godot/imported/skybox_skybox.png-7944a7da1d9e7731373793d206dca2a4.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgtukf5fqf2va"]
+
+[ext_resource type="PackedScene" uid="uid://toncqk8um2f0" path="res://scenes/imported models/sedan.tscn" id="1_u2mgb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1rqvy"]
+size = Vector3(0.840454, 1.21985, 1.71411)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0naoy"]
+size = Vector3(1.27673, 1.28247, 0.17041)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_66vmx"]
+size = Vector3(1, 4.44788, 2.40405)
+
+[node name="Sedan" type="Node3D"]
+transform = Transform3D(-2.5, 0, -2.18557e-07, 0, 2.5, 0, 2.18557e-07, 0, -2.5, 0, 0, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.460195, 0, 0)
+
+[node name="Wheel Collider" type="Area3D" parent="CharacterBody3D" groups=["car"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00461817, 0.216101, -0.0262103)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CharacterBody3D/Wheel Collider"]
+transform = Transform3D(0.295634, 0, 0, 0, 0.308137, 0, 0, 0, 0.308137, 0.865484, -0.0216683, -0.00293469)
+shape = SubResource("BoxShape3D_1rqvy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Wheel Collider"]
+transform = Transform3D(0.276083, 0, 0, 0, 0.308137, 0, 0, 0, 0.308137, 0.032369, -0.014237, -0.029145)
+shape = SubResource("BoxShape3D_1rqvy")
+
+[node name="Wheel Collider" type="Area3D" parent="CharacterBody3D/Wheel Collider" groups=["car"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00461817, -0.00653562, 1.39831)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CharacterBody3D/Wheel Collider/Wheel Collider"]
+transform = Transform3D(0.295634, 0, 0, 0, 0.308137, 0, 0, 0, 0.308137, 0.865484, -0.0216683, -0.00293469)
+shape = SubResource("BoxShape3D_1rqvy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Wheel Collider/Wheel Collider"]
+transform = Transform3D(0.276083, 0, 0, 0, 0.308137, 0, 0, 0, 0.308137, 0.032369, -0.014237, -0.029145)
+shape = SubResource("BoxShape3D_1rqvy")
+
+[node name="Big collider" type="Area3D" parent="CharacterBody3D" groups=["car"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456808, 0.984385, -0.0288041)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Big collider"]
+transform = Transform3D(0.699707, 0, 0, 0, 0.84938, 0, 0, 0, 1, 0.0215192, -0.1942, -0.616337)
+shape = SubResource("BoxShape3D_0naoy")
+
+[node name="sedan" parent="CharacterBody3D" instance=ExtResource("1_u2mgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.466756, 0, 0.674076)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1.27171, 0, 0, 0, 0.234266, 0, 0, 0, 1, 0.497311, 0.727875, 0.658005)
+shape = SubResource("BoxShape3D_66vmx")

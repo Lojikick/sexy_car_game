@@ -1,8 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://bddlh1wy82or7"]
+[gd_scene load_steps=40 format=3 uid="uid://bddlh1wy82or7"]
 
 [ext_resource type="PackedScene" uid="uid://c4tw6ffnnus4h" path="res://scenes/imported models/building_0.tscn" id="1_44kbm"]
 [ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/imported models/mouse.tscn" id="1_e5acv"]
-[ext_resource type="PackedScene" uid="uid://b7ra2uc5w8ojt" path="res://explosion.tscn" id="1_lkskl"]
+[ext_resource type="PackedScene" uid="uid://b7ra2uc5w8ojt" path="res://assets/effects/explosion.tscn" id="1_lkskl"]
 [ext_resource type="Script" path="res://scripts/third_person.gd" id="1_x3oai"]
 [ext_resource type="Script" path="res://NOT_WORKING/cameraFollow.gd" id="2_7k52i"]
 [ext_resource type="Shader" path="res://shader/toon.gdshader" id="2_hsh1f"]
@@ -12,7 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://ce1clfo0okfxy" path="res://assets/kenny_car_assets/truck.glb" id="8_d5dyn"]
 [ext_resource type="PackedScene" uid="uid://eao4h6cku86n" path="res://ambulance.tscn" id="9_5wvwd"]
 [ext_resource type="PackedScene" uid="uid://dm66u8i6sn10i" path="res://assets/kenny_car_assets/police.glb" id="9_7e7cp"]
-[ext_resource type="PackedScene" uid="uid://qv1wqh11358d" path="res://cone_collide.tscn" id="10_kml62"]
+[ext_resource type="PackedScene" uid="uid://qv1wqh11358d" path="res://assets/obstacles/cone_collide.tscn" id="10_kml62"]
+[ext_resource type="PackedScene" uid="uid://pa27tj0ie83c" path="res://assets/kenny_car_assets/taxi.glb" id="14_cylcx"]
+[ext_resource type="PackedScene" uid="uid://clarvn6r7frv8" path="res://assets/kenny_car_assets/suv.glb" id="15_li3se"]
+[ext_resource type="PackedScene" uid="uid://bc7pe26hiyl5a" path="res://assets/kenny_car_assets/van.glb" id="16_r0dyw"]
+[ext_resource type="PackedScene" uid="uid://wcqrhpqhh4i7" path="res://assets/kenny_car_assets/ambulance.glb" id="17_r7j8a"]
+[ext_resource type="PackedScene" uid="uid://c4b3t4pj4lrut" path="res://assets/kenny_car_assets/firetruck.glb" id="18_pp5fr"]
+[ext_resource type="PackedScene" uid="uid://c1qcfyv6cr0co" path="res://assets/kenny_car_assets/garbage-truck.glb" id="19_gyut8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1eg42"]
 
@@ -99,6 +105,9 @@ size = Vector3(1.99449, 1.66797, 4.30167)
 [sub_resource type="BoxShape3D" id="BoxShape3D_xtc41"]
 size = Vector3(1, 1.9032, 3.98151)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2l3ox"]
+size = Vector3(0.933594, 1.27881, 1)
+
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.234068, 0)
 
@@ -172,6 +181,7 @@ shape = SubResource("ConvexPolygonShape3D_1gewj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.240366, 1.22403, -0.365019)
+collision_mask = 7
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(31.2604, 0, 0, 0, 0.202728, 0, 0, 0, 35.4396, 0.101489, -1.14943, 0.284208)
@@ -263,7 +273,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0316725, -0.761815, -0.360
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CharacterBody3D"]
 
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4107, 2.16114, 9.95406)
+collision_layer = 4
+collision_mask = 7
+
+[node name="Cone2" parent="RigidBody3D" instance=ExtResource("10_kml62")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.126306, -0.312454, -0.264735)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1.69023, 0, 0, 0, 1.66999, 0, 0, 0, 1.64969, 0.0525579, 0.682848, 0)
+shape = SubResource("BoxShape3D_2l3ox")
+
 [node name="police" parent="." instance=ExtResource("9_7e7cp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8639, 0.241544, 4.36008)
+
+[node name="taxi" parent="." instance=ExtResource("14_cylcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.77111, 0.241544, 9.90631)
+
+[node name="suv" parent="." instance=ExtResource("15_li3se")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.65281, 0.241544, 10.1674)
+
+[node name="truck2" parent="." instance=ExtResource("8_d5dyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.494, 0.241544, 9.89678)
+
+[node name="van" parent="." instance=ExtResource("16_r0dyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97609, 0.241544, 10.2599)
+
+[node name="ambulance" parent="." instance=ExtResource("17_r7j8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14052, 0.241544, 10.3513)
+
+[node name="firetruck" parent="." instance=ExtResource("18_pp5fr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33587, 0.241544, 10.3416)
+
+[node name="garbage-truck" parent="." instance=ExtResource("19_gyut8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.28641, 0.241544, 10.2802)
 
 [connection signal="area_entered" from="Player/Area3D" to="Player" method="_on_area_3d_area_entered"]

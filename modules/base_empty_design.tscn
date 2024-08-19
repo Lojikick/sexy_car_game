@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dcbp035n642qs"]
 
 [ext_resource type="Script" path="res://scripts/module.gd" id="1_58lgy"]
-[ext_resource type="PackedScene" uid="uid://dpxxgdhfwgdyb" path="res://modules/big_module_ref.tscn" id="2_psr1s"]
+[ext_resource type="PackedScene" uid="uid://dpxxgdhfwgdyb" path="res://modules/old_levels/big_module_ref.tscn" id="2_psr1s"]
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)

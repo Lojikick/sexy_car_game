@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dfp1yp7tgv5we"
-path="res://.godot/imported/skybox.glb-59e513316381e43c05ed3a15b3ee619c.scn"
+path="res://.godot/imported/skybox.glb-408b820443f30f96835dc82b9e3dfd99.scn"
 
 [deps]
 
-source_file="res://assets/skybox.glb"
-dest_files=["res://.godot/imported/skybox.glb-59e513316381e43c05ed3a15b3ee619c.scn"]
+source_file="res://assets/skybox/skybox.glb"
+dest_files=["res://.godot/imported/skybox.glb-408b820443f30f96835dc82b9e3dfd99.scn"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://b7ra2uc5w8ojt"]
 
-[ext_resource type="Script" path="res://explosion.gd" id="1_kxcxa"]
-[ext_resource type="AudioStream" uid="uid://cqrd6fsei7b5g" path="res://assets/cartoon-sound-fx-explosion_F_minor.wav" id="2_jm3nq"]
+[ext_resource type="Script" path="res://assets/effects/explosion.gd" id="1_kxcxa"]
+[ext_resource type="AudioStream" uid="uid://cqrd6fsei7b5g" path="res://assets/audio/cartoon-sound-fx-explosion_F_minor.wav" id="2_jm3nq"]
 
 [sub_resource type="Curve" id="Curve_meora"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.71374, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dg8lrhj8xtr82"]
+
+[ext_resource type="Script" path="res://scripts/module.gd" id="1_w00xn"]
+[ext_resource type="PackedScene" uid="uid://dpxxgdhfwgdyb" path="res://modules/old_levels/big_module_ref.tscn" id="2_m6puy"]
+[ext_resource type="PackedScene" uid="uid://cgtukf5fqf2va" path="res://assets/obstacles/car_collide.tscn" id="3_1eeg7"]
+[ext_resource type="PackedScene" uid="uid://p8t2kcditggn" path="res://assets/obstacles/truck_collide.tscn" id="4_4iqv4"]
+[ext_resource type="PackedScene" uid="uid://c67deg1e0baj" path="res://assets/obstacles/taxi.tscn" id="5_7rxdf"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+script = ExtResource("1_w00xn")
+
+[node name="Road" parent="." instance=ExtResource("2_m6puy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.501)
+
+[node name="Sedan" parent="." instance=ExtResource("3_1eeg7")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 18.5646, 0.241543, -11.2022)
+
+[node name="Truck" parent="." instance=ExtResource("4_4iqv4")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -20.7207, 0.241543, -47.9997)
+
+[node name="Taxi" parent="." instance=ExtResource("5_7rxdf")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 0.307659, 0.241549, -86.3588)
+
+[node name="Sedan2" parent="." instance=ExtResource("3_1eeg7")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -19.7461, 0.450951, -88.3959)

@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://4vykabadyquv"]
+
+[ext_resource type="Script" path="res://scripts/module.gd" id="1_a8ema"]
+[ext_resource type="PackedScene" uid="uid://dpxxgdhfwgdyb" path="res://modules/old_levels/big_module_ref.tscn" id="2_she2k"]
+[ext_resource type="PackedScene" uid="uid://cgtukf5fqf2va" path="res://assets/obstacles/car_collide.tscn" id="3_bqesa"]
+[ext_resource type="PackedScene" uid="uid://bilwvaxur4swm" path="res://assets/obstacles/suv_collide.tscn" id="4_xsk2w"]
+[ext_resource type="PackedScene" uid="uid://p8t2kcditggn" path="res://assets/obstacles/truck_collide.tscn" id="5_2l3v1"]
+[ext_resource type="PackedScene" uid="uid://c67deg1e0baj" path="res://assets/obstacles/taxi.tscn" id="6_b0kr2"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+script = ExtResource("1_a8ema")
+
+[node name="Road" parent="." instance=ExtResource("2_she2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.501)
+
+[node name="Sedan" parent="." instance=ExtResource("3_bqesa")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 23.4492, 0.241543, -12.4519)
+
+[node name="Suv" parent="." instance=ExtResource("4_xsk2w")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 4.62075, 0.241543, -87.5613)
+
+[node name="Truck" parent="." instance=ExtResource("5_2l3v1")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 23.9971, 0.241543, -48.7777)
+
+[node name="Sedan2" parent="." instance=ExtResource("3_bqesa")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 2.90488, 0.241543, -49.31)
+
+[node name="Sedan3" parent="." instance=ExtResource("3_bqesa")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 24.242, 0.241549, -83.4643)
+
+[node name="Taxi" parent="." instance=ExtResource("6_b0kr2")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 1.85064, 0.241543, -10.622)
+
+[node name="Suv3" parent="." instance=ExtResource("4_xsk2w")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -17.8012, 0.241543, -12.3386)
+
+[node name="Sedan4" parent="." instance=ExtResource("3_bqesa")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -17.7914, 0.241543, -88.2751)

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://coj1cdo6lb8xp"]
+
+[ext_resource type="Script" path="res://scripts/module.gd" id="1_6awry"]
+[ext_resource type="PackedScene" uid="uid://dpxxgdhfwgdyb" path="res://modules/old_levels/big_module_ref.tscn" id="2_sw2wv"]
+[ext_resource type="PackedScene" uid="uid://cgtukf5fqf2va" path="res://assets/obstacles/car_collide.tscn" id="3_nrro1"]
+[ext_resource type="PackedScene" uid="uid://bilwvaxur4swm" path="res://assets/obstacles/suv_collide.tscn" id="4_xi7cs"]
+[ext_resource type="PackedScene" uid="uid://p8t2kcditggn" path="res://assets/obstacles/truck_collide.tscn" id="5_x72li"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+script = ExtResource("1_6awry")
+
+[node name="Road" parent="." instance=ExtResource("2_sw2wv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.501)
+
+[node name="Sedan" parent="." instance=ExtResource("3_nrro1")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 23.4492, 0.241543, -12.4519)
+
+[node name="Suv" parent="." instance=ExtResource("4_xi7cs")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 4.62075, 0.241543, -48.3428)
+
+[node name="Truck" parent="." instance=ExtResource("5_x72li")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 23.9971, 0.241543, -48.7777)
+
+[node name="Sedan2" parent="." instance=ExtResource("3_nrro1")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -16.895, 0.241543, -49.31)
+
+[node name="Sedan3" parent="." instance=ExtResource("3_nrro1")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 24.242, 0.241549, -83.4643)
+
+[node name="Suv2" parent="." instance=ExtResource("4_xi7cs")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -16.6665, 0.241543, -84.0514)
