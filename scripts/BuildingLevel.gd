@@ -44,6 +44,8 @@ func spawnModule(n):
 
 
 	instance.position.z = n * (-1)
+	#spawn buildings to the left
+	instance.position.x = -11
 	add_child(instance)
 	last_spawn_position = n
 
@@ -53,8 +55,9 @@ func spawnModule(n):
 			child.position.y -= total_movement  # Adjust initial Y position based on total level movement
 
 func _on_level_barrier_area_entered(area: Area3D) -> void:
-	if area.is_in_group("module"):	
+	if area.is_in_group("building_module"):
 		var new_position = last_spawn_position + offset
+		print(new_position)	
 		spawnModule(new_position)
 		
 		

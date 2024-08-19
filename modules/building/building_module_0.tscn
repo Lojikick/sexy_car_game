@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4tw6ffnnus4h"]
+[gd_scene load_steps=6 format=3 uid="uid://c4tw6ffnnus4h"]
 
 [ext_resource type="PackedScene" uid="uid://crhtwcfq6gljw" path="res://assets/buildings/building module 0.glb" id="1_qpek5"]
 [ext_resource type="Shader" path="res://shader/emissive.gdshader" id="2_81y7u"]
@@ -24,7 +24,16 @@ shader_parameter/use_borders = false
 shader_parameter/border_width = 0.01
 shader_parameter/albedo_texture = ExtResource("3_ms6gl")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0b2a0"]
+size = Vector3(24.7319, 5.58781, 14.3017)
+
 [node name="building module 0" instance=ExtResource("1_qpek5")]
 
 [node name="1 bake" parent="." index="0"]
 surface_material_override/0 = SubResource("ShaderMaterial_46ypv")
+
+[node name="Area3D" type="Area3D" parent="." index="1" groups=["building_module"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.382813, 2.2939, -0.318939)
+shape = SubResource("BoxShape3D_0b2a0")

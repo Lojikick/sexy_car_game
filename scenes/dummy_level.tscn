@@ -1,14 +1,18 @@
-[gd_scene load_steps=17 format=3 uid="uid://diwqu1cvft320"]
+[gd_scene load_steps=21 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://ch2436aoeqts0" path="res://modules/module_a.tscn" id="2_v8pk6"]
 [ext_resource type="PackedScene" uid="uid://bcps2377ctyhe" path="res://modules/module_b.tscn" id="3_ua7j0"]
 [ext_resource type="Script" path="res://scripts/car.gd" id="4_m0aui"]
 [ext_resource type="PackedScene" uid="uid://r7ryx5b7kam2" path="res://modules/module_c.tscn" id="4_p52dj"]
+[ext_resource type="Script" path="res://scripts/BuildingLevel.gd" id="5_0atp4"]
 [ext_resource type="PackedScene" uid="uid://dkthp18q1rkrg" path="res://assets/3D-Car-With-Settingspanel-0eb08d38bd593a8f1314de22d646a95442247612/assets/3d_car_customizable/assets/car_model.glb" id="5_j5iir"]
+[ext_resource type="PackedScene" uid="uid://dppr62roorm57" path="res://modules/building/building_module_1.tscn" id="6_xs0pf"]
+[ext_resource type="PackedScene" uid="uid://c8fns0ol3yxj8" path="res://modules/building/building_module_2.tscn" id="7_8mfnq"]
 [ext_resource type="PackedScene" uid="uid://toncqk8um2f0" path="res://scenes/imported models/sedan.tscn" id="7_u6772"]
 [ext_resource type="Script" path="res://scenes/collider.gd" id="8_7rvd1"]
 [ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/imported models/mouse.tscn" id="8_37yle"]
+[ext_resource type="PackedScene" uid="uid://c4tw6ffnnus4h" path="res://modules/building/building_module_0.tscn" id="8_x8bgp"]
 [ext_resource type="Shader" path="res://shader/outline.gdshader" id="9_mk8c6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_331pq"]
@@ -37,6 +41,11 @@ size = Vector3(3.83148, 2.74304, 0.295898)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
 script = ExtResource("1_eefjj")
 modules = Array[PackedScene]([ExtResource("2_v8pk6"), ExtResource("3_ua7j0"), ExtResource("4_p52dj")])
+
+[node name="BuildingLevel" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
+script = ExtResource("5_0atp4")
+modules = Array[PackedScene]([ExtResource("6_xs0pf"), ExtResource("7_8mfnq"), ExtResource("8_x8bgp")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
@@ -100,3 +109,4 @@ mesh = SubResource("BoxMesh_gusxa")
 
 [connection signal="area_entered" from="Player/Death_Sensor" to="Player" method="_on_deatth_sensor_area_entered"]
 [connection signal="area_entered" from="level_barrier" to="Level" method="_on_level_barrier_area_entered"]
+[connection signal="area_entered" from="level_barrier" to="BuildingLevel" method="_on_level_barrier_area_entered"]
