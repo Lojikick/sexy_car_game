@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://lklhb8nksobm"]
+
+[ext_resource type="PackedScene" uid="uid://dxp7k2bgf3f3y" path="res://assets/buildings/building_module_3.glb" id="1_1jxlg"]
+[ext_resource type="Shader" path="res://shader/emissive.gdshader" id="2_kcx0n"]
+[ext_resource type="Texture2D" uid="uid://b2kqu1n4r010g" path="res://assets/buildings/building_module_3_color 3.png" id="3_taoo4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_25sli"]
+render_priority = 0
+shader = ExtResource("2_kcx0n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_taoo4")
+
+[node name="building_module_3" instance=ExtResource("1_1jxlg")]
+
+[node name="bake 3" parent="." index="0"]
+transform = Transform3D(-1, 0, 3.89414e-07, 0, 2, 0, -3.89414e-07, 0, -1, -0.252921, 0, -0.0962629)
+surface_material_override/0 = SubResource("ShaderMaterial_25sli")

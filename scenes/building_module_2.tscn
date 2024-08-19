@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8fns0ol3yxj8"]
-
-[ext_resource type="PackedScene" uid="uid://bfdp8uebvphun" path="res://assets/buildings/building module 2.glb" id="1_7wb6c"]
-
-[node name="building module 2" instance=ExtResource("1_7wb6c")]

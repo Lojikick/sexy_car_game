@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://qv1wqh11358d"]
 
-[ext_resource type="PackedScene" uid="uid://4ondiigic81s" path="res://assets/kenny_car_assets/cone.glb" id="1_38eol"]
+[ext_resource type="PackedScene" uid="uid://b8vfutvhn7ko8" path="res://scenes/imported models/cone.tscn" id="1_e6s4s"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_k173h"]
 
@@ -30,7 +30,7 @@ skeleton = NodePath("../CollisionShape3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0264331, -0.175485, 0.0146409)
 shape = SubResource("BoxShape3D_onu6o")
 
-[node name="cone2" parent="." instance=ExtResource("1_38eol")]
+[node name="cone" parent="." instance=ExtResource("1_e6s4s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0605124, 0, 0.0807927)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

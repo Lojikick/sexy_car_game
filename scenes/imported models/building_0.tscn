@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4tw6ffnnus4h"]
 
-[ext_resource type="PackedScene" uid="uid://crhtwcfq6gljw" path="res://assets/buildings/building module 0.glb" id="1_qpek5"]
-[ext_resource type="Shader" path="res://shader/emissive.gdshader" id="2_81y7u"]
-[ext_resource type="Texture2D" uid="uid://bsfea8ucqp3cf" path="res://assets/buildings/building module 0_color.png" id="3_ms6gl"]
+[ext_resource type="PackedScene" uid="uid://crhtwcfq6gljw" path="res://assets/buildings/building module 0.glb" id="1_qgbvi"]
+[ext_resource type="Shader" path="res://shader/emissive.gdshader" id="2_8jvas"]
+[ext_resource type="Texture2D" uid="uid://bsfea8ucqp3cf" path="res://assets/buildings/building module 0_color.png" id="3_rj7rl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_46ypv"]
 render_priority = 0
-shader = ExtResource("2_81y7u")
+shader = ExtResource("2_8jvas")
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -22,9 +22,9 @@ shader_parameter/rim_color = Color(1, 1, 1, 1)
 shader_parameter/use_ramp = false
 shader_parameter/use_borders = false
 shader_parameter/border_width = 0.01
-shader_parameter/albedo_texture = ExtResource("3_ms6gl")
+shader_parameter/albedo_texture = ExtResource("3_rj7rl")
 
-[node name="building module 0" instance=ExtResource("1_qpek5")]
+[node name="building module 0" instance=ExtResource("1_qgbvi")]
 
 [node name="1 bake" parent="." index="0"]
 surface_material_override/0 = SubResource("ShaderMaterial_46ypv")

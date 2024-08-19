@@ -27,4 +27,5 @@ shader_parameter/albedo_texture = ExtResource("3_ib7lo")
 [node name="building module 1" instance=ExtResource("1_eibuf")]
 
 [node name="1 bake" parent="." index="0"]
+transform = Transform3D(-0.137886, -0.0106613, 0.137783, 1.81608e-10, 0.389708, 0.00753867, -0.137886, 0.0106613, -0.137783, -0.791, -0.01, -0.829)
 surface_material_override/0 = SubResource("ShaderMaterial_6nstk")
