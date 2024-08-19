@@ -71,11 +71,9 @@ shader_parameter/border_width = 0.01
 [node name="Ref_Module" type="Node3D"]
 transform = Transform3D(2.88953, 0, 0, 0, 1, 0, 0, 0, 2.25685, 0, 0, 0)
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 4.15814, 0, 0, 0, 4.15814, 0.0608058, 3.3422, 0.986948)
-
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(0.999999, -0.00049785, 0, 0.0010472, 0.475412, 0, 0, 0, 0.0731934, 20.6323, 2.29414, -0.709793)
+collision_mask = 7
 
 [node name="Module" type="Node3D" parent="StaticBody3D"]
 

@@ -13,9 +13,6 @@ script = ExtResource("1_8ii02")
 [node name="Road" parent="." instance=ExtResource("2_7lxyj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.501)
 
-[node name="Cone" parent="." instance=ExtResource("3_d13ru")]
-transform = Transform3D(-5.24537e-07, 0, -12, 0, 12, 0, 12, 0, -5.24537e-07, -28.8406, -0.755187, -26.6981)
-
 [node name="Cone2" parent="." instance=ExtResource("3_d13ru")]
 transform = Transform3D(-5.24537e-07, 0, -12, 0, 12, 0, 12, 0, -5.24537e-07, -20.4695, -0.755187, -26.6981)
 

@@ -1,7 +1,7 @@
 extends Node3D
 
 
-var SPEED = 23
+var SPEED = 10
 @onready var player: CharacterBody3D = $Player
 @onready var level_barrier: Area3D = $level_barrier
 
