@@ -160,7 +160,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_13enk"]
 resource_name = "driving"
-length = 0.5
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -169,10 +169,10 @@ tracks/0/path = NodePath("gaming mouse backup:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, -0.0174533), Vector3(0, 0, 0.0174533), Vector3(0, 0, -0.0174533), Vector3(0, 0, 0.0174533), Vector3(0, 0, -0.0174533), Vector3(0, 0, 0.0174533)]
+"values": [Vector3(0, 0, 0.0174533), Vector3(0, 0, -0.0174533), Vector3(0, 0, 0.0174533), Vector3(0, 0, -0.0174533), Vector3(0, 0, 0.0174533), Vector3(0, 0, -0.0174533)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h0bjo"]
