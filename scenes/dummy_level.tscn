@@ -109,7 +109,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0183868, 0, -0.0230103)
 shape = SubResource("BoxShape3D_3pysw")
 
 [node name="car_model" parent="Player" instance=ExtResource("5_j5iir")]
-transform = Transform3D(-0.996699, 0, 0.0811904, 0, 1, 0, -0.0811904, 0, -0.996699, 0, 0, 0)
+transform = Transform3D(-0.996699, 0, 0.0811905, 0, 1, 0, -0.0811905, 0, -0.996699, 0, 0, 0)
 visible = false
 
 [node name="MeshRoot" type="Node3D" parent="Player"]
