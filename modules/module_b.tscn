@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcps2377ctyhe"]
+[gd_scene load_steps=9 format=3 uid="uid://bcps2377ctyhe"]
 
 [ext_resource type="PackedScene" uid="uid://bqvd8j2ns5pxr" path="res://modules/ref_module.tscn" id="1_7einb"]
 [ext_resource type="Script" path="res://scripts/module.gd" id="1_mrn5q"]
 [ext_resource type="PackedScene" uid="uid://cgtukf5fqf2va" path="res://car_collide.tscn" id="3_w5484"]
+[ext_resource type="AudioStream" uid="uid://ippxkttdga7v" path="res://assets/audio/honk 1.wav" id="4_ssf21"]
+[ext_resource type="AudioStream" uid="uid://dk1f6rluvksf1" path="res://assets/audio/honk 2.wav" id="5_2v1i7"]
+[ext_resource type="Script" path="res://scripts/better_horn_collider.gd" id="5_87k0k"]
+[ext_resource type="AudioStream" uid="uid://b4lqkqfr0qkt2" path="res://assets/audio/honk 3.wav" id="6_ga8hp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ykq18"]
+size = Vector3(3.84155, 2.0493, 1)
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -14,7 +21,26 @@ script = ExtResource("1_mrn5q")
 transform = Transform3D(-10, 0, 0.00366362, 0, 10, 0, -0.00366362, 0, -10, 0.164799, 0, 5.41104)
 
 [node name="Collidable_Car3" parent="." instance=ExtResource("3_w5484")]
-transform = Transform3D(-10, 0, 0.00366362, 0, 10, 0, -0.00366362, 0, -10, 22.8787, 0, 5.41104)
+transform = Transform3D(-10, 0, 0.00366362, 0, 10, 0, -0.00366362, 0, -10, 22.8787, 0, 3.62907)
 
-[node name="Node3D" parent="." instance=ExtResource("3_w5484")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -19.7806, 0.241543, -6.71446)
+[node name="Honk_One" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 9.02715, -11.9291)
+stream = ExtResource("4_ssf21")
+
+[node name="Honk_Two" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 8, -12)
+stream = ExtResource("5_2v1i7")
+
+[node name="Honk_Three" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 8, -12)
+stream = ExtResource("6_ga8hp")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13306, 0)
+script = ExtResource("5_87k0k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(17.48, 0, 0, 0, 8.875, 0, 0, 0, 4.23, 1.32673, 5.09119, -6.43063)
+shape = SubResource("BoxShape3D_ykq18")
+
+[connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]

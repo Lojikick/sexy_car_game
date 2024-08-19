@@ -5,6 +5,7 @@
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D"]
 transform = Transform3D(1, 0, 0, 0, 0.923358, -0.383941, 0, 0.383941, 0.923358, 0, 2.74475, -10.3943)
 stream = ExtResource("1_rtadx")
+volume_db = -19.521
 unit_size = 100.0
 autoplay = true
 panning_strength = 0.0
