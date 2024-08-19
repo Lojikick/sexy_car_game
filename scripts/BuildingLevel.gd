@@ -3,7 +3,7 @@ extends Node3D
 @export var modules: Array[PackedScene] = []
 var amnt = 15
 var rng = RandomNumberGenerator.new()
-var offset = 20
+var offset = 25
 var initObs = 0
 var speed = 25
 var new_module_spawn_offset = 3.5

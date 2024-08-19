@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtwvbt371vq1g"]
+[gd_scene load_steps=7 format=3 uid="uid://cnwqkms4wdlr2"]
 
-[ext_resource type="PackedScene" uid="uid://dppr62roorm57" path="res://scenes/imported models/building_1.tscn" id="1_qhgux"]
-[ext_resource type="Shader" path="res://shader/emissive.gdshader" id="2_81y7u"]
-[ext_resource type="PackedScene" uid="uid://c8fns0ol3yxj8" path="res://scenes/imported models/building_2.tscn" id="2_fa5rf"]
+[ext_resource type="PackedScene" uid="uid://dppr62roorm57" path="res://scenes/imported models/building_1.tscn" id="1_hmxyh"]
+[ext_resource type="Shader" path="res://shader/emissive.gdshader" id="2_y5074"]
+[ext_resource type="PackedScene" uid="uid://c8fns0ol3yxj8" path="res://scenes/imported models/building_2.tscn" id="3_fiblk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wx8at"]
 size = Vector3(24.7319, 5.58781, 14.3017)
@@ -11,7 +11,7 @@ size = Vector3(24.7319, 5.58781, 14.3017)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tvh46"]
 render_priority = 0
-shader = ExtResource("2_81y7u")
+shader = ExtResource("2_y5074")
 shader_parameter/albedo = Color(0.560784, 0.560784, 0.560784, 0.560784)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -30,10 +30,7 @@ shader_parameter/border_width = 0.01
 
 [node name="Node3D" type="Node3D"]
 
-[node name="building module 1" parent="." instance=ExtResource("1_qhgux")]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -20, -2.1, 0)
-
-[node name="building module 2" parent="." instance=ExtResource("2_fa5rf")]
+[node name="building module 1" parent="." instance=ExtResource("1_hmxyh")]
 transform = Transform3D(-12, 0, -1.81195e-06, 0, 12, 0, 1.81195e-06, 0, -12, 20, -2.1, 0)
 
 [node name="Area3D" type="Area3D" parent="." groups=["building_module"]]
@@ -46,3 +43,6 @@ shape = SubResource("BoxShape3D_wx8at")
 transform = Transform3D(40, 0, 0, 0, -1.74846e-06, 40, 0, -40, -1.74846e-06, 0, -2, 0)
 mesh = SubResource("QuadMesh_5875p")
 surface_material_override/0 = SubResource("ShaderMaterial_tvh46")
+
+[node name="building module 2" parent="." instance=ExtResource("3_fiblk")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -20, -2.1, 0)

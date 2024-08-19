@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://diwqu1cvft320"]
+[gd_scene load_steps=24 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://ch2436aoeqts0" path="res://modules/module_a.tscn" id="2_v8pk6"]
@@ -7,10 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://r7ryx5b7kam2" path="res://modules/module_c.tscn" id="4_p52dj"]
 [ext_resource type="Script" path="res://scripts/BuildingLevel.gd" id="5_0atp4"]
 [ext_resource type="PackedScene" uid="uid://dkthp18q1rkrg" path="res://assets/3D-Car-With-Settingspanel-0eb08d38bd593a8f1314de22d646a95442247612/assets/3d_car_customizable/assets/car_model.glb" id="5_j5iir"]
+[ext_resource type="PackedScene" uid="uid://cnwqkms4wdlr2" path="res://modules/building/12_building_module.tscn" id="6_xs0pf"]
+[ext_resource type="PackedScene" uid="uid://cw4obtcmg2xtr" path="res://modules/building/13_building_module.tscn" id="7_8mfnq"]
 [ext_resource type="PackedScene" uid="uid://toncqk8um2f0" path="res://scenes/imported models/sedan.tscn" id="7_u6772"]
 [ext_resource type="Script" path="res://scenes/collider.gd" id="8_7rvd1"]
 [ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/imported models/mouse.tscn" id="8_37yle"]
-[ext_resource type="PackedScene" uid="uid://dtwvbt371vq1g" path="res://modules/building/building_module_0.tscn" id="8_x8bgp"]
+[ext_resource type="PackedScene" uid="uid://dtwvbt371vq1g" path="res://modules/building/21_building_module.tscn" id="8_x8bgp"]
+[ext_resource type="PackedScene" uid="uid://cyubya1kbgb5t" path="res://modules/building/32_building_module.tscn" id="9_0swtu"]
+[ext_resource type="PackedScene" uid="uid://lcv5o7snpsp7" path="res://modules/building/31_building_module.tscn" id="9_46a0b"]
+[ext_resource type="PackedScene" uid="uid://bsb6gaua54bs3" path="res://modules/building/23_building_module.tscn" id="9_c5dh7"]
 [ext_resource type="Shader" path="res://shader/outline.gdshader" id="9_mk8c6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_331pq"]
@@ -43,7 +48,7 @@ modules = Array[PackedScene]([ExtResource("2_v8pk6"), ExtResource("3_ua7j0"), Ex
 [node name="BuildingLevel" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
 script = ExtResource("5_0atp4")
-modules = Array[PackedScene]([ExtResource("8_x8bgp"), ExtResource("8_x8bgp"), ExtResource("8_x8bgp")])
+modules = Array[PackedScene]([ExtResource("6_xs0pf"), ExtResource("7_8mfnq"), ExtResource("8_x8bgp"), ExtResource("9_c5dh7"), ExtResource("9_46a0b"), ExtResource("9_0swtu")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
