@@ -1,7 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://bddlh1wy82or7"]
+[gd_scene load_steps=33 format=3 uid="uid://bddlh1wy82or7"]
 
 [ext_resource type="PackedScene" uid="uid://c4tw6ffnnus4h" path="res://scenes/imported models/building_0.tscn" id="1_44kbm"]
 [ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/imported models/mouse.tscn" id="1_e5acv"]
+[ext_resource type="PackedScene" uid="uid://b7ra2uc5w8ojt" path="res://explosion.tscn" id="1_lkskl"]
 [ext_resource type="Script" path="res://scripts/third_person.gd" id="1_x3oai"]
 [ext_resource type="Script" path="res://NOT_WORKING/cameraFollow.gd" id="2_7k52i"]
 [ext_resource type="Shader" path="res://shader/toon.gdshader" id="2_hsh1f"]
@@ -100,6 +101,9 @@ size = Vector3(1, 1.9032, 3.98151)
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.234068, 0)
+
+[node name="Explosion" parent="." instance=ExtResource("1_lkskl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.89754, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0.733202, 3.9628, -6.70276)

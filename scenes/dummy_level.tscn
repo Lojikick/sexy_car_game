@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://diwqu1cvft320"]
+[gd_scene load_steps=38 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://cavj4r6ldiddv" path="res://pause_menu.tscn" id="1_nvsnp"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://b5y6ub2qj0ww2" path="res://modules/building/42_building_module.tscn" id="19_vtmq0"]
 [ext_resource type="PackedScene" uid="uid://dvnd2yj2l2erj" path="res://modules/building/43_building_module.tscn" id="20_yqstn"]
 [ext_resource type="Texture2D" uid="uid://bbj10gcowjshb" path="res://assets/skybox_skybox 2.png" id="21_3ht5n"]
+[ext_resource type="PackedScene" uid="uid://b7ra2uc5w8ojt" path="res://explosion.tscn" id="22_o4i75"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_y1tg0"]
 panorama = ExtResource("21_3ht5n")
@@ -91,7 +92,8 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("4_m0aui")
 
-[node name="Explosion_Object" type="Node3D" parent="Player"]
+[node name="Explosion" parent="Player" instance=ExtResource("22_o4i75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40028, 0.492329)
 
 [node name="Death_Sensor" type="Area3D" parent="Player" groups=["player"]]
 collision_mask = 3
