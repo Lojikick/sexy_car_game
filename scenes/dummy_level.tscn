@@ -79,6 +79,8 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("4_m0aui")
 
+[node name="Explosion_Object" type="Node3D" parent="Player"]
+
 [node name="Death_Sensor" type="Area3D" parent="Player" groups=["player"]]
 collision_mask = 3
 
