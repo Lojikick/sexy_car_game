@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://diwqu1cvft320"]
+[gd_scene load_steps=24 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://ch2436aoeqts0" path="res://modules/module_a.tscn" id="2_v8pk6"]
@@ -12,17 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://toncqk8um2f0" path="res://scenes/imported models/sedan.tscn" id="7_u6772"]
 [ext_resource type="Script" path="res://scenes/collider.gd" id="8_7rvd1"]
 [ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/imported models/mouse.tscn" id="8_37yle"]
-[ext_resource type="PackedScene" uid="uid://b445l23k2irq" path="res://modules/building/14_building_module.tscn" id="8_n8w8s"]
 [ext_resource type="PackedScene" uid="uid://dtwvbt371vq1g" path="res://modules/building/21_building_module.tscn" id="8_x8bgp"]
 [ext_resource type="PackedScene" uid="uid://cyubya1kbgb5t" path="res://modules/building/32_building_module.tscn" id="9_0swtu"]
 [ext_resource type="PackedScene" uid="uid://lcv5o7snpsp7" path="res://modules/building/31_building_module.tscn" id="9_46a0b"]
 [ext_resource type="PackedScene" uid="uid://bsb6gaua54bs3" path="res://modules/building/23_building_module.tscn" id="9_c5dh7"]
 [ext_resource type="Shader" path="res://shader/outline.gdshader" id="9_mk8c6"]
-[ext_resource type="PackedScene" uid="uid://b1so3yf4ra4ll" path="res://modules/building/24_building_module.tscn" id="13_qkt1e"]
-[ext_resource type="PackedScene" uid="uid://bvixffxnm6cv6" path="res://modules/building/34_building_module.tscn" id="14_c8iv7"]
-[ext_resource type="PackedScene" uid="uid://0q13gi0i8v8n" path="res://modules/building/41_building_module.tscn" id="15_u7g8v"]
-[ext_resource type="PackedScene" uid="uid://o1plmafl7ghe" path="res://modules/building/42_building_module.tscn" id="16_yv2oi"]
-[ext_resource type="PackedScene" uid="uid://3iqmevy1bpun" path="res://modules/building/43_building_module.tscn" id="17_rdgv7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_331pq"]
 size = Vector3(1.23047, 1, 1)
@@ -54,7 +48,7 @@ modules = Array[PackedScene]([ExtResource("2_v8pk6"), ExtResource("3_ua7j0"), Ex
 [node name="BuildingLevel" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
 script = ExtResource("5_0atp4")
-modules = Array[PackedScene]([ExtResource("6_xs0pf"), ExtResource("7_8mfnq"), ExtResource("8_n8w8s"), ExtResource("8_x8bgp"), ExtResource("9_c5dh7"), ExtResource("13_qkt1e"), ExtResource("9_46a0b"), ExtResource("9_0swtu"), ExtResource("14_c8iv7"), ExtResource("15_u7g8v"), ExtResource("16_yv2oi"), ExtResource("17_rdgv7")])
+modules = Array[PackedScene]([ExtResource("6_xs0pf"), ExtResource("7_8mfnq"), ExtResource("8_x8bgp"), ExtResource("9_c5dh7"), ExtResource("9_46a0b"), ExtResource("9_0swtu")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
