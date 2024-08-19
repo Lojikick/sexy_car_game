@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://4y4ta7lll15u"]
+
+[ext_resource type="AudioStream" uid="uid://cjf2noy1x3nyn" path="res://assets/audio/sexy car song.wav" id="1_rtadx"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D"]
+transform = Transform3D(1, 0, 0, 0, 0.923358, -0.383941, 0, 0.383941, 0.923358, 0, 2.74475, -10.3943)
+stream = ExtResource("1_rtadx")
+unit_size = 100.0
+autoplay = true
+panning_strength = 0.0

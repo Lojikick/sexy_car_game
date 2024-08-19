@@ -1,9 +1,9 @@
 [gd_scene load_steps=27 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
-[ext_resource type="PackedScene" path="res://pause_menu.tscn" id="1_nvsnp"]
+[ext_resource type="PackedScene" uid="uid://cavj4r6ldiddv" path="res://pause_menu.tscn" id="1_nvsnp"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ytqgl"]
-[ext_resource type="PackedScene" path="res://death_menu.tscn" id="2_hdvao"]
+[ext_resource type="PackedScene" uid="uid://c2f2e0qjqyjkp" path="res://death_menu.tscn" id="2_hdvao"]
 [ext_resource type="PackedScene" uid="uid://ch2436aoeqts0" path="res://modules/module_a.tscn" id="2_v8pk6"]
 [ext_resource type="PackedScene" uid="uid://bcps2377ctyhe" path="res://modules/module_b.tscn" id="3_ua7j0"]
 [ext_resource type="Script" path="res://scripts/car.gd" id="4_m0aui"]
@@ -109,6 +109,8 @@ mesh = SubResource("QuadMesh_vgilf")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("ShaderMaterial_4ab1s")
 
+[node name="Timer" type="Timer" parent="Player"]
+
 [node name="level_barrier" type="Area3D" parent="." groups=["level_end"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.414635, 9.61453)
 script = ExtResource("8_7rvd1")
@@ -122,5 +124,6 @@ transform = Transform3D(2.68187, 0, 0, 0, 2.03066, 0, 0, 0, 0.336716, 0, -0.2763
 mesh = SubResource("BoxMesh_gusxa")
 
 [connection signal="area_entered" from="Player/Death_Sensor" to="Player" method="_on_deatth_sensor_area_entered"]
+[connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="area_entered" from="level_barrier" to="Level" method="_on_level_barrier_area_entered"]
 [connection signal="area_entered" from="level_barrier" to="BuildingLevel" method="_on_level_barrier_area_entered"]

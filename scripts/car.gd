@@ -10,6 +10,11 @@ const JUMP_VELOCITY = 4.5
 #Death Sensor, For collisions
 #@onready var death_sensor = $RayCast3D
 
+
+#For death timer
+@onready var timer: Timer = $Timer
+
+
 #Variables for Transition
 @onready var small_car = false
 var is_transitioning = false
@@ -81,8 +86,9 @@ func _finished_transition():
 	
 #Death/ Level Reload Functions
 func death():
-	game_manager.alive = false
-	game_manager.pauseMenu()
+	timer.start()
+	#game_manager.alive = false
+	#game_manager.pauseMenu()
 
 #Physics Process
 func _physics_process(delta):
@@ -132,3 +138,8 @@ func _on_deatth_sensor_area_entered(area: Area3D) -> void:
 		print("Collided with cone")
 		death()
 		#death()
+
+
+func _on_timer_timeout() -> void:
+	game_manager.alive = false
+	game_manager.pauseMenu()
