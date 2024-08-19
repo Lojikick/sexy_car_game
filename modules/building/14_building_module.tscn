@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b445l23k2irq"]
+
+[ext_resource type="PackedScene" uid="uid://dppr62roorm57" path="res://scenes/imported models/building_1.tscn" id="1_io5p5"]
+[ext_resource type="PackedScene" uid="uid://ds0bf4pwyiisd" path="res://modules/building/ref ground.tscn" id="3_6hi3y"]
+[ext_resource type="PackedScene" uid="uid://chdhmkpw2wdw5" path="res://scenes/imported models/building_4.tscn" id="3_ihvjl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wx8at"]
+size = Vector3(24.7319, 5.58781, 14.3017)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="building module 1" parent="." instance=ExtResource("1_io5p5")]
+transform = Transform3D(-12, 0, -1.81195e-06, 0, 12, 0, 1.81195e-06, 0, -12, 20, -2.1, 0)
+
+[node name="Area3D" type="Area3D" parent="." groups=["building_module"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.382813, 2.2939, -11.6808)
+shape = SubResource("BoxShape3D_wx8at")
+
+[node name="building module 4" parent="." instance=ExtResource("3_ihvjl")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -20, -2.1, 0)
+
+[node name="RefGround" parent="." instance=ExtResource("3_6hi3y")]
