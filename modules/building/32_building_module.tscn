@@ -1,32 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyubya1kbgb5t"]
+[gd_scene load_steps=5 format=3 uid="uid://cyubya1kbgb5t"]
 
 [ext_resource type="PackedScene" uid="uid://lklhb8nksobm" path="res://scenes/imported models/building_3.tscn" id="1_lj315"]
-[ext_resource type="Shader" path="res://shader/emissive.gdshader" id="2_x6sx0"]
 [ext_resource type="PackedScene" uid="uid://c8fns0ol3yxj8" path="res://scenes/imported models/building_2.tscn" id="3_5qacm"]
+[ext_resource type="PackedScene" uid="uid://c2bttv2tsl5cn" path="res://modules/building/ref_ground.tscn" id="3_fwjwm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wx8at"]
 size = Vector3(24.7319, 5.58781, 14.3017)
-
-[sub_resource type="QuadMesh" id="QuadMesh_5875p"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tvh46"]
-render_priority = 0
-shader = ExtResource("2_x6sx0")
-shader_parameter/albedo = Color(0.560784, 0.560784, 0.560784, 0.560784)
-shader_parameter/clamp_diffuse_to_max = false
-shader_parameter/cuts = 3
-shader_parameter/wrap = 0.0
-shader_parameter/steepness = 1.0
-shader_parameter/use_attenuation = true
-shader_parameter/use_specular = true
-shader_parameter/specular_strength = 1.0
-shader_parameter/specular_shininess = 16.0
-shader_parameter/use_rim = true
-shader_parameter/rim_width = 8.0
-shader_parameter/rim_color = Color(1, 1, 1, 1)
-shader_parameter/use_ramp = false
-shader_parameter/use_borders = false
-shader_parameter/border_width = 0.01
 
 [node name="Node3D" type="Node3D"]
 
@@ -39,10 +18,7 @@ transform = Transform3D(-12, 0, -1.81195e-06, 0, 12, 0, 1.81195e-06, 0, -12, 20,
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.382813, 2.2939, -11.6808)
 shape = SubResource("BoxShape3D_wx8at")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(40, 0, 0, 0, -1.74846e-06, 40, 0, -40, -1.74846e-06, 0, -2, 0)
-mesh = SubResource("QuadMesh_5875p")
-surface_material_override/0 = SubResource("ShaderMaterial_tvh46")
-
 [node name="building module 2" parent="." instance=ExtResource("3_5qacm")]
 transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -20, -2.1, 0)
+
+[node name="RefGround" parent="." instance=ExtResource("3_fwjwm")]
