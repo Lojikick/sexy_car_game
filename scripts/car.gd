@@ -17,9 +17,9 @@ var is_transitioning = false
 @export var transition_duration = 0.5
 @onready var tween: Tween
 @onready var death_sensor = $Death_Sensor
-@onready var death_menu = $"../../Death_Menu"
-@onready var menu_ui = $"../../Menu"
-@onready var game_manager = $"../.."
+@onready var death_menu = $"../Death_Menu"
+@onready var menu_ui = $"../Menu"
+@onready var game_manager = $".."
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 

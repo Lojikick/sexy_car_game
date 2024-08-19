@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
-[ext_resource type="PackedScene" uid="uid://cavj4r6ldiddv" path="res://pause_menu.tscn" id="1_nvsnp"]
+[ext_resource type="PackedScene" path="res://pause_menu.tscn" id="1_nvsnp"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ytqgl"]
-[ext_resource type="PackedScene" uid="uid://c2f2e0qjqyjkp" path="res://death_menu.tscn" id="2_hdvao"]
+[ext_resource type="PackedScene" path="res://death_menu.tscn" id="2_hdvao"]
 [ext_resource type="PackedScene" uid="uid://ch2436aoeqts0" path="res://modules/module_a.tscn" id="2_v8pk6"]
 [ext_resource type="PackedScene" uid="uid://bcps2377ctyhe" path="res://modules/module_b.tscn" id="3_ua7j0"]
 [ext_resource type="Script" path="res://scripts/car.gd" id="4_m0aui"]
@@ -43,74 +43,72 @@ offset_top = 146.972
 offset_right = 72.9797
 offset_bottom = 146.972
 
-[node name="Assets" type="Node3D" parent="."]
-
-[node name="Level" type="Node3D" parent="Assets"]
+[node name="Level" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
 script = ExtResource("1_eefjj")
 modules = Array[PackedScene]([ExtResource("2_v8pk6"), ExtResource("3_ua7j0"), ExtResource("4_p52dj")])
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Assets"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Assets"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.930437, 0.366453, 0, -0.366453, 0.930437, 0, 4.64983, 5.59964)
 
-[node name="Player" type="CharacterBody3D" parent="Assets"]
+[node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1.9, 0, 0, 0, 1.9, 0, 0, 0, 1.9, 0, 0.574896, 0)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("4_m0aui")
 
-[node name="Death_Sensor" type="Area3D" parent="Assets/Player" groups=["player"]]
+[node name="Death_Sensor" type="Area3D" parent="Player" groups=["player"]]
 collision_mask = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/Player/Death_Sensor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Death_Sensor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0224609, 0, -1.09633)
 shape = SubResource("BoxShape3D_331pq")
 
-[node name="RayCast3D" type="RayCast3D" parent="Assets/Player"]
+[node name="RayCast3D" type="RayCast3D" parent="Player"]
 transform = Transform3D(12.592, -0.000532352, -0.00116677, -0.00615346, 0.00253579, -2.38139, 0.00682421, 0.984661, 0.00613224, -0.000974394, 0.322719, -0.618295)
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/Player"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0183868, 0, -0.0230103)
 shape = SubResource("BoxShape3D_3pysw")
 
-[node name="car_model" parent="Assets/Player" instance=ExtResource("5_j5iir")]
+[node name="car_model" parent="Player" instance=ExtResource("5_j5iir")]
 transform = Transform3D(-0.996699, 0, 0.0811904, 0, 1, 0, -0.0811904, 0, -0.996699, 0, 0, 0)
 visible = false
 
-[node name="MeshRoot" type="Node3D" parent="Assets/Player"]
+[node name="MeshRoot" type="Node3D" parent="Player"]
 
-[node name="sedan" parent="Assets/Player/MeshRoot" instance=ExtResource("6_d2ip0")]
+[node name="sedan" parent="Player/MeshRoot" instance=ExtResource("6_d2ip0")]
 transform = Transform3D(-1.18215, 0, 0.018697, 0, 1.1816, 0, -0.0221824, 0, -0.996403, -0.0115091, -0.881525, 0.00835109)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Assets/Player/MeshRoot"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/MeshRoot"]
 material_override = SubResource("StandardMaterial3D_ssuos")
 mesh = SubResource("CapsuleMesh_hjwqs")
 
-[node name="Eyes" type="Node3D" parent="Assets/Player/MeshRoot/MeshInstance3D"]
+[node name="Eyes" type="Node3D" parent="Player/MeshRoot/MeshInstance3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Assets/Player/MeshRoot/MeshInstance3D/Eyes"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/MeshRoot/MeshInstance3D/Eyes"]
 transform = Transform3D(0.8489, 0, 0, 0, 0.291202, 0, 0, 0, -1.13156, 0, 0.447251, -0.0961785)
 material_override = SubResource("StandardMaterial3D_35gqq")
 lod_bias = 0.001
 mesh = SubResource("CapsuleMesh_wdoo5")
 
-[node name="Camera3D" type="Camera3D" parent="Assets/Player"]
+[node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.923358, 0.383941, 0, -0.383941, 0.923358, 0, 3.47649, 4.3534)
 
-[node name="level_barrier" type="Area3D" parent="Assets" groups=["level_end"]]
+[node name="level_barrier" type="Area3D" parent="." groups=["level_end"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.414635, 9.61453)
 script = ExtResource("8_7rvd1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/level_barrier"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level_barrier"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302582, 0.871521, 0.352051)
 shape = SubResource("BoxShape3D_cab8x")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Assets/level_barrier/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="level_barrier/CollisionShape3D"]
 transform = Transform3D(2.68187, 0, 0, 0, 2.03066, 0, 0, 0, 0.336716, 0, -0.276341, 0)
 mesh = SubResource("BoxMesh_gusxa")
 
-[connection signal="area_entered" from="Assets/Player/Death_Sensor" to="Assets/Player" method="_on_deatth_sensor_area_entered"]
-[connection signal="area_entered" from="Assets/level_barrier" to="Assets/Level" method="_on_level_barrier_area_entered"]
+[connection signal="area_entered" from="Player/Death_Sensor" to="Player" method="_on_deatth_sensor_area_entered"]
+[connection signal="area_entered" from="level_barrier" to="Level" method="_on_level_barrier_area_entered"]

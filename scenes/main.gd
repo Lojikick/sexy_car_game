@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 		pauseMenu()
 
 func pauseMenu():
+	print("Current player status:", alive)
 	if paused:
 		if alive:
 			pause_menu.hide_menu()
