@@ -12,6 +12,7 @@ size = Vector3(1.27673, 1.28247, 0.17041)
 size = Vector3(1, 4.44788, 2.40405)
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(-2.5, 0, -2.18557e-07, 0, 2.5, 0, 2.18557e-07, 0, -2.5, 0, 0, 0)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.460195, 0, 0)

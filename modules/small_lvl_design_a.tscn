@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3qby158lg22l"]
+
+[ext_resource type="Script" path="res://scripts/module.gd" id="1_7jj75"]
+[ext_resource type="PackedScene" uid="uid://dpxxgdhfwgdyb" path="res://modules/big_module_ref.tscn" id="2_32vrc"]
+[ext_resource type="PackedScene" uid="uid://cgtukf5fqf2va" path="res://car_collide.tscn" id="3_ll2kx"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+script = ExtResource("1_7jj75")
+
+[node name="Road" parent="." instance=ExtResource("2_32vrc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.501)
+
+[node name="Node3D2" parent="." instance=ExtResource("3_ll2kx")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 23.1584, 0.241543, -8.45148)
+
+[node name="Node3D3" parent="." instance=ExtResource("3_ll2kx")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -22.8646, 0.241543, -39.0852)
+
+[node name="Node3D4" parent="." instance=ExtResource("3_ll2kx")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 0.446507, 0.241543, -8.41028)
+
+[node name="Node3D5" parent="." instance=ExtResource("3_ll2kx")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -22.6549, 0.241543, -8.14614)
+
+[node name="Node3D6" parent="." instance=ExtResource("3_ll2kx")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -1.49332, 0.241543, -68.5957)
+
+[node name="Node3D7" parent="." instance=ExtResource("3_ll2kx")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 20.7611, 0.241543, -68.8223)
+
+[node name="Node3D8" parent="." instance=ExtResource("3_ll2kx")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -1.20338, 0.241543, -98.67)
+
+[node name="Node3D9" parent="." instance=ExtResource("3_ll2kx")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -21.2853, 0.241543, -98.466)

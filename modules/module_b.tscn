@@ -11,7 +11,10 @@ script = ExtResource("1_mrn5q")
 [node name="Ref_Module" parent="." instance=ExtResource("1_7einb")]
 
 [node name="Collidable_Car2" parent="." instance=ExtResource("3_w5484")]
-transform = Transform3D(-10, 0, 0.00366362, 0, 10, 0, -0.00366362, 0, -10, 0.12122, 0, 3.62907)
+transform = Transform3D(-10, 0, 0.00366362, 0, 10, 0, -0.00366362, 0, -10, 0.164799, 0, 5.41104)
 
 [node name="Collidable_Car3" parent="." instance=ExtResource("3_w5484")]
-transform = Transform3D(-10, 0, 0.00366362, 0, 10, 0, -0.00366362, 0, -10, 22.8787, 0, 3.62907)
+transform = Transform3D(-10, 0, 0.00366362, 0, 10, 0, -0.00366362, 0, -10, 22.8787, 0, 5.41104)
+
+[node name="Node3D" parent="." instance=ExtResource("3_w5484")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -19.7806, 0.241543, -6.71446)

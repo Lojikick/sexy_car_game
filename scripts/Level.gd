@@ -1,9 +1,9 @@
 extends Node3D
 
 @export var modules: Array[PackedScene] = []
-var amnt = 15
+var amnt = 5
 var rng = RandomNumberGenerator.new()
-var offset = 5.8
+var offset = 30.5
 var initObs = 0
 var speed = 25
 var new_module_spawn_offset = 3.5
@@ -34,12 +34,12 @@ func _process(delta):
 
 func spawnModule(n):
 	var instance
-	if initObs > 10:
+	if initObs > 2:
 		rng.randomize()
 		var num = rng.randi_range(0, modules.size() - 1)
 		instance = modules[num].instantiate()
 	else:
-		instance = modules[2].instantiate()
+		instance = modules[0].instantiate()
 		initObs += 1
 
 
@@ -55,6 +55,7 @@ func spawnModule(n):
 func _on_level_barrier_area_entered(area: Area3D) -> void:
 	if area.is_in_group("module"):	
 		var new_position = last_spawn_position + offset
+		print("Deleting Module")
 		spawnModule(new_position)
 		
 		

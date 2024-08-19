@@ -4,14 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://cavj4r6ldiddv" path="res://pause_menu.tscn" id="1_nvsnp"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ytqgl"]
 [ext_resource type="PackedScene" uid="uid://c2f2e0qjqyjkp" path="res://death_menu.tscn" id="2_hdvao"]
-[ext_resource type="PackedScene" uid="uid://ch2436aoeqts0" path="res://modules/module_a.tscn" id="2_v8pk6"]
-[ext_resource type="PackedScene" uid="uid://bcps2377ctyhe" path="res://modules/module_b.tscn" id="3_ua7j0"]
 [ext_resource type="Script" path="res://scripts/car.gd" id="4_m0aui"]
-[ext_resource type="PackedScene" uid="uid://r7ryx5b7kam2" path="res://modules/module_c.tscn" id="4_p52dj"]
 [ext_resource type="Script" path="res://scripts/BuildingLevel.gd" id="5_0atp4"]
 [ext_resource type="PackedScene" uid="uid://dkthp18q1rkrg" path="res://assets/3D-Car-With-Settingspanel-0eb08d38bd593a8f1314de22d646a95442247612/assets/3d_car_customizable/assets/car_model.glb" id="5_j5iir"]
+[ext_resource type="PackedScene" uid="uid://dcbp035n642qs" path="res://modules/base_empty_design.tscn" id="5_wagff"]
+[ext_resource type="PackedScene" uid="uid://15iahqbcys4x" path="res://modules/big_level_design_a.tscn" id="6_c7qjv"]
 [ext_resource type="PackedScene" uid="uid://cnwqkms4wdlr2" path="res://modules/building/12_building_module.tscn" id="6_xs0pf"]
 [ext_resource type="PackedScene" uid="uid://cw4obtcmg2xtr" path="res://modules/building/13_building_module.tscn" id="7_8mfnq"]
+[ext_resource type="PackedScene" uid="uid://d3qby158lg22l" path="res://modules/small_lvl_design_a.tscn" id="7_11r6h"]
 [ext_resource type="PackedScene" uid="uid://toncqk8um2f0" path="res://scenes/imported models/sedan.tscn" id="7_u6772"]
 [ext_resource type="Script" path="res://scenes/collider.gd" id="8_7rvd1"]
 [ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/imported models/mouse.tscn" id="8_37yle"]
@@ -73,7 +73,7 @@ offset_bottom = 146.972
 [node name="Level" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
 script = ExtResource("1_eefjj")
-modules = Array[PackedScene]([ExtResource("2_v8pk6"), ExtResource("3_ua7j0"), ExtResource("4_p52dj")])
+modules = Array[PackedScene]([ExtResource("5_wagff"), ExtResource("7_11r6h"), ExtResource("6_c7qjv")])
 
 [node name="BuildingLevel" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
@@ -127,26 +127,25 @@ transform = Transform3D(1, 0, 0, 0, 0.923358, 0.383941, 0, -0.383941, 0.923358, 
 
 [node name="outline" type="MeshInstance3D" parent="Player/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0413912, -0.093626, -0.438589)
-visible = false
 mesh = SubResource("QuadMesh_vgilf")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("ShaderMaterial_4ab1s")
 
 [node name="Timer" type="Timer" parent="Player"]
 
-[node name="level_barrier" type="Area3D" parent="." groups=["level_end"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.414635, 9.61453)
+[node name="level_barrier" type="Area3D" parent="Player" groups=["level_end"]]
+transform = Transform3D(0.526316, 0, 0, 0, 0.526316, 0, 0, 0, 0.526316, 0, -0.520806, 19.0062)
 script = ExtResource("8_7rvd1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="level_barrier"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/level_barrier"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302582, 0.871521, 0.352051)
 shape = SubResource("BoxShape3D_cab8x")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="level_barrier/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/level_barrier/CollisionShape3D"]
 transform = Transform3D(2.68187, 0, 0, 0, 2.03066, 0, 0, 0, 0.336716, 0, -0.276341, 0)
 mesh = SubResource("BoxMesh_gusxa")
 
 [connection signal="area_entered" from="Player/Death_Sensor" to="Player" method="_on_deatth_sensor_area_entered"]
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
-[connection signal="area_entered" from="level_barrier" to="Level" method="_on_level_barrier_area_entered"]
-[connection signal="area_entered" from="level_barrier" to="BuildingLevel" method="_on_level_barrier_area_entered"]
+[connection signal="area_entered" from="Player/level_barrier" to="Level" method="_on_level_barrier_area_entered"]
+[connection signal="area_entered" from="Player/level_barrier" to="BuildingLevel" method="_on_level_barrier_area_entered"]

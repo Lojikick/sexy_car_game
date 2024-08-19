@@ -80,10 +80,8 @@ func toggle_car_size():
 	# Small car now true
 	small_car = not small_car
 	if small_car:
-		print("Now small car:", small_car)
 		death_sensor.set_collision_mask_value(3, true)
 	else:
-		print("Now big car:", small_car)
 		death_sensor.set_collision_mask_value(3, false)
 		
 func _finished_transition():
@@ -137,14 +135,11 @@ func _physics_process(delta):
 func _on_resume_game():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	game_manager.pauseMenu()
-	print("Something Happened")
 
 func _on_deatth_sensor_area_entered(area: Area3D) -> void:
 	if area.is_in_group("car"):
-		print("Collided with car")
 		death()
 	if area.is_in_group("cone"):
-		print("Collided with cone")
 		death()
 		#death()
 
