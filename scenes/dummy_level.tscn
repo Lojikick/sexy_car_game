@@ -1,9 +1,9 @@
 [gd_scene load_steps=27 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
-[ext_resource type="PackedScene" path="res://pause_menu.tscn" id="1_nvsnp"]
+[ext_resource type="PackedScene" uid="uid://cavj4r6ldiddv" path="res://pause_menu.tscn" id="1_nvsnp"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ytqgl"]
-[ext_resource type="PackedScene" path="res://death_menu.tscn" id="2_hdvao"]
+[ext_resource type="PackedScene" uid="uid://c2f2e0qjqyjkp" path="res://death_menu.tscn" id="2_hdvao"]
 [ext_resource type="PackedScene" uid="uid://ch2436aoeqts0" path="res://modules/module_a.tscn" id="2_v8pk6"]
 [ext_resource type="PackedScene" uid="uid://bcps2377ctyhe" path="res://modules/module_b.tscn" id="3_ua7j0"]
 [ext_resource type="Script" path="res://scripts/car.gd" id="4_m0aui"]
