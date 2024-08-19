@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://chdhmkpw2wdw5"]
+
+[ext_resource type="PackedScene" uid="uid://pv7iqycnia4l" path="res://assets/buildings/building module 4.glb" id="1_0wet2"]
+[ext_resource type="Shader" path="res://shader/emissive.gdshader" id="2_jpc8l"]
+[ext_resource type="Texture2D" uid="uid://ckvp7c2cwhpmf" path="res://assets/buildings/building module 4_color 4.png" id="3_6aoci"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_foigt"]
+render_priority = 0
+shader = ExtResource("2_jpc8l")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_6aoci")
+
+[node name="building module 4" instance=ExtResource("1_0wet2")]
+
+[node name="bake 4" parent="." index="0"]
+transform = Transform3D(-0.100509, -0.0166969, 0.166977, 0, 0.503623, 0.00753867, -0.167102, 0.0100429, -0.100434, 0.375778, -0.271257, 0.378406)
+surface_material_override/0 = SubResource("ShaderMaterial_foigt")
