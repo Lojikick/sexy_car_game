@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://diwqu1cvft320"]
+[gd_scene load_steps=33 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://cavj4r6ldiddv" path="res://pause_menu.tscn" id="1_nvsnp"]
@@ -20,6 +20,12 @@
 [ext_resource type="PackedScene" uid="uid://lcv5o7snpsp7" path="res://modules/building/31_building_module.tscn" id="9_46a0b"]
 [ext_resource type="PackedScene" uid="uid://bsb6gaua54bs3" path="res://modules/building/23_building_module.tscn" id="9_c5dh7"]
 [ext_resource type="Shader" path="res://shader/outline.gdshader" id="9_mk8c6"]
+[ext_resource type="PackedScene" uid="uid://bbh1uxxu6g2vt" path="res://modules/building/14_building_module.tscn" id="11_1fwqx"]
+[ext_resource type="PackedScene" uid="uid://ct02cv46d3u78" path="res://modules/building/24_building_module.tscn" id="14_m8g6f"]
+[ext_resource type="PackedScene" uid="uid://pckapyp6diev" path="res://modules/building/34_building_module.tscn" id="17_clmh2"]
+[ext_resource type="PackedScene" uid="uid://b3f6c2pomiji6" path="res://modules/building/41_building_module.tscn" id="18_kx6sy"]
+[ext_resource type="PackedScene" uid="uid://b5y6ub2qj0ww2" path="res://modules/building/42_building_module.tscn" id="19_vtmq0"]
+[ext_resource type="PackedScene" uid="uid://dvnd2yj2l2erj" path="res://modules/building/43_building_module.tscn" id="20_yqstn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_331pq"]
 size = Vector3(1.23047, 1, 1)
@@ -60,7 +66,7 @@ modules = Array[PackedScene]([ExtResource("2_v8pk6"), ExtResource("3_ua7j0"), Ex
 [node name="BuildingLevel" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
 script = ExtResource("5_0atp4")
-modules = Array[PackedScene]([ExtResource("6_xs0pf"), ExtResource("7_8mfnq"), ExtResource("8_x8bgp"), ExtResource("9_c5dh7"), ExtResource("9_46a0b"), ExtResource("9_0swtu")])
+modules = Array[PackedScene]([ExtResource("6_xs0pf"), ExtResource("7_8mfnq"), ExtResource("11_1fwqx"), ExtResource("8_x8bgp"), ExtResource("9_c5dh7"), ExtResource("14_m8g6f"), ExtResource("9_46a0b"), ExtResource("9_0swtu"), ExtResource("17_clmh2"), ExtResource("18_kx6sy"), ExtResource("19_vtmq0"), ExtResource("20_yqstn")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
@@ -105,6 +111,7 @@ transform = Transform3D(1, 0, 0, 0, 0.923358, 0.383941, 0, -0.383941, 0.923358, 
 
 [node name="outline" type="MeshInstance3D" parent="Player/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0413912, -0.093626, -0.438589)
+visible = false
 mesh = SubResource("QuadMesh_vgilf")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("ShaderMaterial_4ab1s")
