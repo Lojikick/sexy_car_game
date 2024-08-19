@@ -13,9 +13,13 @@ const JUMP_VELOCITY = 4.5
 #Variables for Transition
 @onready var small_car = false
 var is_transitioning = false
+
 @export var transition_duration = 0.5
 @onready var tween: Tween
 @onready var death_sensor = $Death_Sensor
+@onready var death_menu = $"../../Death_Menu"
+@onready var menu_ui = $"../../Menu"
+@onready var game_manager = $"../.."
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -24,7 +28,7 @@ func _ready():
 	tween.stop()
 	#Captures our mouse so that it doesnt go beyond the game screen
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
+	menu_ui.connect("resume_game", Callable(self, "_on_resume_game"))
 #Handles 3D camera movement
 func _input(event):
 	pass
@@ -77,7 +81,8 @@ func _finished_transition():
 	
 #Death/ Level Reload Functions
 func death():
-	get_tree().reload_current_scene()
+	game_manager.alive = false
+	game_manager.pauseMenu()
 
 #Physics Process
 func _physics_process(delta):
@@ -97,8 +102,10 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("switch") and not is_transitioning:
 		toggle_car_size()
 		
-	if Input.is_action_just_pressed("escape"):
-		get_tree().quit()
+	#if Input.is_action_just_pressed("escape"):
+		##menu_ui.show_menu()
+		##game_manager.pauseMenu()
+		#menu_ui.show_menu()
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "up", "down")
@@ -112,6 +119,10 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+func _on_resume_game():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	game_manager.pauseMenu()
+	print("Something Happened")
 
 func _on_deatth_sensor_area_entered(area: Area3D) -> void:
 	if area.is_in_group("car"):

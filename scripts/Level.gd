@@ -53,16 +53,16 @@ func spawnModule(n):
 			child.position.y -= total_movement  # Adjust initial Y position based on total level movement
 
 func _on_level_barrier_area_entered(area: Area3D) -> void:
-	var new_position = last_spawn_position + offset
-	spawnModule(new_position)
-	
-	
-	var module_to_remove = area.get_parent()
-	
-	if is_instance_valid(module_to_remove) and module_to_remove != self:
-		module_to_remove.queue_free()
-	else:
-		print("Warning: Could not find valid module to remove")
+	if area.is_in_group("module"):
+		var new_position = last_spawn_position + offset
+		spawnModule(new_position)
+		
+		var module_to_remove = area.get_parent()
+		
+		if is_instance_valid(module_to_remove) and module_to_remove != self:
+			module_to_remove.queue_free()
+		else:
+			print("Warning: Could not find valid module to remove")
 	
 
 # Add this to your Module scene script

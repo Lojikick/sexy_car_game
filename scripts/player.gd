@@ -20,9 +20,10 @@ const FOV_CHANGE = 1.5
 #Variables for head and camera
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var menu_ui = $Menu
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
+	menu_ui.connect("resume_game", Callable(self, "_on_resume_game"))
 #unhandled input func, called every time player handles something
 #Handles character movement
 func _unhandled_input(event):
