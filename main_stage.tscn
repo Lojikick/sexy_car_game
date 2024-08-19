@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bddlh1wy82or7"]
+[gd_scene load_steps=42 format=3 uid="uid://bddlh1wy82or7"]
 
 [ext_resource type="PackedScene" uid="uid://c4tw6ffnnus4h" path="res://scenes/imported models/building_0.tscn" id="1_44kbm"]
 [ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/imported models/mouse.tscn" id="1_e5acv"]
@@ -101,6 +101,16 @@ shader_parameter/shadow_thickness = 2.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_brrnt"]
 size = Vector3(1.99449, 1.66797, 4.30167)
+
+[sub_resource type="Animation" id="Animation_nde5t"]
+resource_name = "vibrate"
+length = 1.2
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h0bjo"]
+_data = {
+"vibrate": SubResource("Animation_nde5t")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xtc41"]
 size = Vector3(1, 1.9032, 3.98151)
@@ -248,6 +258,12 @@ collision_mask = 7
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.060463, -0.333984, -0.0859194)
 shape = SubResource("BoxShape3D_brrnt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+libraries = {
+"": SubResource("AnimationLibrary_h0bjo")
+}
+autoplay = "vibrate"
 
 [node name="box2" parent="." instance=ExtResource("6_atthu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.04273, 0.241544, 1.65012)

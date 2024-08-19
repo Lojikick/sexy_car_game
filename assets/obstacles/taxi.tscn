@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c67deg1e0baj"]
 
-[ext_resource type="PackedScene" uid="uid://pa27tj0ie83c" path="res://assets/kenny_car_assets/taxi.glb" id="1_pben6"]
+[ext_resource type="PackedScene" uid="uid://b282sw7fv0708" path="res://scenes/imported models/taxi.tscn" id="1_c1rmt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1rqvy"]
 size = Vector3(0.692429, 1.21985, 1.71411)
@@ -46,9 +46,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456808, 0.984385, -0.028804
 transform = Transform3D(0.699707, 0, 0, 0, 0.84938, 0, 0, 0, 1, 0.0215192, -0.1942, -0.616337)
 shape = SubResource("BoxShape3D_0naoy")
 
-[node name="taxi" parent="CharacterBody3D" instance=ExtResource("1_pben6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47643, 0, 0.897388)
-
 [node name="Body Collider" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1.27171, 0, 0, 0, 0.234266, 0, 3.82983e-12, 0, 1, 0.497311, 0.8802, 0.900716)
 shape = SubResource("BoxShape3D_66vmx")
+
+[node name="taxi" parent="CharacterBody3D" instance=ExtResource("1_c1rmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47643, 0, 0.897388)
