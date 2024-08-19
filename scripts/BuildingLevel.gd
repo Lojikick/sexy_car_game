@@ -3,7 +3,7 @@ extends Node3D
 @export var modules: Array[PackedScene] = []
 var amnt = 15
 var rng = RandomNumberGenerator.new()
-var offset = 5.8
+var offset = 20
 var initObs = 0
 var speed = 25
 var new_module_spawn_offset = 3.5
@@ -44,8 +44,6 @@ func spawnModule(n):
 
 
 	instance.position.z = n * (-1)
-	#spawn buildings to the left
-	instance.position.x = -11
 	add_child(instance)
 	last_spawn_position = n
 
