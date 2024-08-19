@@ -320,7 +320,7 @@ skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("ShaderMaterial_jtc70")
 
 [node name="gaming mouse backup" parent="Player" instance=ExtResource("1_e5acv")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, -0.500755, 0)
+transform = Transform3D(-1, 0, -2.53518e-06, 0, 1, 0, 2.53518e-06, 0, -1, 0, -0.500755, 0)
 
 [node name="Area3D" type="Area3D" parent="Player" groups=["player"]]
 collision_mask = 7
