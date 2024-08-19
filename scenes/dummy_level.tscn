@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://diwqu1cvft320"]
+[gd_scene load_steps=37 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://cavj4r6ldiddv" path="res://pause_menu.tscn" id="1_nvsnp"]
@@ -26,7 +26,17 @@
 [ext_resource type="PackedScene" uid="uid://b3f6c2pomiji6" path="res://modules/building/41_building_module.tscn" id="18_kx6sy"]
 [ext_resource type="PackedScene" uid="uid://b5y6ub2qj0ww2" path="res://modules/building/42_building_module.tscn" id="19_vtmq0"]
 [ext_resource type="PackedScene" uid="uid://dvnd2yj2l2erj" path="res://modules/building/43_building_module.tscn" id="20_yqstn"]
-[ext_resource type="PackedScene" uid="uid://b7ra2uc5w8ojt" path="res://explosion.tscn" id="22_o4i75"]
+[ext_resource type="Texture2D" uid="uid://bbj10gcowjshb" path="res://assets/skybox_skybox 2.png" id="21_3ht5n"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_y1tg0"]
+panorama = ExtResource("21_3ht5n")
+
+[sub_resource type="Sky" id="Sky_gxgwx"]
+sky_material = SubResource("PanoramaSkyMaterial_y1tg0")
+
+[sub_resource type="Environment" id="Environment_4xu4g"]
+background_mode = 2
+sky = SubResource("Sky_gxgwx")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_331pq"]
 size = Vector3(1.23047, 1, 1)
@@ -70,6 +80,7 @@ script = ExtResource("5_0atp4")
 modules = Array[PackedScene]([ExtResource("6_xs0pf"), ExtResource("7_8mfnq"), ExtResource("11_1fwqx"), ExtResource("8_x8bgp"), ExtResource("9_c5dh7"), ExtResource("14_m8g6f"), ExtResource("9_46a0b"), ExtResource("9_0swtu"), ExtResource("17_clmh2"), ExtResource("18_kx6sy"), ExtResource("19_vtmq0"), ExtResource("20_yqstn")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4xu4g")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.930437, 0.366453, 0, -0.366453, 0.930437, 0, 4.64983, 5.59964)
