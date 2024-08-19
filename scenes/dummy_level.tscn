@@ -91,6 +91,8 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("4_m0aui")
 
+[node name="Explosion_Object" type="Node3D" parent="Player"]
+
 [node name="Death_Sensor" type="Area3D" parent="Player" groups=["player"]]
 collision_mask = 3
 
@@ -128,6 +130,8 @@ mesh = SubResource("QuadMesh_vgilf")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("ShaderMaterial_4ab1s")
 
+[node name="Timer" type="Timer" parent="Player"]
+
 [node name="level_barrier" type="Area3D" parent="." groups=["level_end"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.414635, 9.61453)
 script = ExtResource("8_7rvd1")
@@ -141,5 +145,6 @@ transform = Transform3D(2.68187, 0, 0, 0, 2.03066, 0, 0, 0, 0.336716, 0, -0.2763
 mesh = SubResource("BoxMesh_gusxa")
 
 [connection signal="area_entered" from="Player/Death_Sensor" to="Player" method="_on_deatth_sensor_area_entered"]
+[connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="area_entered" from="level_barrier" to="Level" method="_on_level_barrier_area_entered"]
 [connection signal="area_entered" from="level_barrier" to="BuildingLevel" method="_on_level_barrier_area_entered"]
