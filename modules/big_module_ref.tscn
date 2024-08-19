@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpxxgdhfwgdyb"]
+
+[ext_resource type="Script" path="res://scripts/module.gd" id="1_e46e6"]
+[ext_resource type="PackedScene" uid="uid://bqvd8j2ns5pxr" path="res://modules/ref_module.tscn" id="2_b0kdn"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+script = ExtResource("1_e46e6")
+
+[node name="Ref_Module" parent="." instance=ExtResource("2_b0kdn")]
+
+[node name="Ref_Module2" parent="." instance=ExtResource("2_b0kdn")]
+transform = Transform3D(2.88953, 0, 0, 0, 1, 0, 0, 0, 1.70334, 0, 0, -23.0326)
+
+[node name="Ref_Module3" parent="." instance=ExtResource("2_b0kdn")]
+transform = Transform3D(2.88953, 0, 0, 0, 1, 0, 0, 0, 1.70334, 0, 0, -45.9963)
+
+[node name="Ref_Module4" parent="." instance=ExtResource("2_b0kdn")]
+transform = Transform3D(2.88953, 0, 0, 0, 1, 0, 0, 0, 1.70334, 0, 0, -68.9548)

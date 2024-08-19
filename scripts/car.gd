@@ -25,6 +25,11 @@ var is_transitioning = false
 @onready var death_menu = $"../Death_Menu"
 @onready var menu_ui = $"../Menu"
 @onready var game_manager = $".."
+@onready var level: Node3D = $"../Level"
+@onready var building_level: Node3D = $"../BuildingLevel"
+@onready var explosion: Node3D = $Explosion
+
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -86,7 +91,11 @@ func _finished_transition():
 	
 #Death/ Level Reload Functions
 func death():
+	level.speed = 0
+	building_level.speed = 0
 	timer.start()
+	explosion.explode()
+
 	#game_manager.alive = false
 	#game_manager.pauseMenu()
 
@@ -141,5 +150,6 @@ func _on_deatth_sensor_area_entered(area: Area3D) -> void:
 
 
 func _on_timer_timeout() -> void:
+	
 	game_manager.alive = false
 	game_manager.pauseMenu()

@@ -5,8 +5,8 @@ extends Node3D
 @onready var smoke: GPUParticles3D = $Smoke
 @onready var explosion_sound: AudioStreamPlayer3D = $"Explosion Sound"
 
-func _ready():
-	explode()
+#func _ready():
+	#explode()
 	
 func explode():
 	debris.emitting = true
