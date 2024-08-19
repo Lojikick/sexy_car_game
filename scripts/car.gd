@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 15
+var SPEED = 23
 const JUMP_VELOCITY = 4.5
 
 #@onready var pivot = $CamRoot
@@ -22,11 +22,16 @@ var is_transitioning = false
 @export var transition_duration = 0.5
 @onready var tween: Tween
 @onready var death_sensor = $Death_Sensor
-@onready var death_menu = $"../Death_Menu"
-@onready var menu_ui = $"../Menu"
-@onready var game_manager = $".."
-@onready var level: Node3D = $"../Level"
-@onready var building_level: Node3D = $"../BuildingLevel"
+
+#MIGHT FUCK UP WHEN MERGING
+@onready var death_menu = $"../../Death_Menu"
+@onready var menu_ui = $"../../Menu"
+@onready var game_manager = $"../.."
+@onready var level: Node3D = $"../../Level"
+@onready var building_level: Node3D = $"../../BuildingLevel"
+@onready var player_mover: Node3D = $".."
+########
+
 @onready var explosion: Node3D = $Explosion
 
 
@@ -89,10 +94,10 @@ func _finished_transition():
 	
 #Death/ Level Reload Functions
 func death():
-	level.speed = 0
-	building_level.speed = 0
+	player_mover.SPEED = 0
 	timer.start()
 	explosion.explode()
+	
 
 	#game_manager.alive = false
 	#game_manager.pauseMenu()
@@ -112,6 +117,8 @@ func _physics_process(delta):
 		#print("Collision detected!")
 		#death()
 		#get_tree().reload_current_scene()
+		
+	
 	if Input.is_action_just_pressed("switch") and not is_transitioning:
 		toggle_car_size()
 		

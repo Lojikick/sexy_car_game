@@ -5,7 +5,7 @@ var amnt = 15
 var rng = RandomNumberGenerator.new()
 var offset = 25
 var initObs = 0
-var speed = 25
+var speed = 0
 var new_module_spawn_offset = 3.5
 var last_spawn_position = 0
 

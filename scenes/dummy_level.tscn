@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c2f2e0qjqyjkp" path="res://ui/death_menu.tscn" id="2_hdvao"]
 [ext_resource type="Script" path="res://scripts/car.gd" id="4_m0aui"]
 [ext_resource type="Script" path="res://scripts/BuildingLevel.gd" id="5_0atp4"]
-[ext_resource type="PackedScene" uid="uid://dkthp18q1rkrg" path="res://assets/3D-Car-With-Settingspanel-0eb08d38bd593a8f1314de22d646a95442247612/assets/3d_car_customizable/assets/car_model.glb" id="5_j5iir"]
 [ext_resource type="PackedScene" uid="uid://dcbp035n642qs" path="res://modules/base_empty_design.tscn" id="5_wagff"]
 [ext_resource type="PackedScene" uid="uid://bp6ag1ib0s5wg" path="res://modules/mixed_module_a.tscn" id="6_0gqt5"]
 [ext_resource type="PackedScene" uid="uid://cnwqkms4wdlr2" path="res://modules/building/12_building_module.tscn" id="6_xs0pf"]
@@ -31,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://dvnd2yj2l2erj" path="res://modules/building/43_building_module.tscn" id="20_yqstn"]
 [ext_resource type="Texture2D" uid="uid://bbj10gcowjshb" path="res://assets/skybox/skybox_skybox 2.png" id="21_3ht5n"]
 [ext_resource type="PackedScene" uid="uid://b7ra2uc5w8ojt" path="res://assets/effects/explosion.tscn" id="22_o4i75"]
+[ext_resource type="Script" path="res://scenes/player_mover.gd" id="25_nn0rw"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_y1tg0"]
 panorama = ExtResource("21_3ht5n")
@@ -89,66 +89,61 @@ environment = SubResource("Environment_4xu4g")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.930437, 0.366453, 0, -0.366453, 0.930437, 0, 4.64983, 5.59964)
 
-[node name="level_barrier" type="Area3D" parent="." groups=["level_end"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.414635, 36.1118)
+[node name="Player_Mover" type="Node3D" parent="."]
+transform = Transform3D(1.9, 0, 0, 0, 1.9, 0, 0, 0, 1.9, 0, 0.574896, 0)
+script = ExtResource("25_nn0rw")
+
+[node name="level_barrier" type="Area3D" parent="Player_Mover" groups=["level_end"]]
+transform = Transform3D(0.526316, 0, 0, 0, 0.526316, 0, 0, 0, 0.526316, 0, -0.520806, 19.0062)
 script = ExtResource("8_7rvd1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="level_barrier"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player_Mover/level_barrier"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302582, 0.871521, 0.352051)
 shape = SubResource("BoxShape3D_cab8x")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="level_barrier/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player_Mover/level_barrier/CollisionShape3D"]
 transform = Transform3D(2.68187, 0, 0, 0, 2.03066, 0, 0, 0, 0.336716, 0, -0.276341, 0)
 mesh = SubResource("BoxMesh_gusxa")
 
-[node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1.9, 0, 0, 0, 1.9, 0, 0, 0, 1.9, 0, 0.574896, 0)
+[node name="Player" type="CharacterBody3D" parent="Player_Mover"]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("4_m0aui")
 
-[node name="Explosion" parent="Player" instance=ExtResource("22_o4i75")]
+[node name="Explosion" parent="Player_Mover/Player" instance=ExtResource("22_o4i75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40028, 0.492329)
 
-[node name="Death_Sensor" type="Area3D" parent="Player" groups=["player"]]
+[node name="Death_Sensor" type="Area3D" parent="Player_Mover/Player" groups=["player"]]
 collision_mask = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Death_Sensor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player_Mover/Player/Death_Sensor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0224609, 0, -1.09633)
 shape = SubResource("BoxShape3D_331pq")
 
-[node name="RayCast3D" type="RayCast3D" parent="Player"]
-transform = Transform3D(12.592, -0.000532352, -0.00116677, -0.00615346, 0.00253579, -2.38139, 0.00682421, 0.984661, 0.00613224, -0.000974394, 0.322719, -0.618295)
-visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player_Mover/Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0183868, 0, -0.0230103)
 shape = SubResource("BoxShape3D_3pysw")
 
-[node name="car_model" parent="Player" instance=ExtResource("5_j5iir")]
-transform = Transform3D(-0.996699, 0, 0.0811905, 0, 1, 0, -0.0811905, 0, -0.996699, 0, 0, 0)
-visible = false
+[node name="MeshRoot" type="Node3D" parent="Player_Mover/Player"]
 
-[node name="MeshRoot" type="Node3D" parent="Player"]
-
-[node name="sedan" parent="Player/MeshRoot" instance=ExtResource("7_u6772")]
+[node name="sedan" parent="Player_Mover/Player/MeshRoot" instance=ExtResource("7_u6772")]
 transform = Transform3D(-1.18215, 0, 0.018697, 0, 1.1816, 0, -0.0221824, 0, -0.996403, -0.0115091, -0.881525, 0.00835109)
 
-[node name="gaming mouse backup" parent="Player/MeshRoot" instance=ExtResource("8_37yle")]
+[node name="gaming mouse backup" parent="Player_Mover/Player/MeshRoot" instance=ExtResource("8_37yle")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.764046, 0.235408)
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
+[node name="Camera3D" type="Camera3D" parent="Player_Mover/Player"]
 transform = Transform3D(1, 0, 0, 0, 0.923358, 0.383941, 0, -0.383941, 0.923358, 0, 3.47649, 4.3534)
 
-[node name="outline" type="MeshInstance3D" parent="Player/Camera3D"]
+[node name="outline" type="MeshInstance3D" parent="Player_Mover/Player/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0413912, -0.093626, -0.438589)
 mesh = SubResource("QuadMesh_vgilf")
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
 surface_material_override/0 = SubResource("ShaderMaterial_4ab1s")
 
-[node name="Timer" type="Timer" parent="Player"]
+[node name="Timer" type="Timer" parent="Player_Mover/Player"]
 
-[connection signal="area_entered" from="level_barrier" to="Level" method="_on_level_barrier_area_entered"]
-[connection signal="area_entered" from="level_barrier" to="BuildingLevel" method="_on_level_barrier_area_entered"]
-[connection signal="area_entered" from="Player/Death_Sensor" to="Player" method="_on_deatth_sensor_area_entered"]
-[connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="area_entered" from="Player_Mover/level_barrier" to="Level" method="_on_level_barrier_area_entered"]
+[connection signal="area_entered" from="Player_Mover/level_barrier" to="BuildingLevel" method="_on_level_barrier_area_entered"]
+[connection signal="area_entered" from="Player_Mover/Player/Death_Sensor" to="Player_Mover/Player" method="_on_deatth_sensor_area_entered"]
+[connection signal="timeout" from="Player_Mover/Player/Timer" to="Player_Mover/Player" method="_on_timer_timeout"]

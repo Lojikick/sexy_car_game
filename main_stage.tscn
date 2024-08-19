@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bddlh1wy82or7"]
+[gd_scene load_steps=41 format=3 uid="uid://bddlh1wy82or7"]
 
 [ext_resource type="PackedScene" uid="uid://c4tw6ffnnus4h" path="res://scenes/imported models/building_0.tscn" id="1_44kbm"]
 [ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/imported models/mouse.tscn" id="1_e5acv"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://wcqrhpqhh4i7" path="res://assets/kenny_car_assets/ambulance.glb" id="17_r7j8a"]
 [ext_resource type="PackedScene" uid="uid://c4b3t4pj4lrut" path="res://assets/kenny_car_assets/firetruck.glb" id="18_pp5fr"]
 [ext_resource type="PackedScene" uid="uid://c1qcfyv6cr0co" path="res://assets/kenny_car_assets/garbage-truck.glb" id="19_gyut8"]
+[ext_resource type="PackedScene" uid="uid://baf356ac6vxie" path="res://assets/obstacles/rigid_body_test.tscn" id="20_225ep"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1eg42"]
 
@@ -198,7 +199,6 @@ transform = Transform3D(-7.86547, 0, -6.1753, 0, 10, 0, 6.1753, 0, -7.86547, 23.
 
 [node name="Player" type="CharacterBody3D" parent="." groups=["global_collidable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47298, 5.13574)
-collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_x3oai")
 
@@ -308,5 +308,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33587, 0.241544, 10.3416)
 
 [node name="garbage-truck" parent="." instance=ExtResource("19_gyut8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.28641, 0.241544, 10.2802)
+
+[node name="RigidBodyTest" parent="." instance=ExtResource("20_225ep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13994, 0.241544, 3.81584)
 
 [connection signal="area_entered" from="Player/Area3D" to="Player" method="_on_area_3d_area_entered"]
