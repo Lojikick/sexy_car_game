@@ -40,4 +40,4 @@ transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 22.
 transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 22.7922, 0.241543, -83.4299)
 
 [node name="Random_Ingredient" parent="." instance=ExtResource("7_ox3ci")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.54836, 0.241543, -19.2919)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.54836, 7.11778, -19.2919)

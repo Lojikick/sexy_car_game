@@ -25,7 +25,7 @@ transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -22
 transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -0.372118, 0.241543, -42.9357)
 
 [node name="Random_Ingredient" parent="." instance=ExtResource("6_xj0r6")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 21.1867, 0.241543, -27.4638)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 21.1867, 9.33468, -27.4638)
 
 [node name="Cone" parent="." instance=ExtResource("7_trny1")]
 transform = Transform3D(-5.24536e-07, 0, -12, 0, 12, 0, 12, 0, -5.24536e-07, 11.8379, -0.755181, -49.76)
@@ -40,7 +40,7 @@ transform = Transform3D(-5.24536e-07, 0, -12, 0, 12, 0, 12, 0, -5.24536e-07, 24.
 transform = Transform3D(-5.24536e-07, 0, -12, 0, 12, 0, 12, 0, -5.24536e-07, 30.5576, -0.755181, -49.6671)
 
 [node name="Random_Ingredient2" parent="." instance=ExtResource("6_xj0r6")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -19.0964, -0.264744, -95.2662)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -19.0964, 7.33535, -109.222)
 
 [node name="Taxi2" parent="." instance=ExtResource("3_gd1gr")]
 transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 23.5896, 0.241543, -92.6523)

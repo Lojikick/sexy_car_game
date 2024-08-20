@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bfvnea0c840ed"]
+[gd_scene load_steps=54 format=3 uid="uid://bfvnea0c840ed"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://cavj4r6ldiddv" path="res://ui/pause_menu.tscn" id="1_nvsnp"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://b3f6c2pomiji6" path="res://modules/building/41_building_module.tscn" id="18_kx6sy"]
 [ext_resource type="PackedScene" uid="uid://c5i7mg055fn74" path="res://modules/john_normal_b.tscn" id="19_pus5v"]
 [ext_resource type="PackedScene" uid="uid://b5y6ub2qj0ww2" path="res://modules/building/42_building_module.tscn" id="19_vtmq0"]
+[ext_resource type="PackedScene" uid="uid://cde8knf4nrg38" path="res://modules/road_house.tscn" id="20_rl6yu"]
 [ext_resource type="PackedScene" uid="uid://dvnd2yj2l2erj" path="res://modules/building/43_building_module.tscn" id="20_yqstn"]
 [ext_resource type="Texture2D" uid="uid://bbj10gcowjshb" path="res://assets/skybox/skybox_skybox 2.png" id="21_3ht5n"]
 [ext_resource type="PackedScene" uid="uid://b7ra2uc5w8ojt" path="res://assets/effects/explosion.tscn" id="22_o4i75"]
@@ -95,7 +96,7 @@ offset_bottom = 146.972
 [node name="Level" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
 script = ExtResource("1_eefjj")
-modules = Array[PackedScene]([ExtResource("5_wagff"), ExtResource("6_0gqt5"), ExtResource("7_sh3c0"), ExtResource("8_x5npu"), ExtResource("9_bjo3e"), ExtResource("10_wg76l"), ExtResource("12_mbm5i"), ExtResource("13_0ndyb"), ExtResource("14_02wea"), ExtResource("15_x0bqe"), ExtResource("16_mjhtx"), ExtResource("17_q25bg"), ExtResource("18_877jb"), ExtResource("19_pus5v")])
+modules = Array[PackedScene]([ExtResource("5_wagff"), ExtResource("6_0gqt5"), ExtResource("7_sh3c0"), ExtResource("8_x5npu"), ExtResource("9_bjo3e"), ExtResource("10_wg76l"), ExtResource("12_mbm5i"), ExtResource("13_0ndyb"), ExtResource("14_02wea"), ExtResource("15_x0bqe"), ExtResource("16_mjhtx"), ExtResource("17_q25bg"), ExtResource("18_877jb"), ExtResource("19_pus5v"), ExtResource("20_rl6yu")])
 
 [node name="BuildingLevel" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
