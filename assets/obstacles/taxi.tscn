@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c67deg1e0baj"]
+[gd_scene load_steps=8 format=3 uid="uid://c67deg1e0baj"]
 
 [ext_resource type="PackedScene" uid="uid://b282sw7fv0708" path="res://scenes/imported models/taxi.tscn" id="1_c1rmt"]
+[ext_resource type="Animation" uid="uid://8hy8xh3f1q4n" path="res://animations/vibrate.res" id="2_mn2rp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1rqvy"]
 size = Vector3(0.692429, 1.21985, 1.71411)
@@ -10,6 +11,27 @@ size = Vector3(1.27673, 1.28247, 0.17041)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_66vmx"]
 size = Vector3(1, 5.74832, 2.71127)
+
+[sub_resource type="Animation" id="Animation_ngqvg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6sqc7"]
+_data = {
+"RESET": SubResource("Animation_ngqvg"),
+"vibrate": ExtResource("2_mn2rp")
+}
 
 [node name="Taxi" type="Node3D"]
 transform = Transform3D(-2.5, 0, -2.18557e-07, 0, 2.5, 0, 2.18557e-07, 0, -2.5, 0, 0, 0)
@@ -52,3 +74,9 @@ shape = SubResource("BoxShape3D_66vmx")
 
 [node name="taxi" parent="CharacterBody3D" instance=ExtResource("1_c1rmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47643, 0, 0.897388)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody3D/taxi"]
+libraries = {
+"": SubResource("AnimationLibrary_6sqc7")
+}
+autoplay = "vibrate"

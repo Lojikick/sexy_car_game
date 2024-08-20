@@ -1,12 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgtukf5fqf2va"]
+[gd_scene load_steps=7 format=3 uid="uid://cgtukf5fqf2va"]
 
 [ext_resource type="PackedScene" uid="uid://toncqk8um2f0" path="res://scenes/imported models/sedan.tscn" id="1_u2mgb"]
+[ext_resource type="Animation" uid="uid://8hy8xh3f1q4n" path="res://animations/vibrate.res" id="2_wnl2h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1rqvy"]
 size = Vector3(0.840454, 1.21985, 1.71411)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0naoy"]
 size = Vector3(1.27673, 1.28247, 0.17041)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_igejo"]
+_data = {
+"vibrate": ExtResource("2_wnl2h")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_66vmx"]
 size = Vector3(1, 4.44788, 2.40405)
@@ -15,7 +21,7 @@ size = Vector3(1, 4.44788, 2.40405)
 transform = Transform3D(-2.5, 0, -2.18557e-07, 0, 2.5, 0, 2.18557e-07, 0, -2.5, 0, 0, 0)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.460195, 0, 0)
+transform = Transform3D(0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, 0, 0, 1, -0.460195, 0, 0)
 
 [node name="Wheel Collider" type="Area3D" parent="CharacterBody3D" groups=["car"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00461817, 0.216101, -0.0262103)
@@ -47,7 +53,13 @@ transform = Transform3D(0.699707, 0, 0, 0, 0.84938, 0, 0, 0, 1, 0.0215192, -0.19
 shape = SubResource("BoxShape3D_0naoy")
 
 [node name="sedan" parent="CharacterBody3D" instance=ExtResource("1_u2mgb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.466756, 0, 0.674076)
+transform = Transform3D(0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, 0, 0, 1, 0.466756, 0, 0.674076)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody3D/sedan"]
+libraries = {
+"": SubResource("AnimationLibrary_igejo")
+}
+autoplay = "vibrate"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1.27171, 0, 0, 0, 0.234266, 0, 0, 0, 1, 0.497311, 0.727875, 0.658005)

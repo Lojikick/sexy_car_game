@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://diwqu1cvft320"]
+[gd_scene load_steps=43 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://cavj4r6ldiddv" path="res://ui/pause_menu.tscn" id="1_nvsnp"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://dvnd2yj2l2erj" path="res://modules/building/43_building_module.tscn" id="20_yqstn"]
 [ext_resource type="Texture2D" uid="uid://bbj10gcowjshb" path="res://assets/skybox/skybox_skybox 2.png" id="21_3ht5n"]
 [ext_resource type="PackedScene" uid="uid://b7ra2uc5w8ojt" path="res://assets/effects/explosion.tscn" id="22_o4i75"]
+[ext_resource type="Animation" uid="uid://njo5mab8yk2h" path="res://animations/vibrate2.res" id="32_nqf5j"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_y1tg0"]
 panorama = ExtResource("21_3ht5n")
@@ -53,6 +54,11 @@ size = Vector3(1.23047, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3pysw"]
 size = Vector3(1.49069, 1, 2.58582)
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s3t8m"]
+_data = {
+"vibrate2": ExtResource("32_nqf5j")
+}
+
 [sub_resource type="QuadMesh" id="QuadMesh_vgilf"]
 size = Vector2(2, 2)
 
@@ -62,45 +68,8 @@ shader = ExtResource("9_mk8c6")
 shader_parameter/shadow_color = Color(0, 0, 0, 1)
 shader_parameter/shadow_thickness = 2.0
 
-[sub_resource type="Animation" id="Animation_7bs4d"]
-resource_name = "vibrate"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshRoot:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0.0174533), Vector3(0, 0, -0.0174533), Vector3(0, 0, 0.0174533), Vector3(0, 0, -0.0174533), Vector3(0, 0, 0.0174533), Vector3(0, 0, -0.0174533)]
-}
-
-[sub_resource type="Animation" id="Animation_jodm1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshRoot:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0goh8"]
-_data = {
-"RESET": SubResource("Animation_jodm1"),
-"vibrate": SubResource("Animation_7bs4d")
-}
-
 [node name="main" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0175052)
 script = ExtResource("1_ytqgl")
 
 [node name="Death_Menu" parent="." instance=ExtResource("2_hdvao")]
@@ -140,7 +109,7 @@ transform = Transform3D(2.68187, 0, 0, 0, 2.03066, 0, 0, 0, 0.336716, 0, -0.2763
 mesh = SubResource("BoxMesh_gusxa")
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1.9, 0, 0, 0, 1.9, 0, 0, 0, 1.9, 0, 0.574896, 0)
+transform = Transform3D(1.89971, -0.0331595, 0, 0.0331595, 1.89971, 0, 0, 0, 1.9, 0, 0.574896, 0)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("4_m0aui")
@@ -168,12 +137,19 @@ transform = Transform3D(-0.996699, 0, 0.0811905, 0, 1, 0, -0.0811905, 0, -0.9966
 visible = false
 
 [node name="MeshRoot" type="Node3D" parent="Player"]
+transform = Transform3D(0.999848, 0.0174524, 0, -0.0174524, 0.999848, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="sedan" parent="Player/MeshRoot" instance=ExtResource("7_u6772")]
 transform = Transform3D(-1.18215, 0, 0.018697, 0, 1.1816, 0, -0.0221824, 0, -0.996403, -0.0115091, -0.881525, 0.00835109)
 
 [node name="gaming mouse backup" parent="Player/MeshRoot" instance=ExtResource("8_37yle")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.764046, 0.235408)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/MeshRoot"]
+libraries = {
+"": SubResource("AnimationLibrary_s3t8m")
+}
+autoplay = "vibrate2"
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.923358, 0.383941, 0, -0.383941, 0.923358, 0, 3.47649, 4.3534)
@@ -186,12 +162,6 @@ skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("ShaderMaterial_4ab1s")
 
 [node name="Timer" type="Timer" parent="Player"]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
-libraries = {
-"": SubResource("AnimationLibrary_0goh8")
-}
-autoplay = "vibrate"
 
 [connection signal="area_entered" from="level_barrier" to="Level" method="_on_level_barrier_area_entered"]
 [connection signal="area_entered" from="level_barrier" to="BuildingLevel" method="_on_level_barrier_area_entered"]
