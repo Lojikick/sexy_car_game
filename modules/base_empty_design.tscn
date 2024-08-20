@@ -1,12 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcbp035n642qs"]
+[gd_scene load_steps=3 format=3 uid="uid://dcbp035n642qs"]
 
 [ext_resource type="Script" path="res://scripts/module.gd" id="1_58lgy"]
 [ext_resource type="PackedScene" uid="uid://dpxxgdhfwgdyb" path="res://modules/old_levels/big_module_ref.tscn" id="2_psr1s"]
-[ext_resource type="PackedScene" uid="uid://v7vmurijugss" path="res://assets/ingredients/cheese_ingredient.tscn" id="3_3lwjs"]
-[ext_resource type="PackedScene" uid="uid://dxim4pla3r5q5" path="res://assets/ingredients/onion.tscn" id="4_x6ekk"]
-[ext_resource type="PackedScene" uid="uid://b5mt82tw6ff5s" path="res://assets/ingredients/pinapple.tscn" id="5_rn2dt"]
-[ext_resource type="PackedScene" uid="uid://cq4m5acfj55g4" path="res://assets/ingredients/tomato_ingredient.tscn" id="6_7a8gg"]
-[ext_resource type="PackedScene" uid="uid://c66g5gmlqxjqg" path="res://assets/ingredients/mushroom_ingredient.tscn" id="7_etswv"]
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -14,30 +9,3 @@ script = ExtResource("1_58lgy")
 
 [node name="Road" parent="." instance=ExtResource("2_psr1s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.501)
-
-[node name="Cheese" parent="." instance=ExtResource("3_3lwjs")]
-transform = Transform3D(-1.74846e-06, 0, -40, 0, 40, 0, 40, 0, -1.74846e-06, 19.0907, 2.12375, -36.9289)
-
-[node name="Onion" parent="." instance=ExtResource("4_x6ekk")]
-transform = Transform3D(-1.74846e-06, 0, -40, 0, 40, 0, 40, 0, -1.74846e-06, -21.2885, 0.241543, -40.3055)
-
-[node name="Pineapple" parent="." instance=ExtResource("5_rn2dt")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 19.2439, 0.241543, -63.0795)
-
-[node name="Tomato" parent="." instance=ExtResource("6_7a8gg")]
-transform = Transform3D(-1.74846e-06, 0, -40, 0, 40, 0, 40, 0, -1.74846e-06, 0.278317, 0.241543, -41.167)
-
-[node name="Tomato2" parent="." instance=ExtResource("6_7a8gg")]
-transform = Transform3D(-1.74846e-06, 0, -40, 0, 40, 0, 40, 0, -1.74846e-06, 0.378422, 0.241543, -28.7127)
-
-[node name="Pineapple2" parent="." instance=ExtResource("5_rn2dt")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 20.4979, 0.241543, -85.9621)
-
-[node name="Mushroom" parent="." instance=ExtResource("7_etswv")]
-transform = Transform3D(-1.74846e-06, 0, -40, 0, 40, 0, 40, 0, -1.74846e-06, -3.25166, 0.241543, -80.8006)
-
-[node name="Cheese2" parent="." instance=ExtResource("3_3lwjs")]
-transform = Transform3D(-1.74846e-06, 0, -40, 0, 40, 0, 40, 0, -1.74846e-06, 18.0837, 0.241543, -28.8249)
-
-[node name="Onion2" parent="." instance=ExtResource("4_x6ekk")]
-transform = Transform3D(-1.74846e-06, 0, -40, 0, 40, 0, 40, 0, -1.74846e-06, -20.2078, 0.241543, -29.8959)

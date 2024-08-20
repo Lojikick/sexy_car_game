@@ -1,9 +1,10 @@
-[gd_scene load_steps=42 format=3 uid="uid://diwqu1cvft320"]
+[gd_scene load_steps=43 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://cavj4r6ldiddv" path="res://ui/pause_menu.tscn" id="1_nvsnp"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ytqgl"]
 [ext_resource type="PackedScene" uid="uid://c2f2e0qjqyjkp" path="res://ui/death_menu.tscn" id="2_hdvao"]
+[ext_resource type="PackedScene" uid="uid://cvl648gpvqks6" path="res://menu/win_menu.tscn" id="2_lfhuu"]
 [ext_resource type="Script" path="res://scripts/car.gd" id="4_m0aui"]
 [ext_resource type="Script" path="res://scripts/BuildingLevel.gd" id="5_0atp4"]
 [ext_resource type="PackedScene" uid="uid://dkthp18q1rkrg" path="res://assets/3D-Car-With-Settingspanel-0eb08d38bd593a8f1314de22d646a95442247612/assets/3d_car_customizable/assets/car_model.glb" id="5_j5iir"]
@@ -71,6 +72,8 @@ shader_parameter/shadow_thickness = 2.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0175052)
 script = ExtResource("1_ytqgl")
 
+[node name="Win_menu" parent="." instance=ExtResource("2_lfhuu")]
+
 [node name="Death_Menu" parent="." instance=ExtResource("2_hdvao")]
 
 [node name="Menu" parent="." instance=ExtResource("1_nvsnp")]
@@ -136,7 +139,7 @@ transform = Transform3D(-0.996699, 0, 0.0811905, 0, 1, 0, -0.0811905, 0, -0.9966
 visible = false
 
 [node name="MeshRoot" type="Node3D" parent="Player"]
-transform = Transform3D(0.999848, 0.0174524, 0, -0.0174524, 0.999848, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.999951, 0.0099003, 0, -0.0099003, 0.999951, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player/MeshRoot"]
 libraries = {
