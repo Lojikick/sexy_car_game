@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://diwqu1cvft320"]
+[gd_scene load_steps=45 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://cavj4r6ldiddv" path="res://ui/pause_menu.tscn" id="1_nvsnp"]
@@ -31,7 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://bbj10gcowjshb" path="res://assets/skybox/skybox_skybox 2.png" id="21_3ht5n"]
 [ext_resource type="PackedScene" uid="uid://b7ra2uc5w8ojt" path="res://assets/effects/explosion.tscn" id="22_o4i75"]
 [ext_resource type="PackedScene" uid="uid://be2f7o65onmim" path="res://scenes/imported models/pizzacar.tscn" id="31_gt1yu"]
+[ext_resource type="PackedScene" uid="uid://vontjijs72lb" path="res://scenes/trauma_causer.tscn" id="32_jc07w"]
 [ext_resource type="Animation" uid="uid://njo5mab8yk2h" path="res://animations/vibrate2.res" id="32_nqf5j"]
+[ext_resource type="PackedScene" uid="uid://dpp7jdlv510c5" path="res://scenes/shakebalecamera.tscn" id="33_anvha"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_y1tg0"]
 panorama = ExtResource("21_3ht5n")
@@ -126,6 +128,10 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0224609, 0, -1.09633)
 shape = SubResource("BoxShape3D_331pq")
 
+[node name="trauma_causer" parent="Player/Death_Sensor" instance=ExtResource("32_jc07w")]
+transform = Transform3D(1, 1.86265e-09, 0, -1.86265e-09, 1, 0, 0, 0, 1, 0.0599184, 3.43273, 4.31476)
+trauma_amount = 1000.0
+
 [node name="RayCast3D" type="RayCast3D" parent="Player"]
 transform = Transform3D(12.592, -0.000532352, -0.00116677, -0.00615346, 0.00253579, -2.38139, 0.00682421, 0.984661, 0.00613224, -0.000974394, 0.322719, -0.618295)
 visible = false
@@ -150,17 +156,17 @@ autoplay = "vibrate2"
 [node name="PIZZACAR" parent="Player/MeshRoot" instance=ExtResource("31_gt1yu")]
 transform = Transform3D(-1.18236, 0, -8.71237e-08, 0, 1.1816, 0, 1.03365e-07, 0, -0.996578, -0.0115091, -0.881525, 0.00835109)
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
+[node name="Timer" type="Timer" parent="Player"]
+
+[node name="shakecamsensor" parent="Player" instance=ExtResource("33_anvha")]
 transform = Transform3D(1, 0, 0, 0, 0.923358, 0.383941, 0, -0.383941, 0.923358, 0, 3.47649, 4.3534)
 
-[node name="outline" type="MeshInstance3D" parent="Player/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0413912, -0.093626, -0.438589)
+[node name="outline" type="MeshInstance3D" parent="Player/shakecamsensor"]
+transform = Transform3D(0.526316, 9.31323e-10, 2.32831e-10, 0, 0.485978, 0.202074, 0, -0.202074, 0.485978, -0.0217848, 3.34236, 4.15918)
 visible = false
 mesh = SubResource("QuadMesh_vgilf")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("ShaderMaterial_4ab1s")
-
-[node name="Timer" type="Timer" parent="Player"]
 
 [connection signal="area_entered" from="level_barrier" to="Level" method="_on_level_barrier_area_entered"]
 [connection signal="area_entered" from="level_barrier" to="BuildingLevel" method="_on_level_barrier_area_entered"]

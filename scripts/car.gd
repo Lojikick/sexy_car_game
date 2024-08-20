@@ -110,6 +110,8 @@ func death():
 	building_level.speed = 0
 	timer.start()
 	explosion.explode()
+	$Death_Sensor/trauma_causer.cause_trauma()
+	
 
 	#game_manager.alive = false
 	#game_manager.pauseMenu()
