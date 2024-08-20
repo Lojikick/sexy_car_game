@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 15
+var SPEED = 15
 const JUMP_VELOCITY = 4.5
 
 var ingredients_collected = {
@@ -110,6 +110,7 @@ func death():
 	building_level.speed = 0
 	timer.start()
 	explosion.explode()
+	SPEED = 0
 	$Death_Sensor/trauma_causer.cause_trauma()
 	
 
