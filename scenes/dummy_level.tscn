@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bfvnea0c840ed"]
+[gd_scene load_steps=55 format=3 uid="uid://bfvnea0c840ed"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://cavj4r6ldiddv" path="res://ui/pause_menu.tscn" id="1_nvsnp"]
@@ -24,7 +24,6 @@
 [ext_resource type="Shader" path="res://shader/outline.gdshader" id="9_mk8c6"]
 [ext_resource type="PackedScene" uid="uid://celsyw0f8rjop" path="res://modules/big_module_a.tscn" id="10_wg76l"]
 [ext_resource type="PackedScene" uid="uid://bbh1uxxu6g2vt" path="res://modules/building/14_building_module.tscn" id="11_1fwqx"]
-[ext_resource type="PackedScene" uid="uid://dkrnh8y66ba4o" path="res://modules/mason_demo.tscn" id="12_semeo"]
 [ext_resource type="PackedScene" uid="uid://4uuag7goxwkv" path="res://modules/gaming_nation_a.tscn" id="12_mbm5i"]
 [ext_resource type="PackedScene" uid="uid://15iahqbcys4x" path="res://modules/big_level_design_a.tscn" id="13_0ndyb"]
 [ext_resource type="PackedScene" uid="uid://kih11plsau4v" path="res://modules/gamer_nation_b.tscn" id="14_02wea"]

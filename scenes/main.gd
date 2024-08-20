@@ -82,7 +82,10 @@ func _process(delta: float) -> void:
 		pauseMenu()
 		
 func get_ing_diff(ingr_name: String):
-	return abs(player.ingredients_collected[ingr_name] - ingredients_left[ingr_name])
+	if (ingredients_left[ingr_name] == 0 or player.ingredients_collected[ingr_name] >= ingredients_left[ingr_name]):
+		return 0
+	else:
+		return abs(player.ingredients_collected[ingr_name] - ingredients_left[ingr_name])
 func pauseMenu():
 	print("Current player status:", alive)
 	if paused:
