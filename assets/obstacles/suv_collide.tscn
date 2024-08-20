@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bilwvaxur4swm"]
+[gd_scene load_steps=7 format=3 uid="uid://bilwvaxur4swm"]
 
 [ext_resource type="PackedScene" uid="uid://gh87h3m6kicp" path="res://scenes/imported models/suv.tscn" id="1_aplj6"]
+[ext_resource type="Animation" uid="uid://8hy8xh3f1q4n" path="res://animations/vibrate.res" id="2_e2vug"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1rqvy"]
 size = Vector3(0.840454, 1.21985, 1.71411)
@@ -11,11 +12,16 @@ size = Vector3(1.27673, 1.28247, 0.17041)
 [sub_resource type="BoxShape3D" id="BoxShape3D_66vmx"]
 size = Vector3(1, 4.97882, 2.75522)
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kb1so"]
+_data = {
+"vibrate": ExtResource("2_e2vug")
+}
+
 [node name="Suv" type="Node3D"]
 transform = Transform3D(-2.5, 0, -2.18557e-07, 0, 2.5, 0, 2.18557e-07, 0, -2.5, 0, 0, 0)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.460195, 0, 0)
+transform = Transform3D(0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, 0, 0, 1, -0.460195, 0, 0)
 
 [node name="Wheel Collider2" type="Area3D" parent="CharacterBody3D" groups=["car"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0227993, 0.209565, 1.49919)
@@ -51,4 +57,10 @@ transform = Transform3D(1.27171, 0, 0, 0, 0.234266, 0, 2.72848e-12, 0, 1, 0.4973
 shape = SubResource("BoxShape3D_66vmx")
 
 [node name="suv" parent="CharacterBody3D" instance=ExtResource("1_aplj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475534, 0, 0.709853)
+transform = Transform3D(0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, 0, 0, 1, 0.475534, 0, 0.709853)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody3D/suv"]
+libraries = {
+"": SubResource("AnimationLibrary_kb1so")
+}
+autoplay = "vibrate"

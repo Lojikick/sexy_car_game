@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqvd8j2ns5pxr"]
+[gd_scene load_steps=11 format=3 uid="uid://bqvd8j2ns5pxr"]
 
 [ext_resource type="Shader" path="res://shader/emissive.gdshader" id="1_ts656"]
 
@@ -23,6 +23,27 @@ shader_parameter/use_ramp = false
 shader_parameter/use_borders = false
 shader_parameter/border_width = 0.01
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_qg5td"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3cvwj"]
+render_priority = 0
+shader = ExtResource("1_ts656")
+shader_parameter/albedo = Color(0.880907, 0.885382, 0.860297, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_hc4rb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ssxfs"]
@@ -30,7 +51,7 @@ shader_parameter/border_width = 0.01
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e7g74"]
 render_priority = 0
 shader = ExtResource("1_ts656")
-shader_parameter/albedo = Color(0.560784, 0.560784, 0.560784, 0.560784)
+shader_parameter/albedo = Color(0.447059, 0.447059, 0.447059, 0.447059)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
 shader_parameter/wrap = 0.0
@@ -52,7 +73,7 @@ points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cbqlm"]
 render_priority = 0
 shader = ExtResource("1_ts656")
-shader_parameter/albedo = Color(0.560784, 0.560784, 0.560784, 0.560784)
+shader_parameter/albedo = Color(0.447059, 0.447059, 0.447059, 0.447059)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
 shader_parameter/wrap = 0.0
@@ -86,6 +107,26 @@ transform = Transform3D(0.736568, 0.0010472, 0, -0.00162245, 2.10344, 0, 0, 0, 5
 transform = Transform3D(31.2604, 0, 0, 0, 0.202728, 0, 0, 0, 35.4396, 0.101489, -1.14943, 0.284208)
 mesh = SubResource("BoxMesh_jb427")
 surface_material_override/0 = SubResource("ShaderMaterial_xmvrd")
+
+[node name="roadpaint" type="MeshInstance3D" parent="StaticBody3D/Module/Floor/MeshInstance3D"]
+transform = Transform3D(0.01, -4.44983e-14, 0, 4.44089e-16, 1.002, 0, 0, 0, 0.1, 0.19, 0.6, -0.4)
+mesh = SubResource("PlaneMesh_qg5td")
+surface_material_override/0 = SubResource("ShaderMaterial_3cvwj")
+
+[node name="roadpaint2" type="MeshInstance3D" parent="StaticBody3D/Module/Floor/MeshInstance3D"]
+transform = Transform3D(0.01, -4.44977e-14, 0, 4.44089e-16, 1.002, 0, 0, 0, 0.1, 0.19, 0.6, 0.4)
+mesh = SubResource("PlaneMesh_qg5td")
+surface_material_override/0 = SubResource("ShaderMaterial_3cvwj")
+
+[node name="roadpaint3" type="MeshInstance3D" parent="StaticBody3D/Module/Floor/MeshInstance3D"]
+transform = Transform3D(0.01, -4.44974e-14, 0, 4.44089e-16, 1.002, 0, 0, 0, 0.1, -0.19, 0.6, 0.4)
+mesh = SubResource("PlaneMesh_qg5td")
+surface_material_override/0 = SubResource("ShaderMaterial_3cvwj")
+
+[node name="roadpaint4" type="MeshInstance3D" parent="StaticBody3D/Module/Floor/MeshInstance3D"]
+transform = Transform3D(0.01, -4.44974e-14, 0, 4.44089e-16, 1.002, 0, 0, 0, 0.1, -0.19, 0.6, -0.4)
+mesh = SubResource("PlaneMesh_qg5td")
+surface_material_override/0 = SubResource("ShaderMaterial_3cvwj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Module/Floor"]
 transform = Transform3D(0.289, 0, 0, 0, 0.203, 0, 0, 0, 0.297, 0, -0.982486, 0.713681)
