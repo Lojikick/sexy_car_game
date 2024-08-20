@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbauwiy7tojwc"]
+
+[ext_resource type="PackedScene" uid="uid://dhyg3s5yi57o2" path="res://assets/kenny_food_assets/cheese-cut.glb" id="1_601ll"]
+[ext_resource type="Shader" path="res://shader/emissive.gdshader" id="2_8xbbq"]
+[ext_resource type="Texture2D" uid="uid://bibtsc314v7n7" path="res://assets/kenny_food_assets/Textures/colormap.png" id="3_onmq0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xuw81"]
+render_priority = 0
+shader = ExtResource("2_8xbbq")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_onmq0")
+
+[node name="cheese-cut2" instance=ExtResource("1_601ll")]
+
+[node name="cheese-cut" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_xuw81")
