@@ -166,7 +166,8 @@ func _on_deatth_sensor_area_entered(area: Area3D) -> void:
 		elif area.is_in_group("mushroom"):
 			print("mushroom")
 			ingredients_collected["mushrooms"] += 1
-		#death()
+		var module_to_remove = area.get_parent()
+		module_to_remove.queue_free()
 	print(ingredients_collected)
 
 func _on_timer_timeout() -> void:
