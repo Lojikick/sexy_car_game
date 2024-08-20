@@ -47,7 +47,7 @@ func _ready() -> void:
 	
 	str_result = str(ingredients_left["pineapple"]) + "x"
 	vegtable_ui.pineapple_label.text = str_result
-	print("Initialized the ingredients", ingredients_left)
+	
 	Engine.time_scale = 1
 	pass # Replace with function body.
 
@@ -82,9 +82,14 @@ func _process(delta: float) -> void:
 		pauseMenu()
 		
 func get_ing_diff(ingr_name: String):
-	return abs(player.ingredients_collected[ingr_name] - ingredients_left[ingr_name])
+	print(player.ingredients_collected[ingr_name])
+	print(ingredients_left[ingr_name])
+	if ingredients_left[ingr_name] == 0 or player.ingredients_collected[ingr_name] >= ingredients_left[ingr_name]:
+		return 0
+	else:
+		return abs(player.ingredients_collected[ingr_name] - ingredients_left[ingr_name])
 func pauseMenu():
-	print("Current player status:", alive)
+	
 	if paused:
 		if alive:
 			pause_menu.hide_menu()

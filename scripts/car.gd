@@ -163,41 +163,41 @@ func _on_deatth_sensor_area_entered(area: Area3D) -> void:
 	if area.is_in_group("cone"):
 		death()
 	if area.is_in_group("ingredient"):
-		print("hit an ingredient")
+		
 		if area.is_in_group("tomato"):
-			print("tomato")
+
 			ingredients_collected["tomato"] += 1
 			var num_left = game_manager.get_ing_diff("tomato")
 			var str_result = str(num_left) + "x"
 			vegtable_ui.tomato_label.text = str_result
 		elif area.is_in_group("onion"):
-			print("onion")
+			
 			ingredients_collected["onion"] += 1
 			var num_left = game_manager.get_ing_diff("onion")
 			var str_result = str(num_left) + "x"
 			vegtable_ui.onion_label.text = str_result
 		elif area.is_in_group("pineapple"):
-			print("pineapple")
+			
 			ingredients_collected["pineapple"] += 1
 			var num_left = game_manager.get_ing_diff("pineapple")
 			var str_result = str(num_left) + "x"
 			vegtable_ui.pineapple_label.text = str_result
 		elif area.is_in_group("cheese"):
-			print("cheese")
+			
 			ingredients_collected["cheese"] += 1
 			var num_left = game_manager.get_ing_diff("cheese")
 			var str_result = str(num_left) + "x"
 			vegtable_ui.cheese_label.text = str_result
 			
 		elif area.is_in_group("mushroom"):
-			print("mushroom")
+			
 			ingredients_collected["mushrooms"] += 1
 			var num_left = game_manager.get_ing_diff("mushrooms")
 			var str_result = str(num_left) + "x"
 			vegtable_ui.mushroom_label.text = str_result
 		var module_to_remove = area.get_parent()
 		module_to_remove.queue_free()
-	print(ingredients_collected)
+	
 
 func _on_timer_timeout() -> void:
 	

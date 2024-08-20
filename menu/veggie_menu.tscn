@@ -230,6 +230,7 @@ text = "3x
 
 [node name="Veggies" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 176.0
 offset_top = 23.0
 offset_right = 216.0
