@@ -31,6 +31,12 @@ player=""
 module=""
 car=""
 building_module=""
+ingredient=""
+onion=""
+pineapple=""
+mushroom=""
+cheese=""
+tomato=""
 
 [input]
 

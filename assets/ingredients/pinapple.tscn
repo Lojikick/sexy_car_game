@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5mt82tw6ff5s"]
+
+[ext_resource type="PackedScene" uid="uid://cwhy0ctpv3djf" path="res://assets/kenny_food_assets/pineapple.glb" id="1_synsy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5217j"]
+radius = 0.176232
+
+[node name="Pineapple" type="Node3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="." groups=["ingredient", "pineapple"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0362984, 0.102494, 0.00792283)
+shape = SubResource("SphereShape3D_5217j")
+
+[node name="pineapple2" parent="Area3D" instance=ExtResource("1_synsy")]
+transform = Transform3D(0.524216, -0.100607, 0, 0.100607, 0.524216, 0, 0, 0, 0.533783, 0.0665108, -0.0174291, 0)
