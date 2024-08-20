@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://chpt64aabip7y"]
+
+[ext_resource type="Script" path="res://menu/win_menu.gd" id="1_7fcqp"]
+[ext_resource type="Texture2D" uid="uid://50k1serb616u" path="res://assets/UI Elements/neew gaame.png" id="2_5r2mp"]
+[ext_resource type="Texture2D" uid="uid://cl0i58b3yycat" path="res://assets/UI Elements/queet.png" id="3_81dap"]
+[ext_resource type="Texture2D" uid="uid://bpdixnq0rbg4i" path="res://assets/UI Elements/delivery complete!!.png" id="4_qgl5s"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -434.0
+offset_top = -70.0
+offset_right = -434.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.556281, 0.619517)
+script = ExtResource("1_7fcqp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 294.815
+offset_top = 117.834
+offset_right = 714.815
+offset_bottom = 245.834
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.08, 2.24)
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_5r2mp")
+flat = true
+icon_alignment = 1
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_81dap")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 406.27
+offset_top = -227.597
+offset_right = 1069.27
+offset_bottom = 95.4033
+grow_horizontal = 2
+texture = ExtResource("4_qgl5s")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

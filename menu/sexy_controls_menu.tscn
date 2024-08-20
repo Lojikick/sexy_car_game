@@ -1,0 +1,141 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxfpevft2kpgj"]
+
+[ext_resource type="Script" path="res://menu/credits_menu.gd" id="1_31gyf"]
+[ext_resource type="FontFile" uid="uid://c8eituf7jqtb7" path="res://menu/ui_assets/DeliciousHandrawn-Regular.ttf" id="2_pq65q"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -528.0
+offset_top = -541.0
+offset_right = 1439.0
+offset_bottom = 1255.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.269093, 0.21882)
+script = ExtResource("1_31gyf")
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -623.03
+offset_top = -418.154
+offset_right = -583.03
+offset_bottom = -378.154
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.808543, 0.833857)
+
+[node name="Label" type="Label" parent="Control2"]
+layout_mode = 2
+offset_left = 1277.73
+offset_top = 1128.99
+offset_right = 3338.73
+offset_bottom = 1608.99
+theme_override_fonts/font = ExtResource("2_pq65q")
+theme_override_font_sizes/font_size = 400
+text = "CREDITS"
+
+[node name="Label4" type="Label" parent="Control2"]
+layout_direction = 2
+offset_left = 634.269
+offset_top = 1649.63
+offset_right = 4069.27
+offset_bottom = 1925.63
+scale = Vector2(0.722342, 0.810343)
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_pq65q")
+theme_override_font_sizes/font_size = 230
+text = "Avik Samanta : Programming, Game Design"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 943.5
+offset_top = 858.0
+offset_right = 983.5
+offset_bottom = 898.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.746811, 0.752964)
+
+[node name="Back" type="Button" parent="Control2/Control"]
+layout_mode = 0
+offset_left = 761.339
+offset_top = 3550.54
+offset_right = 1774.34
+offset_bottom = 4038.54
+scale = Vector2(1.0142, 0.9213)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_pq65q")
+theme_override_font_sizes/font_size = 400
+text = "Back
+"
+
+[node name="Label6" type="Label" parent="Control2/Control"]
+layout_direction = 2
+offset_left = -487.655
+offset_top = 1954.31
+offset_right = 2947.34
+offset_bottom = 2230.31
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_pq65q")
+theme_override_font_sizes/font_size = 230
+text = "Mason Hiskey : Audio, Music, and Programming"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Control2/Control/Label6"]
+layout_direction = 2
+offset_left = 104.498
+offset_top = 1086.4
+offset_right = 3598.5
+offset_bottom = 1362.4
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_pq65q")
+theme_override_font_sizes/font_size = 175
+text = "This project utlizes assets from https://kenney.nl/assets"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Control2/Control"]
+layout_direction = 2
+offset_left = -482.679
+offset_top = 1432.35
+offset_right = 2952.32
+offset_bottom = 1708.35
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_pq65q")
+theme_override_font_sizes/font_size = 230
+text = "Lyn Grimes : Modeling and Animation"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Control2/Control/Label5"]
+layout_direction = 2
+offset_left = -49.7607
+offset_top = 1019.64
+offset_right = 3385.24
+offset_bottom = 1295.64
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_pq65q")
+theme_override_font_sizes/font_size = 230
+text = "Nassib Chaya : Game Design"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Control2/Control/Back" to="." method="_on_back_pressed"]

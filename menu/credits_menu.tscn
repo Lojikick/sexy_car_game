@@ -1,0 +1,213 @@
+[gd_scene load_steps=7 format=3 uid="uid://o4ncse6wle7w"]
+
+[ext_resource type="Script" path="res://menu/controlls_menu.gd" id="1_0l6i0"]
+[ext_resource type="FontFile" uid="uid://c8eituf7jqtb7" path="res://menu/ui_assets/DeliciousHandrawn-Regular.ttf" id="2_i1su1"]
+[ext_resource type="Texture2D" uid="uid://cleg7ms6n0hjy" path="res://menu/ui_photos/a_tile.png" id="3_4oi0r"]
+[ext_resource type="Texture2D" uid="uid://cx27n72v4vfam" path="res://menu/ui_photos/d_tile.png" id="4_fn1ml"]
+[ext_resource type="Texture2D" uid="uid://d14nthk0qokuu" path="res://menu/ui_photos/s_tile.png" id="5_t6ik6"]
+[ext_resource type="Texture2D" uid="uid://dfnh8p0jjvwp" path="res://menu/ui_photos/Screenshot 2024-08-20 055012.png" id="6_0lr6s"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -351.0
+offset_top = -245.0
+offset_right = 1616.0
+offset_bottom = 1551.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.269093, 0.21882)
+script = ExtResource("1_0l6i0")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -663.908
+offset_top = -1455.54
+offset_right = -623.908
+offset_bottom = -1415.54
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.746811, 0.752964)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 241.552
+offset_top = 342.747
+offset_right = 2302.55
+offset_bottom = 582.747
+theme_override_fonts/font = ExtResource("2_i1su1")
+theme_override_font_sizes/font_size = 200
+text = "Squeaky Vicky needs your help!"
+
+[node name="Label2" type="Label" parent="Control"]
+layout_direction = 2
+layout_mode = 2
+offset_left = -453.375
+offset_top = 717.485
+offset_right = 3186.63
+offset_bottom = 867.485
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_i1su1")
+theme_override_font_sizes/font_size = 125
+text = "There's a pizza delivery on the line, but Chef Vicky forot to add the customer's toppings,"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control"]
+layout_direction = 2
+layout_mode = 0
+offset_left = -341.889
+offset_top = 945.983
+offset_right = 3093.11
+offset_bottom = 1095.98
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_i1su1")
+theme_override_font_sizes/font_size = 125
+text = "Hop into Vicky's Magic Mouse Car to make a speedy delivery!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control"]
+layout_direction = 2
+layout_mode = 0
+offset_left = -419.929
+offset_top = 1197.33
+offset_right = 3015.07
+offset_bottom = 1437.33
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_i1su1")
+theme_override_font_sizes/font_size = 230
+text = "CONTROLS:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -293.579
+offset_top = 1604.06
+offset_right = 1754.42
+offset_bottom = 3652.06
+scale = Vector2(0.254286, 0.275846)
+texture = ExtResource("3_4oi0r")
+
+[node name="DTile" type="Sprite2D" parent="Control"]
+position = Vector2(1285.8, 1905.68)
+scale = Vector2(0.250517, 0.27708)
+texture = ExtResource("4_fn1ml")
+
+[node name="STile" type="Sprite2D" parent="Control"]
+position = Vector2(2586.47, 1905.68)
+scale = Vector2(0.260818, 0.277445)
+texture = ExtResource("5_t6ik6")
+
+[node name="Label5" type="Label" parent="Control"]
+layout_direction = 2
+layout_mode = 0
+offset_left = -431.078
+offset_top = 2170.73
+offset_right = 3003.92
+offset_bottom = 2446.73
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_i1su1")
+theme_override_font_sizes/font_size = 140
+text = "Move Car Right"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Screenshot2024-08-20055012" type="Sprite2D" parent="Control"]
+position = Vector2(1313.68, 3022.51)
+scale = Vector2(6.87521, 6.78482)
+texture = ExtResource("6_0lr6s")
+
+[node name="Label6" type="Label" parent="Control"]
+layout_direction = 2
+layout_mode = 0
+offset_left = -1739.18
+offset_top = 2161.59
+offset_right = 1695.82
+offset_bottom = 2437.59
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_i1su1")
+theme_override_font_sizes/font_size = 140
+text = "Move Car Left"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Label6"]
+layout_direction = 2
+layout_mode = 0
+offset_left = 2597.61
+offset_top = 22.8498
+offset_right = 6032.61
+offset_bottom = 298.85
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_i1su1")
+theme_override_font_sizes/font_size = 140
+text = "Shrink Car!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Label6/Label4"]
+layout_direction = 2
+layout_mode = 0
+offset_left = -1296.95
+offset_top = 283.338
+offset_right = 2138.05
+offset_bottom = 559.338
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_i1su1")
+theme_override_font_sizes/font_size = 120
+text = "Shrink your car to dodge traffic and obstacles!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Control/Label6/Label4"]
+layout_direction = 2
+layout_mode = 0
+offset_left = -1579.97
+offset_top = 1117.26
+offset_right = 2496.03
+offset_bottom = 1393.26
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_i1su1")
+theme_override_font_sizes/font_size = 140
+text = "The above bar tracks the customer's toppings, collect them all to complete your delivery!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1856.08
+offset_top = 3586.96
+offset_right = 2869.08
+offset_bottom = 4074.96
+scale = Vector2(1.02076, 0.999244)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_i1su1")
+theme_override_font_sizes/font_size = 400
+text = "Play!"
+
+[node name="Credits" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -482.679
+offset_top = 3635.51
+offset_right = 530.321
+offset_bottom = 4123.51
+scale = Vector2(1.0142, 0.9213)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_i1su1")
+theme_override_font_sizes/font_size = 400
+text = "Credits"
+
+[connection signal="pressed" from="Control/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/Credits" to="." method="_on_credits_pressed"]
