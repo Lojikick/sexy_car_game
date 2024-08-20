@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpxxgdhfwgdyb"]
+[gd_scene load_steps=4 format=3 uid="uid://dpxxgdhfwgdyb"]
 
 [ext_resource type="Script" path="res://scripts/module.gd" id="1_e46e6"]
 [ext_resource type="PackedScene" uid="uid://bqvd8j2ns5pxr" path="res://modules/old_levels/ref_module.tscn" id="2_b0kdn"]
-[ext_resource type="PackedScene" uid="uid://c66g5gmlqxjqg" path="res://assets/ingredients/mushroom_ingredient.tscn" id="3_3x3gk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p5cny"]
 size = Vector3(1.0546, 1, 1)
@@ -28,6 +27,3 @@ transform = Transform3D(2.88953, 0, 0, 0, 1, 0, 0, 0, 2.25685, 0, 0, -51.436)
 
 [node name="Ref_Module4" parent="." instance=ExtResource("2_b0kdn")]
 transform = Transform3D(2.88953, 0, 0, 0, 1, 0, 0, 0, 2.25685, 0, 0, -81.91)
-
-[node name="Mushroom" parent="." instance=ExtResource("3_3x3gk")]
-transform = Transform3D(-1.74846e-06, 0, -40, 0, 40, 0, 40, 0, -1.74846e-06, -1.83069, 0.241543, -40.5616)
