@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfmqgh1wwda2j"]
+
+[ext_resource type="Script" path="res://scripts/mouse_radio.gd" id="1_758jb"]
+[ext_resource type="AudioStream" uid="uid://cx0jlfkj4a58o" path="res://assets/audio/sexy song big.wav" id="2_oc2mb"]
+[ext_resource type="AudioStream" uid="uid://c67kif112ssm0" path="res://assets/audio/sexy song small.wav" id="3_asg2q"]
+
+[node name="MouseRadio" type="Node"]
+script = ExtResource("1_758jb")
+
+[node name="song_big" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_oc2mb")
+volume_db = -7.0
+autoplay = true
+
+[node name="song_small" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_asg2q")
+volume_db = -80.0
+autoplay = true
