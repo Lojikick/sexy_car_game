@@ -26,6 +26,11 @@ layout_mode = 2
 layout_mode = 2
 text = "New Game"
 
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Play"]
+layout_mode = 0
+offset_right = 93.0
+offset_bottom = 40.0
+
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit

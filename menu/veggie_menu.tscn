@@ -1,0 +1,302 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8opht5ktw6rh"]
+
+[ext_resource type="Script" path="res://menu/death_menu.gd" id="1_f4dtg"]
+[ext_resource type="Texture2D" uid="uid://dgl2vvhj0n5us" path="res://menu/ui_photos/cheese-wedge.png" id="2_fwnp7"]
+[ext_resource type="FontFile" uid="uid://c8eituf7jqtb7" path="res://menu/ui_assets/DeliciousHandrawn-Regular.ttf" id="3_whwg6"]
+[ext_resource type="Texture2D" uid="uid://dp3v5ebva4f3n" path="res://menu/ui_photos/tomato.png" id="4_62s8m"]
+[ext_resource type="Texture2D" uid="uid://bng6nihbm3i3d" path="res://menu/ui_photos/bulb.png" id="5_bii2r"]
+[ext_resource type="Texture2D" uid="uid://b5qmnyjek20f8" path="res://menu/ui_photos/sliced-mushroom.png" id="6_lcxa3"]
+[ext_resource type="Texture2D" uid="uid://ce8q4lphx06ec" path="res://menu/ui_photos/pineapple.png" id="7_2uqmm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljtjr"]
+bg_color = Color(0.850211, 0.352411, 0.278941, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.223103, 0.223103, 0.223103, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7nu0"]
+bg_color = Color(1, 1, 1, 1)
+border_width_top = 16
+border_width_bottom = 16
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53fv8"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f4dtg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 12.0
+offset_right = 1099.0
+offset_bottom = 99.0
+scale = Vector2(0.65, 0.642)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ljtjr")
+
+[node name="Cheese_Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 32.3077
+offset_top = 10.9034
+offset_right = 96.3077
+offset_bottom = 75.9034
+theme_override_styles/panel = SubResource("StyleBoxFlat_i7nu0")
+
+[node name="Avatar" type="TextureRect" parent="Panel/Cheese_Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -23.5
+offset_right = 27.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fwnp7")
+expand_mode = 5
+
+[node name="Cheese_Label" type="Label" parent="Panel/Cheese_Panel"]
+layout_mode = 0
+offset_left = 72.3077
+offset_top = -12.4611
+offset_right = 149.308
+offset_bottom = 77.5389
+theme_override_fonts/font = ExtResource("3_whwg6")
+theme_override_font_sizes/font_size = 60
+text = "3x
+"
+
+[node name="Tomato_Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 175.385
+offset_top = 10.9034
+offset_right = 239.385
+offset_bottom = 75.9034
+theme_override_styles/panel = SubResource("StyleBoxFlat_i7nu0")
+
+[node name="Avatar" type="TextureRect" parent="Panel/Tomato_Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.3846
+offset_top = -26.2695
+offset_right = 26.6154
+offset_bottom = 27.7305
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_62s8m")
+expand_mode = 5
+
+[node name="Tomato_Label" type="Label" parent="Panel/Tomato_Panel"]
+layout_mode = 0
+offset_left = 72.3077
+offset_top = -12.4611
+offset_right = 149.308
+offset_bottom = 77.5389
+theme_override_fonts/font = ExtResource("3_whwg6")
+theme_override_font_sizes/font_size = 60
+text = "3x
+"
+
+[node name="Onion_Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 315.385
+offset_top = 10.9034
+offset_right = 379.385
+offset_bottom = 75.9034
+theme_override_styles/panel = SubResource("StyleBoxFlat_i7nu0")
+
+[node name="Avatar" type="TextureRect" parent="Panel/Onion_Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -23.5
+offset_right = 27.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_bii2r")
+expand_mode = 5
+
+[node name="Onion_Label" type="Label" parent="Panel/Onion_Panel"]
+layout_mode = 0
+offset_left = 72.3077
+offset_top = -12.4611
+offset_right = 149.308
+offset_bottom = 77.5389
+theme_override_fonts/font = ExtResource("3_whwg6")
+theme_override_font_sizes/font_size = 60
+text = "3x
+"
+
+[node name="Mushroom_Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 450.769
+offset_top = 10.9034
+offset_right = 514.769
+offset_bottom = 75.9034
+theme_override_styles/panel = SubResource("StyleBoxFlat_i7nu0")
+
+[node name="Avatar" type="TextureRect" parent="Panel/Mushroom_Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -23.5
+offset_right = 27.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_lcxa3")
+expand_mode = 5
+
+[node name="Mushroom_Label" type="Label" parent="Panel/Mushroom_Panel"]
+layout_mode = 0
+offset_left = 72.3077
+offset_top = -12.4611
+offset_right = 149.308
+offset_bottom = 77.5389
+theme_override_fonts/font = ExtResource("3_whwg6")
+theme_override_font_sizes/font_size = 60
+text = "3x
+"
+
+[node name="Pineapple_Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 586.154
+offset_top = 10.9034
+offset_right = 650.154
+offset_bottom = 75.9034
+theme_override_styles/panel = SubResource("StyleBoxFlat_i7nu0")
+
+[node name="Avatar" type="TextureRect" parent="Panel/Pineapple_Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -23.5
+offset_right = 27.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_2uqmm")
+expand_mode = 5
+
+[node name="Pineapple_Label" type="Label" parent="Panel/Pineapple_Panel"]
+layout_mode = 0
+offset_left = 72.3077
+offset_top = -12.4611
+offset_right = 149.308
+offset_bottom = 77.5389
+theme_override_fonts/font = ExtResource("3_whwg6")
+theme_override_font_sizes/font_size = 60
+text = "3x
+"
+
+[node name="Veggies" type="Panel" parent="."]
+visible = false
+offset_left = 176.0
+offset_top = 23.0
+offset_right = 216.0
+offset_bottom = 77.0
+scale = Vector2(21.3012, 1.75105)
+
+[node name="Panel" type="Panel" parent="Veggies"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 3.95414
+offset_top = -19.2386
+offset_right = 43.9541
+offset_bottom = 20.7614
+grow_vertical = 2
+scale = Vector2(0.0802005, 0.943685)
+theme_override_styles/panel = SubResource("StyleBoxFlat_53fv8")
+
+[node name="Panel2" type="Panel" parent="Veggies"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 11.1646
+offset_top = -19.2386
+offset_right = 51.1646
+offset_bottom = 20.7614
+grow_vertical = 2
+scale = Vector2(0.0802005, 0.943685)
+theme_override_styles/panel = SubResource("StyleBoxFlat_53fv8")
+
+[node name="Panel3" type="Panel" parent="Veggies"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 18.4914
+offset_top = -19.2386
+offset_right = 58.4914
+offset_bottom = 20.7614
+grow_vertical = 2
+scale = Vector2(0.0802005, 0.943685)
+theme_override_styles/panel = SubResource("StyleBoxFlat_53fv8")
+
+[node name="Panel4" type="Panel" parent="Veggies"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.4693
+offset_top = -20.0
+offset_right = 65.4693
+offset_bottom = 20.0
+grow_vertical = 2
+scale = Vector2(0.0802005, 0.943685)
+theme_override_styles/panel = SubResource("StyleBoxFlat_53fv8")
+
+[node name="Panel5" type="Panel" parent="Veggies"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 32.1564
+offset_top = -19.2386
+offset_right = 72.1564
+offset_bottom = 20.7614
+grow_vertical = 2
+scale = Vector2(0.0802005, 0.943685)
+theme_override_styles/panel = SubResource("StyleBoxFlat_53fv8")

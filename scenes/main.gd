@@ -4,6 +4,7 @@ extends Node3D
 @onready var death_menu = $Death_Menu
 @onready var win_menu = $Win_menu
 @onready var player: CharacterBody3D = $Player
+@onready var vegtable_ui: Control = $Vegtable_Ui
 
 var rng = RandomNumberGenerator.new()
 var paused = false
@@ -13,7 +14,7 @@ var won = false
 var ingredients_left = {
 	"tomato": 0,
 	"mushrooms": 0,
-	"cheese": 0,
+	"cheese": 3,
 	"onion": 0,
 	"pineapple":0,
 }
@@ -30,6 +31,22 @@ func _ready() -> void:
 	ingredients_left["onion"] = rng.randi_range(0, 1)
 	ingredients_left["pineapple"] = rng.randi_range(0, 1)
 	
+	
+	#CHEESU#
+	var str_result = str(ingredients_left["cheese"]) + "x"
+	vegtable_ui.cheese_label.text = str_result
+	#TOMATO#
+	str_result = str(ingredients_left["tomato"]) + "x"
+	vegtable_ui.tomato_label.text = str_result
+	#ONION#
+	str_result = str(ingredients_left["onion"]) + "x"
+	vegtable_ui.onion_label.text = str_result
+	#MUSHROOM#
+	str_result = str(ingredients_left["mushrooms"]) + "x"
+	vegtable_ui.mushroom_label.text = str_result
+	
+	str_result = str(ingredients_left["pineapple"]) + "x"
+	vegtable_ui.pineapple_label.text = str_result
 	print("Initialized the ingredients", ingredients_left)
 	Engine.time_scale = 1
 	pass # Replace with function body.
@@ -63,7 +80,9 @@ func _process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("escape"):
 		pauseMenu()
-
+		
+func get_ing_diff(ingr_name: String):
+	return abs(player.ingredients_collected[ingr_name] - ingredients_left[ingr_name])
 func pauseMenu():
 	print("Current player status:", alive)
 	if paused:

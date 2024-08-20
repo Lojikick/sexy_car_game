@@ -13,6 +13,7 @@ var last_spawn_position = 0
 var total_movement = 0.0
 var physics_fps = 60  # Adjust this to match your physics FPS setting
 
+
 func _ready():
 	for n in amnt:
 		spawnModule(n * offset)
@@ -56,6 +57,7 @@ func _on_level_barrier_area_entered(area: Area3D) -> void:
 			print("Warning: Could not find valid module to remove")
 	
 
+	
 # Add this to your Module scene script
 #class_name Module extends Node3D
 #

@@ -1,8 +1,9 @@
-[gd_scene load_steps=43 format=3 uid="uid://diwqu1cvft320"]
+[gd_scene load_steps=45 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://cavj4r6ldiddv" path="res://ui/pause_menu.tscn" id="1_nvsnp"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ytqgl"]
+[ext_resource type="PackedScene" uid="uid://b8opht5ktw6rh" path="res://menu/veggie_menu.tscn" id="2_e8nh3"]
 [ext_resource type="PackedScene" uid="uid://c2f2e0qjqyjkp" path="res://ui/death_menu.tscn" id="2_hdvao"]
 [ext_resource type="PackedScene" uid="uid://cvl648gpvqks6" path="res://menu/win_menu.tscn" id="2_lfhuu"]
 [ext_resource type="Script" path="res://scripts/car.gd" id="4_m0aui"]
@@ -23,6 +24,7 @@
 [ext_resource type="Shader" path="res://shader/outline.gdshader" id="9_mk8c6"]
 [ext_resource type="PackedScene" uid="uid://celsyw0f8rjop" path="res://modules/big_module_a.tscn" id="10_wg76l"]
 [ext_resource type="PackedScene" uid="uid://bbh1uxxu6g2vt" path="res://modules/building/14_building_module.tscn" id="11_1fwqx"]
+[ext_resource type="PackedScene" uid="uid://dkrnh8y66ba4o" path="res://modules/mason_demo.tscn" id="12_semeo"]
 [ext_resource type="PackedScene" uid="uid://ct02cv46d3u78" path="res://modules/building/24_building_module.tscn" id="14_m8g6f"]
 [ext_resource type="PackedScene" uid="uid://pckapyp6diev" path="res://modules/building/34_building_module.tscn" id="17_clmh2"]
 [ext_resource type="PackedScene" uid="uid://b3f6c2pomiji6" path="res://modules/building/41_building_module.tscn" id="18_kx6sy"]
@@ -72,6 +74,8 @@ shader_parameter/shadow_thickness = 2.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0175052)
 script = ExtResource("1_ytqgl")
 
+[node name="Vegtable_Ui" parent="." instance=ExtResource("2_e8nh3")]
+
 [node name="Win_menu" parent="." instance=ExtResource("2_lfhuu")]
 
 [node name="Death_Menu" parent="." instance=ExtResource("2_hdvao")]
@@ -85,7 +89,7 @@ offset_bottom = 146.972
 [node name="Level" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
 script = ExtResource("1_eefjj")
-modules = Array[PackedScene]([ExtResource("5_wagff"), ExtResource("6_0gqt5"), ExtResource("7_sh3c0"), ExtResource("8_x5npu"), ExtResource("9_bjo3e"), ExtResource("10_wg76l")])
+modules = Array[PackedScene]([ExtResource("5_wagff"), ExtResource("6_0gqt5"), ExtResource("7_sh3c0"), ExtResource("8_x5npu"), ExtResource("9_bjo3e"), ExtResource("10_wg76l"), ExtResource("12_semeo")])
 
 [node name="BuildingLevel" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)

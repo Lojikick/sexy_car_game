@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcbp035n642qs"]
+[gd_scene load_steps=4 format=3 uid="uid://dcbp035n642qs"]
 
 [ext_resource type="Script" path="res://scripts/module.gd" id="1_58lgy"]
 [ext_resource type="PackedScene" uid="uid://dpxxgdhfwgdyb" path="res://modules/old_levels/big_module_ref.tscn" id="2_psr1s"]
+[ext_resource type="PackedScene" uid="uid://v7vmurijugss" path="res://assets/ingredients/cheese_ingredient.tscn" id="3_3lwjs"]
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -9,3 +10,6 @@ script = ExtResource("1_58lgy")
 
 [node name="Road" parent="." instance=ExtResource("2_psr1s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.501)
+
+[node name="Cheese" parent="." instance=ExtResource("3_3lwjs")]
+transform = Transform3D(-1.74846e-06, 0, -40, 0, 40, 0, 40, 0, -1.74846e-06, -2.0202, 0.241543, -110.331)
