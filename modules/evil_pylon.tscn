@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://bqf77075qs2dw"]
+
+[ext_resource type="Script" path="res://scripts/module.gd" id="1_llkg4"]
+[ext_resource type="PackedScene" uid="uid://dpxxgdhfwgdyb" path="res://modules/old_levels/big_module_ref.tscn" id="2_xquy2"]
+[ext_resource type="PackedScene" uid="uid://cgtukf5fqf2va" path="res://assets/obstacles/car_collide.tscn" id="3_fagaa"]
+[ext_resource type="PackedScene" uid="uid://bilwvaxur4swm" path="res://assets/obstacles/suv_collide.tscn" id="4_nvtuj"]
+[ext_resource type="PackedScene" uid="uid://p8t2kcditggn" path="res://assets/obstacles/truck_collide.tscn" id="5_wqwcm"]
+[ext_resource type="PackedScene" uid="uid://c67deg1e0baj" path="res://assets/obstacles/taxi.tscn" id="6_spx2l"]
+[ext_resource type="PackedScene" uid="uid://cyt230ry27vvy" path="res://assets/ingredients/random_ingredient.tscn" id="7_ox3ci"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+script = ExtResource("1_llkg4")
+
+[node name="Road" parent="." instance=ExtResource("2_xquy2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.501)
+
+[node name="Sedan" parent="." instance=ExtResource("3_fagaa")]
+transform = Transform3D(-0.228346, -6.69688, -7.42291, -0.205914, 7.42642, -6.69372, 9.99527, 0, -0.307478, -17.7031, 10.101, -27.3061)
+
+[node name="Sedan2" parent="." instance=ExtResource("3_fagaa")]
+transform = Transform3D(0.891252, -2.55067, -9.62807, 0.463339, 9.66669, -2.51801, 9.94942, -0.221688, 0.979728, -1.22699, 19.1912, -28.9489)
+
+[node name="Sedan3" parent="." instance=ExtResource("3_fagaa")]
+transform = Transform3D(-0.0169735, 2.32597, -9.72572, 0.0040593, 9.72573, 2.32596, 9.99998, -1.65841e-10, -0.0174521, 15.8229, 19.6752, -27.8235)
+
+[node name="Sedan4" parent="." instance=ExtResource("3_fagaa")]
+transform = Transform3D(-0.400504, 7.90828, -6.10726, 0.517501, 6.12038, 7.89133, 9.97857, 0, -0.654378, 28.4945, 2.21797, -26.8675)
+
+[node name="Suv" parent="." instance=ExtResource("4_nvtuj")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -1.01833, 0.241543, -90.2078)
+
+[node name="Truck" parent="." instance=ExtResource("5_wqwcm")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -19.9068, 0.241543, -59.2623)
+
+[node name="Taxi" parent="." instance=ExtResource("6_spx2l")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 22.7263, 0.241543, -50.9894)
+
+[node name="Sedan5" parent="." instance=ExtResource("3_fagaa")]
+transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 22.7922, 0.241543, -83.4299)
+
+[node name="Random_Ingredient" parent="." instance=ExtResource("7_ox3ci")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.54836, 7.11778, -19.2919)

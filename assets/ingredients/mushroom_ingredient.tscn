@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c66g5gmlqxjqg"]
 
-[ext_resource type="PackedScene" uid="uid://dj60k6t13ases" path="res://assets/kenny_food_assets/mushroom-half.glb" id="1_jertp"]
+[ext_resource type="PackedScene" uid="uid://xitrav4ulbkh" path="res://scenes/imported models/mushroom_half.tscn" id="1_mqc4e"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5217j"]
 radius = 0.176232
@@ -8,11 +8,11 @@ radius = 0.176232
 [node name="Mushroom" type="Node3D"]
 transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 0, 0, 0)
 
-[node name="mushroom-half2" parent="." instance=ExtResource("1_jertp")]
-transform = Transform3D(1.49, 0, 0, 0, 1.49, 0, 0, 0, 1.49, 0.0346243, -0.0057926, 0.0105493)
-
 [node name="Area3D" type="Area3D" parent="." groups=["ingredient", "mushroom"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0362984, 0.102494, 0.00792283)
 shape = SubResource("SphereShape3D_5217j")
+
+[node name="mushroom-half3" parent="." instance=ExtResource("1_mqc4e")]
+transform = Transform3D(1.49, 0, 0, 0, 1.49, 0, 0, 0, 1.49, 0.0346243, -0.0057926, 0.0105493)

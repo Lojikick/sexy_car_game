@@ -1,22 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2f2e0qjqyjkp"]
+[gd_scene load_steps=5 format=3 uid="uid://c2f2e0qjqyjkp"]
 
 [ext_resource type="Script" path="res://ui/death_menu.gd" id="1_0j4wn"]
+[ext_resource type="Texture2D" uid="uid://50k1serb616u" path="res://assets/UI Elements/neew gaame.png" id="2_ujxip"]
+[ext_resource type="Texture2D" uid="uid://cl0i58b3yycat" path="res://assets/UI Elements/queet.png" id="3_wh778"]
+[ext_resource type="Texture2D" uid="uid://dvtr3ly8s1iam" path="res://assets/UI Elements/ar eye pee.png" id="4_tiqne"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.514
+offset_left = -458.0
+offset_top = -183.0
+offset_right = 339.0
+offset_bottom = 646.928
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0j4wn")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 487.0
+offset_left = 538.0
 offset_top = 220.0
-offset_right = 580.0
-offset_bottom = 286.0
+offset_right = 1015.0
+offset_bottom = 640.0
 scale = Vector2(2.08, 2.24)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -24,12 +30,34 @@ layout_mode = 2
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "New Game"
+icon = ExtResource("2_ujxip")
+flat = true
+icon_alignment = 1
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit
+text = "
 "
+icon = ExtResource("3_wh778")
+flat = true
+text_overrun_behavior = 1
+icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1273.0
+offset_top = 394.0
+offset_right = 1555.0
+offset_bottom = 649.0
+texture = ExtResource("4_tiqne")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 396.0
+offset_right = 787.0
+offset_bottom = 651.0
+texture = ExtResource("4_tiqne")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

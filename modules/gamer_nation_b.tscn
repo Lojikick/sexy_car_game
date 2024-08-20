@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://kih11plsau4v"]
+
+[ext_resource type="Script" path="res://scripts/module.gd" id="1_ym2mj"]
+[ext_resource type="PackedScene" uid="uid://dpxxgdhfwgdyb" path="res://modules/old_levels/big_module_ref.tscn" id="2_bd0m3"]
+[ext_resource type="PackedScene" uid="uid://cgtukf5fqf2va" path="res://assets/obstacles/car_collide.tscn" id="3_rkufs"]
+[ext_resource type="PackedScene" uid="uid://qv1wqh11358d" path="res://assets/obstacles/cone_collide.tscn" id="4_fdetc"]
+[ext_resource type="PackedScene" uid="uid://c46bsi3c8rfcq" path="res://assets/obstacles/police_car.tscn" id="5_mmafv"]
+[ext_resource type="PackedScene" uid="uid://cyt230ry27vvy" path="res://assets/ingredients/random_ingredient.tscn" id="6_pg1q1"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+script = ExtResource("1_ym2mj")
+
+[node name="Road" parent="." instance=ExtResource("2_bd0m3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.501)
+
+[node name="Sedan" parent="." instance=ExtResource("3_rkufs")]
+transform = Transform3D(-7.98749, -0.834371, -5.95851, 4.00547, 6.6524, -6.30094, 4.48957, -7.41953, -4.97939, -20.3514, 4.60223, -55.9029)
+
+[node name="Cone" parent="." instance=ExtResource("4_fdetc")]
+transform = Transform3D(-5.24536e-07, 0, -12, 0, 12, 0, 12, 0, -5.24536e-07, -26.6053, -0.755181, -38.0892)
+
+[node name="Cone2" parent="." instance=ExtResource("4_fdetc")]
+transform = Transform3D(-5.24536e-07, 0, -12, 0, 12, 0, 12, 0, -5.24536e-07, -17.9942, -0.755181, -40.6425)
+
+[node name="Police" parent="." instance=ExtResource("5_mmafv")]
+transform = Transform3D(0.0382252, 0, -9.99993, 0, 10, 0, 9.99993, 0, 0.0382252, 24.955, 0.241543, -17.9701)
+
+[node name="Cone3" parent="." instance=ExtResource("4_fdetc")]
+transform = Transform3D(-5.24536e-07, 0, -12, 0, 12, 0, 12, 0, -5.24536e-07, -9.91308, -0.755181, -45.9087)
+
+[node name="Police2" parent="." instance=ExtResource("5_mmafv")]
+transform = Transform3D(7.27785, 0, -6.85806, 0, 10, 0, 6.85806, 0, 7.27785, -8.65381, 0.241543, -98.7038)
+
+[node name="Random_Ingredient" parent="." instance=ExtResource("6_pg1q1")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 15.3581, 8.29746, -88.0514)

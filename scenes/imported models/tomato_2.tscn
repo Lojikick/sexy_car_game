@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh1if0d6behyl"]
+
+[ext_resource type="PackedScene" uid="uid://crm7tnpi6ordb" path="res://assets/kenny_food_assets/tomato.glb" id="1_5dl64"]
+[ext_resource type="Shader" path="res://shader/emissive.gdshader" id="2_s5ljb"]
+[ext_resource type="Texture2D" uid="uid://bibtsc314v7n7" path="res://assets/kenny_food_assets/Textures/colormap.png" id="3_pv5p2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ja6x6"]
+render_priority = 0
+shader = ExtResource("2_s5ljb")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_pv5p2")
+
+[node name="tomato2" instance=ExtResource("1_5dl64")]
+
+[node name="tomato" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_ja6x6")

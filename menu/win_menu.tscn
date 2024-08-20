@@ -1,12 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvl648gpvqks6"]
+[gd_scene load_steps=5 format=3 uid="uid://cvl648gpvqks6"]
 
 [ext_resource type="Script" path="res://menu/win_menu.gd" id="1_fk83g"]
+[ext_resource type="Texture2D" uid="uid://50k1serb616u" path="res://assets/UI Elements/neew gaame.png" id="2_8nxfx"]
+[ext_resource type="Texture2D" uid="uid://cl0i58b3yycat" path="res://assets/UI Elements/queet.png" id="3_cqexk"]
+[ext_resource type="Texture2D" uid="uid://bpdixnq0rbg4i" path="res://assets/UI Elements/delivery complete!!.png" id="4_qjiuq"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = 52.0
+offset_right = -152.0
+offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fk83g")
@@ -22,18 +29,34 @@ scale = Vector2(2.08, 2.24)
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Play" type="Button" parent="."]
 layout_mode = 2
-text = "YOU WONN!!!!"
+offset_left = 39.0
+offset_top = 192.0
+offset_right = 366.0
+offset_bottom = 372.0
+scale = Vector2(2.598, 2.598)
+icon = ExtResource("2_8nxfx")
+flat = true
+icon_alignment = 1
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="."]
 layout_mode = 2
-text = "New Game"
+offset_left = 799.0
+offset_top = 214.0
+offset_right = 1012.0
+offset_bottom = 410.0
+scale = Vector2(2.27, 2.27)
+icon = ExtResource("3_cqexk")
+flat = true
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Quit
-"
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 401.0
+offset_top = -41.0
+offset_right = 1064.0
+offset_bottom = 282.0
+texture = ExtResource("4_qjiuq")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
