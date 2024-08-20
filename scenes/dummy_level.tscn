@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://diwqu1cvft320"]
+[gd_scene load_steps=51 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://cavj4r6ldiddv" path="res://ui/pause_menu.tscn" id="1_nvsnp"]
@@ -23,9 +23,17 @@
 [ext_resource type="Shader" path="res://shader/outline.gdshader" id="9_mk8c6"]
 [ext_resource type="PackedScene" uid="uid://celsyw0f8rjop" path="res://modules/big_module_a.tscn" id="10_wg76l"]
 [ext_resource type="PackedScene" uid="uid://bbh1uxxu6g2vt" path="res://modules/building/14_building_module.tscn" id="11_1fwqx"]
+[ext_resource type="PackedScene" uid="uid://4uuag7goxwkv" path="res://modules/gaming_nation_a.tscn" id="12_mbm5i"]
+[ext_resource type="PackedScene" uid="uid://15iahqbcys4x" path="res://modules/big_level_design_a.tscn" id="13_0ndyb"]
+[ext_resource type="PackedScene" uid="uid://kih11plsau4v" path="res://modules/gamer_nation_b.tscn" id="14_02wea"]
 [ext_resource type="PackedScene" uid="uid://ct02cv46d3u78" path="res://modules/building/24_building_module.tscn" id="14_m8g6f"]
+[ext_resource type="PackedScene" uid="uid://136yuvpureov" path="res://modules/gamer-nation_c.tscn" id="15_x0bqe"]
+[ext_resource type="PackedScene" uid="uid://bqf77075qs2dw" path="res://modules/evil_pylon.tscn" id="16_mjhtx"]
 [ext_resource type="PackedScene" uid="uid://pckapyp6diev" path="res://modules/building/34_building_module.tscn" id="17_clmh2"]
+[ext_resource type="PackedScene" uid="uid://by5g7eydx3417" path="res://modules/trucking_accident.tscn" id="17_q25bg"]
+[ext_resource type="PackedScene" uid="uid://cha4oddw77act" path="res://modules/john_normal_a.tscn" id="18_877jb"]
 [ext_resource type="PackedScene" uid="uid://b3f6c2pomiji6" path="res://modules/building/41_building_module.tscn" id="18_kx6sy"]
+[ext_resource type="PackedScene" uid="uid://c5i7mg055fn74" path="res://modules/john_normal_b.tscn" id="19_pus5v"]
 [ext_resource type="PackedScene" uid="uid://b5y6ub2qj0ww2" path="res://modules/building/42_building_module.tscn" id="19_vtmq0"]
 [ext_resource type="PackedScene" uid="uid://dvnd2yj2l2erj" path="res://modules/building/43_building_module.tscn" id="20_yqstn"]
 [ext_resource type="Texture2D" uid="uid://bbj10gcowjshb" path="res://assets/skybox/skybox_skybox 2.png" id="21_3ht5n"]
@@ -85,7 +93,7 @@ offset_bottom = 146.972
 [node name="Level" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
 script = ExtResource("1_eefjj")
-modules = Array[PackedScene]([ExtResource("5_wagff"), ExtResource("6_0gqt5"), ExtResource("7_sh3c0"), ExtResource("8_x5npu"), ExtResource("9_bjo3e"), ExtResource("10_wg76l")])
+modules = Array[PackedScene]([ExtResource("5_wagff"), ExtResource("6_0gqt5"), ExtResource("7_sh3c0"), ExtResource("8_x5npu"), ExtResource("9_bjo3e"), ExtResource("10_wg76l"), ExtResource("12_mbm5i"), ExtResource("13_0ndyb"), ExtResource("14_02wea"), ExtResource("15_x0bqe"), ExtResource("16_mjhtx"), ExtResource("17_q25bg"), ExtResource("18_877jb"), ExtResource("19_pus5v")])
 
 [node name="BuildingLevel" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)

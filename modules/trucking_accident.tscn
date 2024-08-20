@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://by5g7eydx3417"]
+
+[ext_resource type="Script" path="res://scripts/module.gd" id="1_tlhct"]
+[ext_resource type="PackedScene" uid="uid://dpxxgdhfwgdyb" path="res://modules/old_levels/big_module_ref.tscn" id="2_3xd72"]
+[ext_resource type="PackedScene" uid="uid://p8t2kcditggn" path="res://assets/obstacles/truck_collide.tscn" id="3_ck4od"]
+[ext_resource type="PackedScene" uid="uid://qv1wqh11358d" path="res://assets/obstacles/cone_collide.tscn" id="4_08gvk"]
+[ext_resource type="PackedScene" uid="uid://cyt230ry27vvy" path="res://assets/ingredients/random_ingredient.tscn" id="5_5wsyb"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+script = ExtResource("1_tlhct")
+
+[node name="Road" parent="." instance=ExtResource("2_3xd72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.501)
+
+[node name="Truck" parent="." instance=ExtResource("3_ck4od")]
+transform = Transform3D(-0.0810143, 2.52868, 9.67467, 9.99487, 0.320214, 8.7378e-07, -0.309796, 9.6697, -2.52998, 5.86411, 4.61282, -90.4971)
+
+[node name="Cone" parent="." instance=ExtResource("4_08gvk")]
+transform = Transform3D(-5.24536e-07, 5.03205e-15, -12, -10.7222, -5.38846, 4.6868e-07, -5.38846, 10.7222, 2.35537e-07, 10.3875, 4.16236, -84.2425)
+
+[node name="Cone2" parent="." instance=ExtResource("4_08gvk")]
+transform = Transform3D(-7.26625, -9.49273, -1.04387, 2.5854, -3.21806, 11.2676, -9.19334, 6.59789, 3.99381, 22.7046, 1.66917, -63.9462)
+
+[node name="Cone3" parent="." instance=ExtResource("4_08gvk")]
+transform = Transform3D(6.36169, 9.6927, 3.0952, -0.750682, -3.19333, 11.5429, 10.1472, -6.313, -1.08657, 3.39839, 2.29221, -68.0676)
+
+[node name="Cone4" parent="." instance=ExtResource("4_08gvk")]
+transform = Transform3D(-5.24536e-07, 2.1264e-14, -12, -11.5968, -3.08458, 5.06911e-07, -3.08458, 11.5968, 1.34831e-07, 0.843136, 3.35036, -54.1991)
+
+[node name="Cone5" parent="." instance=ExtResource("4_08gvk")]
+transform = Transform3D(-0.20841, -8.22792, -8.73258, -9.88034, -4.83737, 4.79362, -6.80702, 7.27332, -6.69054, -12.1839, 3.29243, -68.2403)
+
+[node name="Cone6" parent="." instance=ExtResource("4_08gvk")]
+transform = Transform3D(-7.56112, 0, -9.31823, 0, 12, 0, 9.31823, 0, -7.56112, 15.9965, -0.755181, -42.4855)
+
+[node name="Random_Ingredient" parent="." instance=ExtResource("5_5wsyb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.1414, 0.241543, -30.719)
