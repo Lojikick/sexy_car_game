@@ -19,6 +19,10 @@ run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MouseRadio="*res://autoloads/mouse_radio.tscn"
+
 [dotnet]
 
 project/assembly_name="Sexy Car Game"
