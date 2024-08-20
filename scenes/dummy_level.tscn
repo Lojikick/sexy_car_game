@@ -88,10 +88,10 @@ script = ExtResource("1_ytqgl")
 [node name="Death_Menu" parent="." instance=ExtResource("2_hdvao")]
 
 [node name="Menu" parent="." instance=ExtResource("1_nvsnp")]
-offset_left = 72.9797
-offset_top = 146.972
-offset_right = 72.9797
-offset_bottom = 146.972
+offset_left = -165.0
+offset_top = -91.0
+offset_right = -165.0
+offset_bottom = -91.0
 
 [node name="Level" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
