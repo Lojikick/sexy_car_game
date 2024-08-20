@@ -1,0 +1,197 @@
+[gd_scene load_steps=15 format=3 uid="uid://be2f7o65onmim"]
+
+[ext_resource type="PackedScene" uid="uid://bj263khrxq4ir" path="res://assets/pizza car/PIZZACAR.glb" id="1_axmry"]
+[ext_resource type="Shader" path="res://shader/emissive.gdshader" id="2_5jn74"]
+[ext_resource type="Texture2D" uid="uid://dc85res5qewml" path="res://assets/pizza car/PIZZACAR_colormap.png" id="3_p6pvq"]
+[ext_resource type="Texture2D" uid="uid://bs2gtcg13smdy" path="res://assets/pizza car/PIZZACAR_color.png" id="3_vyoli"]
+[ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/imported models/mouse.tscn" id="4_353a0"]
+[ext_resource type="Texture2D" uid="uid://br01ha2jyy5kp" path="res://assets/pizza car/PIZZACAR_PIZZA SIGN.png" id="4_kam16"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ir3v"]
+render_priority = 0
+shader = ExtResource("2_5jn74")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_p6pvq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aa0r4"]
+render_priority = 0
+shader = ExtResource("2_5jn74")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_p6pvq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yn2pu"]
+render_priority = 0
+shader = ExtResource("2_5jn74")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_p6pvq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_116l3"]
+render_priority = 0
+shader = ExtResource("2_5jn74")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_p6pvq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ex50v"]
+render_priority = 0
+shader = ExtResource("2_5jn74")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_p6pvq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bh6nh"]
+render_priority = 0
+shader = ExtResource("2_5jn74")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("4_kam16")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fc3pj"]
+render_priority = 0
+shader = ExtResource("2_5jn74")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_vyoli")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e7hp3"]
+render_priority = 0
+shader = ExtResource("2_5jn74")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 3
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_vyoli")
+
+[node name="PIZZACAR" instance=ExtResource("1_axmry")]
+
+[node name="wheel-front-right" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_5ir3v")
+
+[node name="wheel-front-left" parent="." index="1"]
+surface_material_override/0 = SubResource("ShaderMaterial_aa0r4")
+
+[node name="wheel-back-right" parent="." index="2"]
+surface_material_override/0 = SubResource("ShaderMaterial_yn2pu")
+
+[node name="wheel-back-left" parent="." index="3"]
+surface_material_override/0 = SubResource("ShaderMaterial_116l3")
+
+[node name="body" parent="." index="4"]
+surface_material_override/0 = SubResource("ShaderMaterial_ex50v")
+
+[node name="body_001" parent="." index="5"]
+surface_material_override/0 = SubResource("ShaderMaterial_bh6nh")
+
+[node name="BAKR_001" parent="." index="6"]
+surface_material_override/0 = SubResource("ShaderMaterial_fc3pj")
+
+[node name="BAKR_002" parent="." index="7"]
+surface_material_override/0 = SubResource("ShaderMaterial_e7hp3")
+
+[node name="gaming mouse backup" parent="." index="8" instance=ExtResource("4_353a0")]
+transform = Transform3D(0.131048, 0, 0.0729823, 0, 0.15, 0, -0.0729823, 0, 0.131048, 0.549775, 0.896113, 0.301005)

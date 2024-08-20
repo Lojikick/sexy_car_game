@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://upuuo3egkrv6"
-path="res://.godot/imported/road.glb-3ca309f69e50372310f8967f91005340.scn"
+path="res://.godot/imported/road.glb-8992c42e25bc56cbb7ad0cb4138925f9.scn"
 
 [deps]
 
-source_file="res://assets/road.glb"
-dest_files=["res://.godot/imported/road.glb-3ca309f69e50372310f8967f91005340.scn"]
+source_file="res://assets/unused/road/road.glb"
+dest_files=["res://.godot/imported/road.glb-8992c42e25bc56cbb7ad0cb4138925f9.scn"]
 
 [params]
 
