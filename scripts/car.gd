@@ -30,6 +30,9 @@ var is_transitioning = false
 @onready var explosion: Node3D = $Explosion
 
 
+
+
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -86,6 +89,12 @@ func toggle_car_size():
 		
 func _finished_transition():
 	is_transitioning = false
+	
+	if small_car:
+		MouseRadio.play_small_song()
+	else:
+		MouseRadio.play_big_song()
+		
 	
 #Death/ Level Reload Functions
 func death():

@@ -15,6 +15,7 @@ func hide_menu():
 
 func _on_play_pressed():
 	get_tree().reload_current_scene()
+	MouseRadio.play_big_song()
 	
 
 func _on_quit_pressed():
