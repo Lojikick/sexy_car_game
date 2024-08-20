@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dg8lrhj8xtr82"]
+[gd_scene load_steps=7 format=3 uid="uid://dg8lrhj8xtr82"]
 
 [ext_resource type="Script" path="res://scripts/module.gd" id="1_w00xn"]
 [ext_resource type="PackedScene" uid="uid://dpxxgdhfwgdyb" path="res://modules/old_levels/big_module_ref.tscn" id="2_m6puy"]
 [ext_resource type="PackedScene" uid="uid://cgtukf5fqf2va" path="res://assets/obstacles/car_collide.tscn" id="3_1eeg7"]
 [ext_resource type="PackedScene" uid="uid://p8t2kcditggn" path="res://assets/obstacles/truck_collide.tscn" id="4_4iqv4"]
 [ext_resource type="PackedScene" uid="uid://c67deg1e0baj" path="res://assets/obstacles/taxi.tscn" id="5_7rxdf"]
+[ext_resource type="PackedScene" uid="uid://cyt230ry27vvy" path="res://assets/ingredients/random_ingredient.tscn" id="6_jlh8k"]
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -24,3 +25,6 @@ transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, 0.3
 
 [node name="Sedan2" parent="." instance=ExtResource("3_1eeg7")]
 transform = Transform3D(-10, 0, -8.74228e-07, 0, 10, 0, 8.74228e-07, 0, -10, -19.7461, 0.450951, -88.3959)
+
+[node name="Random_Ingredient" parent="." instance=ExtResource("6_jlh8k")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 16.8685, 5.43806, -97.8426)

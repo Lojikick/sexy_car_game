@@ -20,17 +20,6 @@ func _ready():
 func _process(delta):
 	var movement = speed * delta
 	position.z += movement
-	total_movement += movement
-
-	# Apply an opposite force to all RigidBody2D nodes
-	var compensating_force = Vector2(0, 0)  # Adjust if your level moves in other directions
-	compensating_force.y = -speed / physics_fps  # Convert speed to force
-
-	for module in get_children():
-		if module is Node3D:  # Assuming modules are Node3D
-			for child in module.get_children():
-				if child is RigidBody2D:
-					child.apply_central_force(compensating_force)
 
 func spawnModule(n):
 	var instance

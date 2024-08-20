@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://v7vmurijugss"]
+
+[ext_resource type="PackedScene" uid="uid://dhyg3s5yi57o2" path="res://assets/kenny_food_assets/cheese-cut.glb" id="1_d3kvh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5217j"]
+radius = 0.176232
+
+[node name="Cheese" type="Node3D"]
+transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="." groups=["cheese", "ingredient"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0362984, 0.102494, 0.00792283)
+shape = SubResource("SphereShape3D_5217j")
+
+[node name="cheese-cut2" parent="." instance=ExtResource("1_d3kvh")]
+transform = Transform3D(0.325468, 0.945857, 0, -0.46792, 0.657902, 0, 0, 0, 0.567178, 0.0387743, 0.106344, 0.00231214)

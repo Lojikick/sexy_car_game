@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bddlh1wy82or7"]
+[gd_scene load_steps=47 format=3 uid="uid://bddlh1wy82or7"]
 
 [ext_resource type="PackedScene" uid="uid://c4tw6ffnnus4h" path="res://scenes/imported models/building_0.tscn" id="1_44kbm"]
 [ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/imported models/mouse.tscn" id="1_e5acv"]
@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://wcqrhpqhh4i7" path="res://assets/kenny_car_assets/ambulance.glb" id="17_r7j8a"]
 [ext_resource type="PackedScene" uid="uid://c4b3t4pj4lrut" path="res://assets/kenny_car_assets/firetruck.glb" id="18_pp5fr"]
 [ext_resource type="PackedScene" uid="uid://c1qcfyv6cr0co" path="res://assets/kenny_car_assets/garbage-truck.glb" id="19_gyut8"]
+[ext_resource type="PackedScene" uid="uid://b5mt82tw6ff5s" path="res://assets/ingredients/pinapple.tscn" id="20_8p5aj"]
+[ext_resource type="PackedScene" uid="uid://dxim4pla3r5q5" path="res://assets/ingredients/onion.tscn" id="21_by7ns"]
+[ext_resource type="PackedScene" uid="uid://v7vmurijugss" path="res://assets/ingredients/cheese_ingredient.tscn" id="22_gi8a5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1eg42"]
 
@@ -394,5 +397,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33587, 0.241544, 10.3416)
 
 [node name="garbage-truck" parent="." instance=ExtResource("19_gyut8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.28641, 0.241544, 10.2802)
+
+[node name="Pineapple" parent="." instance=ExtResource("20_8p5aj")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.97386, 0.241544, 4.82184)
+
+[node name="Onion" parent="." instance=ExtResource("21_by7ns")]
+transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 4.65417, 0.241544, 5.36103)
+
+[node name="Cheese" parent="." instance=ExtResource("22_gi8a5")]
+transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 7.32337, 0.241544, -1.71514)
 
 [connection signal="area_entered" from="Player/Area3D" to="Player" method="_on_area_3d_area_entered"]

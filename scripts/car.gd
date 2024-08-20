@@ -4,6 +4,14 @@ extends CharacterBody3D
 const SPEED = 15
 const JUMP_VELOCITY = 4.5
 
+var ingredients_collected = {
+	"tomato": 0,
+	"mushrooms": 0,
+	"cheese": 0,
+	"onion": 0,
+	"pineapple":0,
+}
+
 #@onready var pivot = $CamRoot
 @export var sens = 0.5
 
@@ -150,8 +158,25 @@ func _on_deatth_sensor_area_entered(area: Area3D) -> void:
 		death()
 	if area.is_in_group("cone"):
 		death()
+	if area.is_in_group("ingredient"):
+		print("hit an ingredient")
+		if area.is_in_group("tomato"):
+			print("tomato")
+			ingredients_collected["tomato"] += 1
+		elif area.is_in_group("onion"):
+			print("onion")
+			ingredients_collected["onion"] += 1
+		elif area.is_in_group("pineapple"):
+			print("pineapple")
+			ingredients_collected["pineapple"] += 1
+		elif area.is_in_group("cheese"):
+			print("cheese")
+			ingredients_collected["cheese"] += 1
+		elif area.is_in_group("mushroom"):
+			print("mushroom")
+			ingredients_collected["mushrooms"] += 1
 		#death()
-
+	print(ingredients_collected)
 
 func _on_timer_timeout() -> void:
 	
