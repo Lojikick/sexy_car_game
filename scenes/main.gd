@@ -2,16 +2,18 @@ extends Node3D
 
 @onready var pause_menu = $Menu
 @onready var death_menu = $Death_Menu
+@onready var win_menu = $Win_menu
 @onready var player: CharacterBody3D = $Player
 
 var rng = RandomNumberGenerator.new()
 var paused = false
 var alive = true
 var won = false
+
 var ingredients_left = {
 	"tomato": 0,
 	"mushrooms": 0,
-	"cheese": 1,
+	"cheese": 0,
 	"onion": 0,
 	"pineapple":0,
 }
@@ -22,11 +24,11 @@ func _ready() -> void:
 	
 	
 	rng.randomize()
-	#ingredients_left["tomato"] = 1
-	#ingredients_left["cheese"] = rng.randi_range(1, 2)
-	#ingredients_left["mushrooms"] = rng.randi_range(0, 2)
-	#ingredients_left["onion"] = rng.randi_range(0, 1)
-	#ingredients_left["pineapple"] = rng.randi_range(0, 1)
+	ingredients_left["tomato"] = 1
+	ingredients_left["cheese"] = rng.randi_range(1, 2)
+	ingredients_left["mushrooms"] = rng.randi_range(0, 2)
+	ingredients_left["onion"] = rng.randi_range(0, 1)
+	ingredients_left["pineapple"] = rng.randi_range(0, 1)
 	
 	print("Initialized the ingredients", ingredients_left)
 	Engine.time_scale = 1
@@ -46,9 +48,11 @@ func check_ingredients():
 func _process(delta: float) -> void:
 	
 	#check if player completed objectives:
-	if check_ingredients():
+	if not won and check_ingredients():
 		#Replace with with menu
 		print("you won the game!")
+		won = true
+		pauseMenu()
 		#won = true
 		#get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		#get_tree().paused = true
@@ -69,7 +73,10 @@ func pauseMenu():
 		else:
 			Engine.time_scale = 1
 	else:
-		if alive:
+		if won:
+			win_menu.show_menu()
+			Engine.time_scale = 0
+		elif alive:
 			pause_menu.show_menu()
 			Engine.time_scale = 0
 		else:
