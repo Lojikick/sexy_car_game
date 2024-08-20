@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxim4pla3r5q5"]
 
-[ext_resource type="PackedScene" uid="uid://bcngqs06k3wmt" path="res://assets/kenny_food_assets/onion-half.glb" id="1_3k5oe"]
+[ext_resource type="PackedScene" uid="uid://dptx4l2erg3un" path="res://scenes/imported models/onion_half_2.tscn" id="1_aausc"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5217j"]
 radius = 0.176232
@@ -14,5 +14,5 @@ transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0362984, 0.102494, 0.00792283)
 shape = SubResource("SphereShape3D_5217j")
 
-[node name="onion-half2" parent="Area3D" instance=ExtResource("1_3k5oe")]
+[node name="onion-half3" parent="Area3D" instance=ExtResource("1_aausc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0665108, 0, 0)

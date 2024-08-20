@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cq4m5acfj55g4"]
 
-[ext_resource type="PackedScene" uid="uid://crm7tnpi6ordb" path="res://assets/kenny_food_assets/tomato.glb" id="1_7m8pq"]
+[ext_resource type="PackedScene" uid="uid://bh1if0d6behyl" path="res://scenes/imported models/tomato_2.tscn" id="1_svfks"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5217j"]
 radius = 0.176232
@@ -8,11 +8,11 @@ radius = 0.176232
 [node name="Tomato" type="Node3D"]
 transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 0, 0, 0)
 
-[node name="tomato_mesh" parent="." instance=ExtResource("1_7m8pq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0346243, 0.024618, 0.0105493)
-
 [node name="Area3D" type="Area3D" parent="." groups=["ingredient", "tomato"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0362984, 0.102494, 0.00792283)
 shape = SubResource("SphereShape3D_5217j")
+
+[node name="tomato2" parent="." instance=ExtResource("1_svfks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0346243, 0.024618, 0.0105493)
