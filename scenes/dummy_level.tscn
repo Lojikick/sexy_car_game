@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://diwqu1cvft320"]
+[gd_scene load_steps=42 format=3 uid="uid://diwqu1cvft320"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_eefjj"]
 [ext_resource type="PackedScene" uid="uid://cavj4r6ldiddv" path="res://ui/pause_menu.tscn" id="1_nvsnp"]
@@ -12,9 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cnwqkms4wdlr2" path="res://modules/building/12_building_module.tscn" id="6_xs0pf"]
 [ext_resource type="PackedScene" uid="uid://cw4obtcmg2xtr" path="res://modules/building/13_building_module.tscn" id="7_8mfnq"]
 [ext_resource type="PackedScene" uid="uid://dg8lrhj8xtr82" path="res://modules/mixed_module_b.tscn" id="7_sh3c0"]
-[ext_resource type="PackedScene" uid="uid://toncqk8um2f0" path="res://scenes/imported models/sedan.tscn" id="7_u6772"]
 [ext_resource type="Script" path="res://scenes/collider.gd" id="8_7rvd1"]
-[ext_resource type="PackedScene" uid="uid://b4necsbha6adv" path="res://scenes/imported models/mouse.tscn" id="8_37yle"]
 [ext_resource type="PackedScene" uid="uid://dlvmc3tiwp2cr" path="res://modules/mixed_module_c.tscn" id="8_x5npu"]
 [ext_resource type="PackedScene" uid="uid://dtwvbt371vq1g" path="res://modules/building/21_building_module.tscn" id="8_x8bgp"]
 [ext_resource type="PackedScene" uid="uid://cyubya1kbgb5t" path="res://modules/building/32_building_module.tscn" id="9_0swtu"]
@@ -31,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://dvnd2yj2l2erj" path="res://modules/building/43_building_module.tscn" id="20_yqstn"]
 [ext_resource type="Texture2D" uid="uid://bbj10gcowjshb" path="res://assets/skybox/skybox_skybox 2.png" id="21_3ht5n"]
 [ext_resource type="PackedScene" uid="uid://b7ra2uc5w8ojt" path="res://assets/effects/explosion.tscn" id="22_o4i75"]
+[ext_resource type="PackedScene" uid="uid://be2f7o65onmim" path="res://scenes/imported models/pizzacar.tscn" id="31_gt1yu"]
 [ext_resource type="Animation" uid="uid://njo5mab8yk2h" path="res://animations/vibrate2.res" id="32_nqf5j"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_y1tg0"]
@@ -139,17 +138,14 @@ visible = false
 [node name="MeshRoot" type="Node3D" parent="Player"]
 transform = Transform3D(0.999848, 0.0174524, 0, -0.0174524, 0.999848, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="sedan" parent="Player/MeshRoot" instance=ExtResource("7_u6772")]
-transform = Transform3D(-1.18215, 0, 0.018697, 0, 1.1816, 0, -0.0221824, 0, -0.996403, -0.0115091, -0.881525, 0.00835109)
-
-[node name="gaming mouse backup" parent="Player/MeshRoot" instance=ExtResource("8_37yle")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.764046, 0.235408)
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player/MeshRoot"]
 libraries = {
 "": SubResource("AnimationLibrary_s3t8m")
 }
 autoplay = "vibrate2"
+
+[node name="PIZZACAR" parent="Player/MeshRoot" instance=ExtResource("31_gt1yu")]
+transform = Transform3D(-1.18215, 0, 0.018697, 0, 1.1816, 0, -0.0221824, 0, -0.996403, -0.0115091, -0.881525, 0.00835109)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.923358, 0.383941, 0, -0.383941, 0.923358, 0, 3.47649, 4.3534)

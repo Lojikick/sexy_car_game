@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bijpubojp0bc"
-path.s3tc="res://.godot/imported/road_road2.png-29f2606d7b31afff5f346f51c18bd5ee.s3tc.ctex"
+uid="uid://dc85res5qewml"
+path.s3tc="res://.godot/imported/PIZZACAR_colormap.png-2e336802265ee66d24a82bda146dd44d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "4aa0c408b84a7a9b227b7ca43f7559d3"
+"md5": "611df30398ddade53b30132a6d84ae0a"
 }
 
 [deps]
 
-source_file="res://assets/road_road2.png"
-dest_files=["res://.godot/imported/road_road2.png-29f2606d7b31afff5f346f51c18bd5ee.s3tc.ctex"]
+source_file="res://assets/pizza car/PIZZACAR_colormap.png"
+dest_files=["res://.godot/imported/PIZZACAR_colormap.png-2e336802265ee66d24a82bda146dd44d.s3tc.ctex"]
 
 [params]
 
