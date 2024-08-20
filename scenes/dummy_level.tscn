@@ -148,7 +148,7 @@ libraries = {
 autoplay = "vibrate2"
 
 [node name="PIZZACAR" parent="Player/MeshRoot" instance=ExtResource("31_gt1yu")]
-transform = Transform3D(-1.18215, 0, 0.018697, 0, 1.1816, 0, -0.0221824, 0, -0.996403, -0.0115091, -0.881525, 0.00835109)
+transform = Transform3D(-1.18236, 0, -8.71237e-08, 0, 1.1816, 0, 1.03365e-07, 0, -0.996578, -0.0115091, -0.881525, 0.00835109)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.923358, 0.383941, 0, -0.383941, 0.923358, 0, 3.47649, 4.3534)
