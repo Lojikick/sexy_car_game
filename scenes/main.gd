@@ -89,12 +89,14 @@ func get_ing_diff(ingr_name: String):
 func pauseMenu():
 	print("Current player status:", alive)
 	if paused:
+		vegtable_ui.show_menu()
 		if alive:
 			pause_menu.hide_menu()
 			Engine.time_scale = 1
 		else:
 			Engine.time_scale = 1
 	else:
+		vegtable_ui.hide_menu()
 		if won:
 			win_menu.show_menu()
 			Engine.time_scale = 0

@@ -7,56 +7,60 @@
 
 [node name="Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -152.0
-offset_top = 52.0
-offset_right = -152.0
-offset_bottom = 52.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -434.0
+offset_top = -70.0
+offset_right = -434.0
+offset_bottom = -70.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.556281, 0.619517)
 script = ExtResource("1_fk83g")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = 487.0
-offset_top = 220.0
-offset_right = 580.0
-offset_bottom = 286.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 294.815
+offset_top = 117.834
+offset_right = 714.815
+offset_bottom = 245.834
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(2.08, 2.24)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Play" type="Button" parent="."]
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_left = 39.0
-offset_top = 192.0
-offset_right = 366.0
-offset_bottom = 372.0
-scale = Vector2(2.598, 2.598)
 icon = ExtResource("2_8nxfx")
 flat = true
 icon_alignment = 1
 
-[node name="Quit" type="Button" parent="."]
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_left = 799.0
-offset_top = 214.0
-offset_right = 1012.0
-offset_bottom = 410.0
-scale = Vector2(2.27, 2.27)
 icon = ExtResource("3_cqexk")
 flat = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 401.0
-offset_top = -41.0
-offset_right = 1064.0
-offset_bottom = 282.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 406.27
+offset_top = -227.597
+offset_right = 1069.27
+offset_bottom = 95.4033
+grow_horizontal = 2
 texture = ExtResource("4_qjiuq")
 
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

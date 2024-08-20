@@ -87,14 +87,29 @@ script = ExtResource("1_ytqgl")
 [node name="Vegtable_Ui" parent="." instance=ExtResource("2_e8nh3")]
 
 [node name="Win_menu" parent="." instance=ExtResource("2_lfhuu")]
+offset_left = -411.0
+offset_top = -39.0
+offset_right = -411.0
+offset_bottom = -39.0
 
 [node name="Death_Menu" parent="." instance=ExtResource("2_hdvao")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1039.0
+offset_top = -487.0
+offset_right = -242.0
+offset_bottom = 342.928
 
 [node name="Menu" parent="." instance=ExtResource("1_nvsnp")]
-offset_left = -165.0
-offset_top = -91.0
-offset_right = -165.0
-offset_bottom = -91.0
+visible = false
+offset_left = -323.0
+offset_top = -275.0
+offset_right = -323.0
+offset_bottom = -275.0
 
 [node name="Level" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.170344)
